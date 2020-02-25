@@ -7,7 +7,11 @@ const CopyLink = () => {
         console.log(text);
     };
 
-    return <span onClick={() => copyToClipboard('sd')}>structture</span>;
+    return (
+        <span className={styles.redSpan} onClick={() => copyToClipboard('sd')}>
+            structture
+        </span>
+    );
 };
 
 export default CopyLink;
