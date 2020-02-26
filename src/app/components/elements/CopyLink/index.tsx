@@ -4,6 +4,7 @@ import styles from './copylink.module.scss';
 
 interface Props {
     text?: string;
+    link?: string;
 }
 
 const CopyLink: React.SFC<Props> = props => {
@@ -20,6 +21,7 @@ const CopyLink: React.SFC<Props> = props => {
 
 CopyLink.defaultProps = {
     text: 'Hallo',
+    link: '',
 };
 
 export default CopyLink;

@@ -9,7 +9,7 @@ const LaunchView = ({}) => {
     return (
         <div>
             <img src={pluginLogo} />
-            <p>Your JSON file should have a certain {<CopyLink />} to be readable.</p>
+            <p>Your JSON file should have a certain {<CopyLink text="structure" />} to be readable.</p>
         </div>
     );
 };
