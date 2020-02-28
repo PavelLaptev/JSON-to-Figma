@@ -4,7 +4,7 @@ figma.ui.onmessage = msg => {
     if (msg.type === 'copy-to-clipboard') {
         console.log(msg.link);
         figma.notify(msg.notifyText, {
-            timeout: 60000,
+            timeout: 1500,
         });
     }
 };

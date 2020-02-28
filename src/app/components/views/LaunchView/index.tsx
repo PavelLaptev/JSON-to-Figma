@@ -10,8 +10,8 @@ const LaunchView = ({}) => {
         <div>
             <img src={pluginLogo} />
             <p>
-                Your JSON file should have a certain {<CopyLink text="structure" link="https://www.google.com/" />} to
-                be readable.
+                Your JSON file should have a certain{' '}
+                {<CopyLink text="structure" className="yo" link="https://www.google.com/" />} to be readable.
             </p>
         </div>
     );
