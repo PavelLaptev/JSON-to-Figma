@@ -9,8 +9,8 @@ module.exports = (env, argv) => ({
     devtool: argv.mode === 'production' ? false : 'inline-source-map',
 
     entry: {
-        ui: './src/app/index.tsx', // The entry point for your UI code
         code: './src/plugin/controller.ts', // The entry point for your plugin code
+        ui: './src/app/index.tsx', // The entry point for your UI code
     },
 
     module: {
