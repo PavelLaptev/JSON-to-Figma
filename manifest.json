@@ -3,5 +3,13 @@
     "id": "00000000",
     "api": "1.0.0",
     "main": "dist/code.js",
-    "ui": "dist/ui.html"
+    "ui": "dist/ui.html",
+    "menu": [
+        {"name": "Load local JSON file", "command": "text"},
+        {"name": "Parse a link from Clipboard", "command": "frame"}
+    ],
+    "relaunchButtons": [
+        {"command": "edit", "name": "Load local JSON file"},
+        {"command": "open", "name": "Parse a link from Clipboard"}
+    ]
 }
