@@ -1,0 +1,14 @@
+@import '../../../styles/tokens';
+
+.wrap {
+    background-color: $main-pink;
+    padding: $l-space;
+    background-repeat: no-repeat;
+    background-position: 140% -70px;
+}
+
+.buttonsSection {
+    flex-wrap: wrap;
+    display: flex;
+    border: 1px solid red;
+}

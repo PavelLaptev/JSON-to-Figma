@@ -1,11 +1,11 @@
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 body {
     font: 12px sans-serif;
     text-align: center;
-    margin: 20px;
+    margin: 0;
 }
