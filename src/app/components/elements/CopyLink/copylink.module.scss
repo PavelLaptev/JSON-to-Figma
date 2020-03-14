@@ -1,8 +1,10 @@
+$link-hover: #ff2b2b;
+
 .copyLink {
     text-decoration-line: underline;
     text-decoration-style: dotted;
     &:hover {
         cursor: context-menu;
-        color: #f45;
+        color: $link-hover;
     }
 }

@@ -11,14 +11,14 @@ const jasonMask = require('../../../assets/jason-mask.svg');
 const LaunchView = ({}) => {
     return (
         <main className={styles.wrap} style={{backgroundImage: `url(${jasonMask})`}}>
-            <img src={pluginLogo} />
+            <img className={styles.logo} src={pluginLogo} />
             <section className={styles.buttonsSection}>
-                <Button text={'From local file'} />
+                <Button icon="yo" text={'From local file'} />
                 <Button text={'From Clipboard link'} />
             </section>
-            <p>
-                Your JSON file should have a certain{' '}
-                {<CopyLink text="structure" className="yo" link="https://www.google.com/" />} to be readable.
+            <p className={styles.caption}>
+                Your JSON file should have a{' '}
+                {<CopyLink text="certain structure" className="yo" link="https://www.google.com/" />} to be readable.
             </p>
         </main>
     );

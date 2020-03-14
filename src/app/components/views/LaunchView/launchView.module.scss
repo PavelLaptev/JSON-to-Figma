@@ -1,14 +1,38 @@
 @import '../../../styles/tokens';
+@import '../../../styles/figma/styles';
 
 .wrap {
-    background-color: $main-pink;
+    background-color: $color-pink-main;
     padding: $l-space;
     background-repeat: no-repeat;
-    background-position: 140% -70px;
+    background-size: 154px 204px;
+    background-position: 126% -50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 170px;
+    height: 80px;
+    margin-top: $s-space;
+    margin-bottom: $l-space;
 }
 
 .buttonsSection {
     flex-wrap: wrap;
     display: flex;
-    border: 1px solid red;
+    margin-bottom: $m-space;
+
+    button {
+        &:first-child {
+            margin-right: $s-space;
+        }
+    }
+}
+
+.caption {
+    @include text-11-regular;
+    color: $color-black-80;
+    text-align: left;
+    max-width: 200px;
 }

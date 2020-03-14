@@ -9,7 +9,7 @@
         "prettier:format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,json}' "
     },
     "dependencies": {
-        "@create-figma-plugin/ui": "*",
+        "@create-figma-plugin/ui": "0.0.54",
         "react": "^16.8.6",
         "react-dom": "^16.8.6"
     },

@@ -6,15 +6,25 @@ interface Props {
     text: string;
     click?: string;
     className?: any;
+    type?: string;
+    icon?: string;
 }
 
 const Button: React.SFC<Props> = props => {
     return (
-        <button className={`${styles.button} ${props.className}`} onClick={() => console.log('click')}>
+        <button
+            className={`${styles.button} ${props.className} ${styles[props.type]}`}
+            onClick={() => console.log('click ones')}
+        >
             <span>{props.text}</span>
-            <i>i</i>
+            {typeof props.icon === 'undefined' ? <i>i</i> : console.log(props.icon)}
         </button>
     );
 };
+
+Button.defaultProps = {
+    type: 'blue',
+    className: null,
+} as Partial<Props>;
 
 export default Button;
