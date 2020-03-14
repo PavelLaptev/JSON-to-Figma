@@ -9,23 +9,24 @@
     background-position: 126% -50px;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .logo {
     width: 170px;
     height: 80px;
     margin-top: $s-space;
-    margin-bottom: $l-space;
+    margin-bottom: $l-space + $xs-space;
 }
 
 .buttonsSection {
     flex-wrap: wrap;
     display: flex;
-    margin-bottom: $m-space;
+    margin-bottom: $s-space;
 
     button {
         &:first-child {
-            margin-right: $s-space;
+            margin-right: $xs-space + $xxs-space;
         }
     }
 }
