@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import Icon from '../Icon';
+
 import styles from './button.module.scss';
 
 interface Props {
@@ -17,7 +19,7 @@ const Button: React.SFC<Props> = props => {
             onClick={() => console.log('click ones')}
         >
             <span>{props.text}</span>
-            {typeof props.icon === 'undefined' ? <i>i</i> : console.log(props.icon)}
+            {typeof props.icon === 'undefined' ? <Icon /> : console.log(props.icon)}
         </button>
     );
 };

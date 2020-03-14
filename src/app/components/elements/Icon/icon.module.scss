@@ -1,0 +1,11 @@
+@import '../../../styles/tokens';
+@import '../../../styles/figma/styles';
+
+.wrap {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX($s-space);
+}
