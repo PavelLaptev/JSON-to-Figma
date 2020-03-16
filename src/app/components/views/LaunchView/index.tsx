@@ -13,8 +13,8 @@ const LaunchView = ({}) => {
         <main className={styles.wrap} style={{backgroundImage: `url(${jasonMask})`}}>
             <img className={styles.logo} src={pluginLogo} />
             <section className={styles.buttonsSection}>
-                <Button icon="yo" text={'From local file'} />
-                <Button text={'From Clipboard link'} />
+                <Button icon="upload" fileType text={'From local file'} />
+                <Button icon="copy" text={'From Clipboard link'} />
             </section>
             <p className={styles.caption}>
                 Your JSON file should have a{' '}

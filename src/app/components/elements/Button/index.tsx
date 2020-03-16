@@ -8,25 +8,35 @@ interface Props {
     text: string;
     click?: string;
     className?: any;
-    type?: string;
+    mod?: string;
     icon?: string;
+    fileType?: boolean;
 }
 
 const Button: React.SFC<Props> = props => {
-    return (
-        <button
-            className={`${styles.button} ${props.className} ${styles[props.type]}`}
-            onClick={() => console.log('click ones')}
-        >
-            <span>{props.text}</span>
-            {typeof props.icon === 'undefined' ? <Icon /> : console.log(props.icon)}
-        </button>
-    );
+    const btnComponent = () => {
+        return (
+            <button
+                className={`${styles.button} ${props.className} ${styles[props.mod]}`}
+                onClick={() => console.log('click ones')}
+            >
+                <span>{props.text}</span>
+                {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
+            </button>
+        );
+    };
+
+    const fileComponent = () => {
+        return <input className={`${styles.button} ${props.className} ${styles[props.mod]}`} type="file" />;
+    };
+
+    return props.fileType ? fileComponent() : btnComponent();
 };
 
 Button.defaultProps = {
-    type: 'blue',
+    mod: 'blue',
     className: null,
+    fileType: false,
 } as Partial<Props>;
 
 export default Button;

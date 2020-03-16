@@ -1,3 +1,4 @@
+/// Show UI
 figma.showUI(__html__, {width: 320, height: 246});
 
 figma.ui.onmessage = msg => {
@@ -8,4 +9,4 @@ figma.ui.onmessage = msg => {
     }
 };
 
-figma.currentPage.setRelaunchData({edit: 'sdfsdf', open: 'sdff'});
+figma.currentPage.setRelaunchData({open: ''});

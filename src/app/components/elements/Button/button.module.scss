@@ -18,4 +18,12 @@
     &:hover {
         background-color: $color-blue-dark;
     }
+
+    i {
+        transform: translateX($s-space);
+    }
+
+    svg {
+        fill: #fff;
+    }
 }
