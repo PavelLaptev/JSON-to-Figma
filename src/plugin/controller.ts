@@ -1,5 +1,5 @@
 /// Show UI
-figma.showUI(__html__, {width: 320, height: 246});
+figma.showUI(__html__, {width: 330, height: 246});
 
 figma.ui.onmessage = msg => {
     if (msg.type === 'copy-to-clipboard') {

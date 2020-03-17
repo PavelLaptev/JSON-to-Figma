@@ -18,7 +18,7 @@ const Button: React.SFC<Props> = props => {
         return (
             <button
                 className={`${styles.button} ${props.className} ${styles[props.mod]}`}
-                onClick={() => console.log('click ones')}
+                onClick={() => console.log('click button')}
             >
                 <span>{props.text}</span>
                 {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
@@ -27,7 +27,13 @@ const Button: React.SFC<Props> = props => {
     };
 
     const fileComponent = () => {
-        return <input className={`${styles.button} ${props.className} ${styles[props.mod]}`} type="file" />;
+        return (
+            <label className={`${styles.button} ${styles.fileButton} ${props.className} ${styles[props.mod]}`}>
+                <input type="file" onClick={e => console.log(e.target)} />
+                <span>{props.text}</span>
+                {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
+            </label>
+        );
     };
 
     return props.fileType ? fileComponent() : btnComponent();

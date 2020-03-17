@@ -6,10 +6,16 @@
     outline: none;
     border: none;
     border-radius: $border-radius-6;
-    padding: ($xs-space + $xs-space) ($s-space + $s-space);
+    padding: ($xs-space + $xs-space) $m-space;
     transition: background-color 0.08s ease-in-out;
     display: flex;
     align-items: center;
+}
+
+.fileButton {
+    input {
+        display: none;
+    }
 }
 
 .blue {
@@ -20,7 +26,8 @@
     }
 
     i {
-        transform: translateX($s-space);
+        transform: translateX($s-space + $xxs-space);
+        margin-right: $xs-space;
     }
 
     svg {

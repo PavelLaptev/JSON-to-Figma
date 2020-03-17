@@ -24,10 +24,8 @@
     display: flex;
     margin-bottom: $s-space;
 
-    button {
-        &:first-child {
-            margin-right: $xs-space + $xxs-space;
-        }
+    > :first-child {
+        margin-right: $xs-space + $xxs-space;
     }
 }
 
