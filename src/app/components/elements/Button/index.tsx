@@ -6,11 +6,12 @@ import styles from './button.module.scss';
 
 interface Props {
     text: string;
-    click?: string;
     className?: any;
-    mod?: string;
     icon?: string;
+    mod?: string;
     fileType?: boolean;
+    onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
+    onChange?(event: React.FormEvent<HTMLInputElement>): void;
 }
 
 const Button: React.SFC<Props> = props => {
@@ -18,7 +19,8 @@ const Button: React.SFC<Props> = props => {
         return (
             <button
                 className={`${styles.button} ${props.className} ${styles[props.mod]}`}
-                onClick={() => console.log('click button')}
+                onClick={props.onClick}
+                onChange={props.onChange}
             >
                 <span>{props.text}</span>
                 {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
@@ -26,22 +28,22 @@ const Button: React.SFC<Props> = props => {
         );
     };
 
-    const fileComponent = () => {
+    const fileBtnComponent = () => {
         return (
             <label className={`${styles.button} ${styles.fileButton} ${props.className} ${styles[props.mod]}`}>
-                <input type="file" onClick={e => console.log(e.target)} />
+                <input type="file" onClick={props.onClick} onChange={props.onChange} />
                 <span>{props.text}</span>
                 {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
             </label>
         );
     };
 
-    return props.fileType ? fileComponent() : btnComponent();
+    return props.fileType ? fileBtnComponent() : btnComponent();
 };
 
 Button.defaultProps = {
-    mod: 'blue',
     className: null,
+    mod: 'blue',
     fileType: false,
 } as Partial<Props>;
 

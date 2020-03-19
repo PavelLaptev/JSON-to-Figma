@@ -2,8 +2,7 @@ import * as React from 'react';
 import '../styles/ui.scss';
 
 import LanchView from './views/LaunchView';
-
-// declare function require(path: string): any;
+// import OperationsView from './views/OperationsView';
 
 const App = ({}) => {
     return <LanchView />;
