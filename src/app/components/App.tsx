@@ -1,11 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import '../styles/ui.scss';
 
+import ViewProvider from './views/ViewContext';
 import LanchView from './views/LaunchView';
-// import OperationsView from './views/OperationsView';
+import OperationsView from './views/OperationsView';
 
 const App = ({}) => {
-    return <LanchView />;
+    return (
+        <ViewProvider.Consumer>
+            {isJSONloaded => (isJSONloaded ? <OperationsView /> : <LanchView />)}
+        </ViewProvider.Consumer>
+    );
 };
 
 export default App;
