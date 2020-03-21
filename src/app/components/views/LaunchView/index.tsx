@@ -10,7 +10,7 @@ const pluginLogo = require('../../../assets/logo.svg');
 const jasonMask = require('../../../assets/jason-mask.svg');
 
 const LaunchView = ({}) => {
-    const [isJSONloaded, setIsJSONloaded] = useState(false as any);
+    const [isJSONloaded, setIsJSONloaded] = useState(null);
 
     const handleChangeFile = e => {
         const fileReader = new FileReader();
@@ -19,7 +19,8 @@ const LaunchView = ({}) => {
 
         fileReader.onload = () => {
             setIsJSONloaded(fileReader.result);
-            console.log(fileReader.result);
+            // console.log(fileReader.result);
+            console.log(isJSONloaded);
         };
     };
 

@@ -8,7 +8,7 @@ import OperationsView from './views/OperationsView';
 const App = ({}) => {
     return (
         <ViewProvider.Consumer>
-            {isJSONloaded => (isJSONloaded ? <OperationsView /> : <LanchView />)}
+            {isJSONloaded => (isJSONloaded !== null ? <OperationsView /> : <LanchView />)}
         </ViewProvider.Consumer>
     );
 };
