@@ -1,0 +1,22 @@
+@import '../../../styles/tokens';
+@import '../../../styles/figma/styles';
+
+.wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    transition: left 0.2s ease-in-out;
+}
+
+.hidden {
+    top: 0;
+    left: 100%;
+    background-color: blue;
+}
+
+.visible {
+    left: 0;
+    background-color: gray;
+}

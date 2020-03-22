@@ -1,11 +1,16 @@
 import * as React from 'react';
-// import styles from './launchView.module.scss';
+import ViewProvider from '../ViewContext';
+import styles from './operationsView.module.scss';
 
 const OperationsView = ({}) => {
     return (
-        <main>
-            <h1>Hello, The Second Screen!</h1>
-        </main>
+        <ViewProvider.Consumer>
+            {() => (
+                <main className={`${styles.wrap}`}>
+                    <h1>Hello, The Second Screen!</h1>
+                </main>
+            )}
+        </ViewProvider.Consumer>
     );
 };
 

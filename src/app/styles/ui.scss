@@ -1,9 +1,13 @@
-@import './figma/styles';
+@import './tokens';
 
 *,
 *:before,
 *:after {
     box-sizing: border-box;
+}
+
+*::selection {
+    background-color: lighten($color: $color-pink-dark, $amount: 10);
 }
 
 body {

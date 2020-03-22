@@ -3,6 +3,7 @@
 
 .button {
     @include text-11-regular;
+    user-select: none;
     outline: none;
     border: none;
     border-radius: $border-radius-6;

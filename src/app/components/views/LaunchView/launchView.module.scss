@@ -13,6 +13,8 @@
 }
 
 .logo {
+    pointer-events: none;
+    user-select: none;
     width: 170px;
     height: 80px;
     margin-top: $s-space;
@@ -31,6 +33,7 @@
 
 .caption {
     @include text-11-regular;
+    user-select: none;
     color: $color-black-80;
     text-align: left;
     max-width: 200px;
