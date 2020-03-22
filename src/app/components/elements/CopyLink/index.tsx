@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {showMsg, execCopy} from '../../../utils';
+import {showMsg, execCopyToClipboard} from '../../../utils';
 
 import styles from './copylink.module.scss';
 
@@ -12,7 +12,7 @@ interface Props {
 
 const CopyLink: React.SFC<Props> = props => {
     const copyToClipboard = (link: string): void => {
-        execCopy(link);
+        execCopyToClipboard(link);
         showMsg('copy', 'Link copied to Clipboard');
     };
 
