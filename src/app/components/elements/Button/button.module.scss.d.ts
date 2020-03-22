@@ -4,6 +4,8 @@ interface CssExports {
     blue: string;
     button: string;
     fileButton: string;
+    'ghost-dark': string;
+    'ghost-light': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

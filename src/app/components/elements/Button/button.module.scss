@@ -2,15 +2,25 @@
 @import '../../../styles/figma/styles';
 
 .button {
-    @include text-11-regular;
     user-select: none;
     outline: none;
     border: none;
     border-radius: $border-radius-6;
     padding: ($xs-space + $xs-space) $m-space;
-    transition: background-color 0.08s ease-in-out;
     display: flex;
     align-items: center;
+    height: 32px;
+    transition: all 0.08s ease-in-out;
+
+    span {
+        @include text-11-regular;
+        line-height: normal;
+    }
+
+    i {
+        transform: translateX($s-space + $xxs-space);
+        margin-right: $xs-space;
+    }
 }
 
 .fileButton {
@@ -26,12 +36,35 @@
         background-color: $color-blue-dark;
     }
 
-    i {
-        transform: translateX($s-space + $xxs-space);
-        margin-right: $xs-space;
+    svg {
+        fill: #fff;
+    }
+}
+
+.ghost-dark {
+    background-color: transparent;
+    border: 1px solid $color-black-80;
+    color: $color-black-80;
+    &:hover {
+        border: 1px solid $color-white;
+        color: $color-white;
     }
 
     svg {
-        fill: #fff;
+        fill: $color-black-80;
+    }
+}
+
+.ghost-light {
+    background-color: transparent;
+    border: 1px solid $color-white-80;
+    color: $color-white-80;
+    &:hover {
+        border: 1px solid $color-white;
+        color: $color-white;
+    }
+
+    svg {
+        fill: $color-white-80;
     }
 }

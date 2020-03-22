@@ -18,13 +18,12 @@ interface Props {
 const LaunchView: React.SFC<Props> = props => {
     return (
         <ViewProvider.Consumer>
-            {JSONobject => (
+            {() => (
                 <main className={styles.wrap} style={{backgroundImage: `url(${jasonMask})`}}>
                     <img className={styles.logo} src={pluginLogo} />
                     <section className={styles.buttonsSection}>
                         <Button icon="upload" fileType text={'From local file'} onChange={props.fileOnChange} />
                         <Button icon="copy" text={'From Clipboard link'} onClick={props.urlOnClick} />
-                        {JSONobject !== null ? <p>Hello</p> : null}
                     </section>
                     <p className={styles.caption}>
                         Your JSON file should have a{' '}
