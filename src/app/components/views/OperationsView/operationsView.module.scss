@@ -3,6 +3,7 @@
 
 .wrap {
     position: absolute;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -25,8 +26,12 @@
             margin-right: $m-space;
         }
         &_text {
-            @include text-11-regular;
+            @include text-12-regular;
             color: $color-white-80;
         }
     }
+}
+
+.mainOperations {
+    background: $color-black-03;
 }

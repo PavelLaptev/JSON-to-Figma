@@ -1,0 +1,18 @@
+@import '../../../styles/tokens';
+@import '../../../styles/figma/styles';
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $color-black-10;
+    padding: $l-space $m-space $xs-space;
+    width: 100%;
+}
+
+.title {
+    @include text-11-bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: left;
+    margin: 0 0 $m-space 0;
+}

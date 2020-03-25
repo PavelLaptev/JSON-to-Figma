@@ -1,0 +1,10 @@
+@import '../../../styles/tokens';
+@import '../../../styles/figma/styles';
+
+.caption {
+    @include text-11-regular;
+    text-align: left;
+    width: 100%;
+    margin-bottom: $l-space;
+    color: $color-black-40;
+}

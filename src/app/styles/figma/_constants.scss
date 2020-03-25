@@ -3,9 +3,13 @@ $border-radius-6: 6px;
 
 $box-shadow: 0 5px 17px rgba(0, 0, 0, 0.2), 0 2px 7px rgba(0, 0, 0, 0.15);
 
+$color-black-02: rgba(0, 0, 0, 0.02);
 $color-black-03: rgba(0, 0, 0, 0.03);
 $color-black-10: rgba(0, 0, 0, 0.1);
 $color-black-30: rgba(0, 0, 0, 0.3);
+$color-black-40: rgba(0, 0, 0, 0.4);
+$color-black-50: rgba(0, 0, 0, 0.5);
+$color-black-60: rgba(0, 0, 0, 0.6);
 $color-black-80: rgba(0, 0, 0, 0.8);
 $color-blue: #18a0fb;
 $color-purple: #7b61ff;
@@ -33,10 +37,3 @@ $opacity-30: 0.3;
 
 $z-index-1: 1;
 $z-index-2: 2;
-
-$space-unit: 4px;
-$space-extra-small: 2 * $space-unit;
-$space-small: 3 * $space-unit;
-$space-medium: 4 * $space-unit;
-$space-large: 5 * $space-unit;
-$space-extra-large: 6 * $space-unit;
