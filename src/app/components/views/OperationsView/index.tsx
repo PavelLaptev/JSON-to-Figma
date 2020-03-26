@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import ViewProvider from '../ViewContext';
-import {Button, RadioBtn, ElementCaption} from '../../elements';
+import {Button, RadioBtn, ElementCaption, Switcher} from '../../elements';
 import {SectionWrapper} from '../../sections';
 
 import styles from './operationsView.module.scss';
@@ -45,7 +45,7 @@ const OperationsView = ({}) => {
 
                     <SectionWrapper>
                         <ElementCaption text="Select frames or groups that contents text layers with string templates. Replaces only the contents of a string in {braces}.">
-                            <RadioBtn id="string-templates" groupName={populateMode} label="String templates" />
+                            <Switcher id="string-templates" label="String templates" />
                         </ElementCaption>
                     </SectionWrapper>
 
