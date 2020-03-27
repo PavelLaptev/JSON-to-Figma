@@ -1,17 +1,23 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 
 import styles from './switcher.module.scss';
 
 interface Props {
     label?: string;
-    state?: boolean;
+    checked?: boolean;
     id: string;
 }
 
 const Switcher: React.SFC<Props> = props => {
+    const [switcherChecked, setSwitcherChecked] = useState(props.checked);
+
+    const handleChange = () => {
+        setSwitcherChecked(!switcherChecked);
+    };
+
     return (
         <div className={styles.wrap}>
-            <input type="checkbox" id={props.id} />
+            <input type="checkbox" id={props.id} checked={switcherChecked} onChange={handleChange} />
             <label htmlFor={props.id}>{props.label}</label>
         </div>
     );
@@ -19,7 +25,7 @@ const Switcher: React.SFC<Props> = props => {
 
 Switcher.defaultProps = {
     label: 'label',
-    state: false,
+    checked: false,
 } as Partial<Props>;
 
 export default Switcher;

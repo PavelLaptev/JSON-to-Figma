@@ -49,7 +49,6 @@ const App = ({}) => {
             .then(response => response.json())
             .then(responseJson => {
                 loadOperationView(responseJson);
-                // return responseJson;
             })
             .catch(error => {
                 showErrorMsg(error, 'Something wrong with the URL or JSON file');
