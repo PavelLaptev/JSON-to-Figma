@@ -5,6 +5,7 @@ interface CssExports {
     fileSection_info: string;
     fileSection_info_icon: string;
     fileSection_info_text: string;
+    jsonObjBtns: string;
     mainOperations: string;
     wrap: string;
 }

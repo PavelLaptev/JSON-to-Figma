@@ -9,20 +9,28 @@ import styles from './operationsView.module.scss';
 const loadedFileIcon = require('../../../assets/loaded-file-icon.svg');
 
 const OperationsView = ({}) => {
-    const FileSection = () => {
+    const FileSection = ({obj}) => {
+        let amountOfItems = Object.keys(obj[0]).length;
+        console.log(amountOfItems);
         return (
             <section className={styles.fileSection}>
                 <div className={styles.fileSection_info}>
                     <img className={styles.fileSection_info_icon} src={loadedFileIcon} />
-                    <p className={styles.fileSection_info_text}>Founded items</p>
+                    <p className={styles.fileSection_info_text}>
+                        Founded <span>{amountOfItems} items</span>
+                    </p>
                 </div>
                 <Button text="Reset" mod="ghost-light" />
             </section>
         );
     };
 
-    const JSONItemsSection = () => {
-        return <SectionWrapper title="JSON Items"></SectionWrapper>;
+    const JSONItemsSection = ({children}) => {
+        return (
+            <SectionWrapper title="JSON Items">
+                <div className={styles.jsonObjBtns}>{children}</div>
+            </SectionWrapper>
+        );
     };
 
     const PopulateOptionsSection = () => {
@@ -78,17 +86,21 @@ const OperationsView = ({}) => {
         );
     };
 
+    const createButtons = obj => {
+        return Object.keys(obj[0]).map((item, i) => {
+            console.log(item);
+            return <Button key={`item-button-${i}`} text={item} mod="ghost-dark" />;
+        });
+    };
+
     return (
         <ViewProvider.Consumer>
             {JSONobject => (
                 <main className={styles.wrap}>
-                    <FileSection />
-                    <JSONItemsSection />
+                    <FileSection obj={JSONobject} />
+                    <JSONItemsSection children={createButtons(JSONobject)} />
                     <PopulateOptionsSection />
                     <AdditionalSection />
-
-                    <br />
-                    <code style={{width: '100%'}}>{JSON.stringify(JSONobject)}</code>
                 </main>
             )}
         </ViewProvider.Consumer>

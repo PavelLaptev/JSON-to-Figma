@@ -37,17 +37,17 @@
     }
 
     svg {
-        fill: #fff;
+        fill: $color-white;
     }
 }
 
 .ghost-dark {
     background-color: transparent;
-    border: 1px solid $color-black-80;
+    border: 1px solid $color-black-60;
     color: $color-black-80;
     &:hover {
-        border: 1px solid $color-white;
-        color: $color-white;
+        border: 1px solid $color-black;
+        color: $color-black;
     }
 
     svg {

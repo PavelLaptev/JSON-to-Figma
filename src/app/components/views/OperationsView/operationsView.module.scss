@@ -28,8 +28,15 @@
         &_text {
             @include text-12-regular;
             color: $color-white-80;
+            span {
+                font-weight: bold;
+            }
         }
     }
+}
+
+.jsonObjBtns {
+    display: flex;
 }
 
 .mainOperations {

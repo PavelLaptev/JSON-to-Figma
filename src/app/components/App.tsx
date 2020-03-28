@@ -19,13 +19,12 @@ const App = ({}) => {
     // Show operation view on load
     const loadOperationView = result => {
         setJSONobject(result);
-        console.log(result);
 
         let frameHeight = 700;
         parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
     };
 
-    // Hadle file input type
+    // Handle file input type
     const handleChangeButton = e => {
         let fileReader = new FileReader();
         fileReader.readAsText(e.target.files[0]);
@@ -40,9 +39,8 @@ const App = ({}) => {
         e.target.value = null;
     };
 
-    // Hadle copyFromClipboard
-    const handleClickButton = e => {
-        console.log(e);
+    // Handle copy from Clipboard
+    const handleClickButton = () => {
         let clipboardLink = execGetClipboard();
 
         fetch(clipboardLink)
@@ -60,7 +58,7 @@ const App = ({}) => {
             {JSONobject !== null ? (
                 <OperationsView />
             ) : (
-                <LanchView urlOnClick={e => handleClickButton(e)} fileOnChange={e => handleChangeButton(e)} />
+                <LanchView urlOnClick={handleClickButton} fileOnChange={handleChangeButton} />
             )}
         </ViewProvider.Provider>
     );
