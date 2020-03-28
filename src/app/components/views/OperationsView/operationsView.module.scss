@@ -37,6 +37,9 @@
 
 .jsonObjBtns {
     display: flex;
+    button {
+        margin-right: $s-space;
+    }
 }
 
 .mainOperations {

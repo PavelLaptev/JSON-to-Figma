@@ -1,0 +1,9 @@
+@import '../../../../../styles/tokens';
+@import '../../../../../styles/figma/styles';
+
+.buttonsWrap {
+    display: flex;
+    button {
+        margin-right: $s-space;
+    }
+}

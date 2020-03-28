@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     height: 32px;
-    transition: all 0.08s ease-in-out;
+    transition: all $default-transition;
 
     span {
         @include text-11-regular;
@@ -46,7 +46,7 @@
     border: 1px solid $color-black-60;
     color: $color-black-80;
     &:hover {
-        border: 1px solid $color-black;
+        border: 1px solid $color-black-80;
         color: $color-black;
     }
 

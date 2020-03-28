@@ -1,0 +1,29 @@
+@import '../../../../../styles/tokens';
+@import '../../../../../styles/figma/styles';
+
+.wrap {
+    background-color: $color-black-80;
+    padding: $s-space $l-space;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.infoIcon {
+    width: 18px;
+    height: 22px;
+    margin-right: $m-space;
+}
+
+.text {
+    @include text-12-regular;
+    color: $color-white-80;
+    span {
+        font-weight: bold;
+    }
+}
