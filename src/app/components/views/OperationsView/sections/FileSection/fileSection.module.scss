@@ -3,7 +3,7 @@
 
 .wrap {
     background-color: $color-black-80;
-    padding: $s-space $l-space;
+    padding: $xs-space * 3 $l-space;
     display: flex;
     align-items: center;
     justify-content: space-between;

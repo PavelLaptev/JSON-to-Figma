@@ -19,9 +19,6 @@ const App = ({}) => {
     // Show operation view on load
     const loadOperationView = result => {
         setJSONobject(result);
-
-        let frameHeight = 700;
-        parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
     };
 
     // Handle file input type
@@ -53,10 +50,16 @@ const App = ({}) => {
             });
     };
 
+    const onResetClickHandle = () => {
+        setJSONobject(null);
+        const frameHeight = 246;
+        parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
+    };
+
     return (
         <ViewProvider.Provider value={JSONobject}>
             {JSONobject !== null ? (
-                <OperationsView />
+                <OperationsView onResetClick={onResetClickHandle} />
             ) : (
                 <LanchView urlOnClick={handleClickButton} fileOnChange={handleChangeButton} />
             )}
