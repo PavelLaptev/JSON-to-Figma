@@ -2,9 +2,8 @@ import React, {useState} from 'react';
 import '../styles/ui.scss';
 
 import {showMsg, execGetClipboard} from '../utils';
-import ViewProvider from './views/ViewContext';
-import LanchView from './views/LaunchView';
-import OperationsView from './views/OperationsView';
+import {ViewContext} from './contexts';
+import {LaunchView, OperationsView} from './views';
 
 const App = ({}) => {
     const [JSONobject, setJSONobject] = useState(null);
@@ -57,13 +56,13 @@ const App = ({}) => {
     };
 
     return (
-        <ViewProvider.Provider value={JSONobject}>
+        <ViewContext.Provider value={JSONobject}>
             {JSONobject !== null ? (
                 <OperationsView onResetClick={onResetClickHandle} />
             ) : (
-                <LanchView urlOnClick={handleClickButton} fileOnChange={handleChangeButton} />
+                <LaunchView urlOnClick={handleClickButton} fileOnChange={handleChangeButton} />
             )}
-        </ViewProvider.Provider>
+        </ViewContext.Provider>
     );
 };
 

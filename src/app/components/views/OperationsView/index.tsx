@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ViewProvider from '../ViewContext';
-import FileSection from './sections/FileSection';
-import JSONItemsSection from './sections/JSONItemsSection';
-import OptionsSection from './sections/OptionsSection';
-import ExtraSection from './sections/ExtraSection';
+import {ViewContext} from '../../contexts';
+import FileInfo from './sections/FileInfo';
+import JSONItems from './sections/JSONItems';
+import Options from './sections/Options';
+import ExtraOptions from './sections/ExtraOptions';
 
 import styles from './operationsView.module.scss';
 
@@ -21,16 +21,16 @@ const OperationsView: React.SFC<Props> = props => {
     });
 
     return (
-        <ViewProvider.Consumer>
+        <ViewContext.Consumer>
             {JSONobject => (
                 <main ref={mainSectionRef} className={styles.wrap}>
-                    <FileSection obj={JSONobject} onResetClick={props.onResetClick} />
-                    <JSONItemsSection obj={JSONobject} />
-                    <OptionsSection />
-                    <ExtraSection />
+                    <FileInfo obj={JSONobject} onResetClick={props.onResetClick} />
+                    <JSONItems obj={JSONobject} />
+                    <Options />
+                    <ExtraOptions />
                 </main>
             )}
-        </ViewProvider.Consumer>
+        </ViewContext.Consumer>
     );
 };
 

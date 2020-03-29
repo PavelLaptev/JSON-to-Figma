@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ViewProvider from '../ViewContext';
+import {ViewContext} from '../../contexts';
 import {CopyLink, Button} from '../../elements';
 
 declare function require(path: string): any;
@@ -17,7 +17,7 @@ interface Props {
 
 const LaunchView: React.SFC<Props> = props => {
     return (
-        <ViewProvider.Consumer>
+        <ViewContext.Consumer>
             {() => (
                 <main className={styles.wrap} style={{backgroundImage: `url(${jasonMask})`}}>
                     <img className={styles.logo} src={pluginLogo} />
@@ -32,7 +32,7 @@ const LaunchView: React.SFC<Props> = props => {
                     </p>
                 </main>
             )}
-        </ViewProvider.Consumer>
+        </ViewContext.Consumer>
     );
 };
 

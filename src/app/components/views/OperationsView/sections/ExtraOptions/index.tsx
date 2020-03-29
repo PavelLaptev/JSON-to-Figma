@@ -5,7 +5,7 @@ import {SectionWrapper} from '../../../../sections';
 
 interface Props {}
 
-const ExtraSection: React.SFC<Props> = () => {
+const ExtraOptions: React.SFC<Props> = () => {
     return (
         <SectionWrapper>
             <ElementCaption text="All selected items will be filled in a random order.">
@@ -15,4 +15,4 @@ const ExtraSection: React.SFC<Props> = () => {
     );
 };
 
-export default ExtraSection;
+export default ExtraOptions;
