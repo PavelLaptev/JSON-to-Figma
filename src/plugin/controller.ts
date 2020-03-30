@@ -12,6 +12,10 @@ figma.ui.onmessage = msg => {
     if (msg.type === 'change-size' || msg.type === 'reset') {
         figma.ui.resize(pluginInitialWidth, msg.frameHeight);
     }
+
+    if (msg.type === 'selected') {
+        console.log('selected');
+    }
 };
 
 figma.currentPage.setRelaunchData({open: ''});

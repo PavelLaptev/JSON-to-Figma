@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import * as React from 'react';
 import '../styles/ui.scss';
 
 import {showMsg, execGetClipboard} from '../utils';
@@ -6,7 +6,7 @@ import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
 const App = ({}) => {
-    const [JSONobject, setJSONobject] = useState(null);
+    const [JSONobject, setJSONobject] = React.useState(null);
 
     // Helper function
     const showErrorMsg = (error, errorText) => {
