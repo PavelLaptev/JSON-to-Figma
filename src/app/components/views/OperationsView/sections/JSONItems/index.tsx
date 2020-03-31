@@ -12,16 +12,15 @@ interface Props {
     onSectionChange?(event: React.FormEvent<HTMLInputElement>): void;
 }
 
-const createButtons = (obj, props) => {
+const createButtons = (currentObj, props) => {
     const handleClick = e => {
-        let selected = props.selected;
+        let selected = {...props.selected, ...{btnName: e.target.textContent}};
+        const obj = props.selected.random ? shuffleArray(currentObj) : currentObj;
 
-        const newObj = props.selected.random ? shuffleArray(obj) : obj;
-        console.log(newObj);
-        parent.postMessage({pluginMessage: {type: 'selected', selected}}, '*');
+        parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
     };
 
-    return Object.keys(obj[0]).map((item, i) => {
+    return Object.keys(currentObj[0]).map((item, i) => {
         return <Button key={`item-button-${i}`} text={item} mod="ghost-dark" onClick={handleClick} />;
     });
 };
