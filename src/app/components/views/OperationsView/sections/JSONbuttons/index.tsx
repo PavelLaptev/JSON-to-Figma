@@ -25,7 +25,7 @@ const createButtons = (currentObj, props) => {
     });
 };
 
-const JSONItemsSection: React.SFC<Props> = props => {
+const JSONbuttons: React.SFC<Props> = props => {
     return (
         <SectionWrapper title="JSON Items">
             <div onChange={props.onSectionChange} className={styles.buttonsWrap}>
@@ -35,4 +35,4 @@ const JSONItemsSection: React.SFC<Props> = props => {
     );
 };
 
-export default JSONItemsSection;
+export default JSONbuttons;

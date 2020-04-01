@@ -1,4 +1,6 @@
 import {radioArray} from '../app/components/views/OperationsView/sections/Options/buttonsArray';
+import {figmaNotify} from './utils';
+import {populateOnlySelected, populateByNames} from './utils';
 
 /// Show UI
 const pluginInitialWidth = 330;
@@ -19,17 +21,30 @@ figma.ui.onmessage = msg => {
 
     // Selected layers only
     if (msg.type === radioArray[0].id) {
-        console.log(msg.selected);
+        if (figma.currentPage.selection.length <= 0) {
+            figmaNotify('error', 'Select text layers');
+        } else {
+            populateOnlySelected(figma.currentPage.selection, msg.obj, msg.selected.btnName);
+        }
     }
 
     // By layer name
     if (msg.type === radioArray[1].id) {
-        console.log(msg.selected);
+        if (figma.currentPage.selection.length <= 0) {
+            figmaNotify('error', `Select frames/groups with layers called "${msg.selected.btnName}"`, 3000);
+        } else {
+            console.log(msg.selected);
+            populateByNames(figma.currentPage.selection, msg.obj, msg.selected.btnName);
+        }
     }
 
     // String templates
     if (msg.type === radioArray[2].id) {
-        console.log(msg.selected);
+        if (figma.currentPage.selection.length <= 0) {
+            figmaNotify('error', `Select frames/groups with string templates "${msg.selected.btnName}"`, 3000);
+        } else {
+            console.log(msg.selected);
+        }
     }
 };
 

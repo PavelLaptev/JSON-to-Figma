@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import {ViewContext} from '../../contexts';
 import FileInfo from './sections/FileInfo';
-import JSONItems from './sections/JSONItems';
+import JSONbuttons from './sections/JSONbuttons';
 import Options from './sections/Options';
 import RandomSwitcher from './sections/RandomSwitcher';
 
@@ -37,7 +37,7 @@ const OperationsView: React.SFC<Props> = props => {
             {JSONobject => (
                 <main ref={mainSectionRef} className={styles.wrap}>
                     <FileInfo obj={JSONobject} onResetClick={props.onResetClick} />
-                    <JSONItems obj={JSONobject} selected={{option: selectedOption, random: isRandomSwitch}} />
+                    <JSONbuttons obj={JSONobject} selected={{option: selectedOption, random: isRandomSwitch}} />
                     <Options
                         onSectionChange={handleSelectedOption}
                         array={radioArray}
