@@ -33,7 +33,6 @@ figma.ui.onmessage = msg => {
         if (figma.currentPage.selection.length <= 0) {
             figmaNotify('error', `Select frames/groups with layers called "${msg.selected.btnName}"`, 3000);
         } else {
-            console.log(msg.selected);
             populateByNames(figma.currentPage.selection, msg.obj, msg.selected.btnName);
         }
     }

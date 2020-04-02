@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
-import {shuffleArray} from '../../../../../utils';
+import {parseNestedObject, shuffleArray} from '../../../../../utils';
 
 import styles from './jsonItemsSection.module.scss';
 
@@ -15,7 +15,7 @@ interface Props {
 const createButtons = (currentObj, props) => {
     const handleClick = e => {
         let selected = {...props.selected, ...{btnName: e.target.textContent}};
-        const obj = props.selected.random ? shuffleArray(currentObj) : currentObj;
+        const obj = parseNestedObject(props.selected.random ? shuffleArray(currentObj) : currentObj);
 
         parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
     };
