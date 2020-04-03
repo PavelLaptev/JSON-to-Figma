@@ -1,6 +1,6 @@
 import {radioArray} from '../app/components/views/OperationsView/sections/Options/buttonsArray';
-import {figmaNotify} from './utils';
-import {populateOnlySelected, populateByNames} from './utils';
+import {populateOnlySelected, populateByName, figmaNotify} from './utils';
+import {shuffleArray} from '../app/utils';
 
 /// Show UI
 const pluginInitialWidth = 330;
@@ -19,12 +19,17 @@ figma.ui.onmessage = msg => {
         figma.ui.resize(pluginInitialWidth, msg.frameHeight);
     }
 
+    // Check if random button is on
+    const isRandomJSON = msg => {
+        return msg.selected.random ? shuffleArray(msg.resultObj) : msg.resultObj;
+    };
+
     // Selected layers only
     if (msg.type === radioArray[0].id) {
         if (figma.currentPage.selection.length <= 0) {
             figmaNotify('error', 'Select text layers');
         } else {
-            populateOnlySelected(figma.currentPage.selection, msg.obj, msg.selected.btnName);
+            populateOnlySelected(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
         }
     }
 
@@ -33,7 +38,7 @@ figma.ui.onmessage = msg => {
         if (figma.currentPage.selection.length <= 0) {
             figmaNotify('error', `Select frames/groups with layers called "${msg.selected.btnName}"`, 3000);
         } else {
-            populateByNames(figma.currentPage.selection, msg.obj, msg.selected.btnName);
+            populateByName(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
         }
     }
 

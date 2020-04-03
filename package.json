@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "@create-figma-plugin/ui": "0.0.54",
-        "flat": "^5.0.0",
+        "flattern": "^1.0.7",
         "react": "^16.8.6",
         "react-dom": "^16.8.6"
     },
