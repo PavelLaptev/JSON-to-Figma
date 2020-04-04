@@ -6,19 +6,20 @@ import styles from './fileSection.module.scss';
 const loadedFileIcon = require('../../../../../assets/loaded-file-icon.svg');
 
 interface Props {
-    obj: Object;
+    obj: Array<any>;
     onResetClick?(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 const FileSection: React.SFC<Props> = props => {
-    let amountOfItems = Object.keys(props.obj[0]).length;
+    let amountOfKeys = Object.keys(props.obj[0]).length;
+    let amountOfItems = props.obj.length;
 
     return (
         <section className={styles.wrap}>
             <div className={styles.info}>
                 <img className={styles.infoIcon} src={loadedFileIcon} />
                 <p className={styles.text}>
-                    Founded <span>{amountOfItems} items</span>
+                    <span>{amountOfKeys} keys</span> and <span>{amountOfItems} repeat items</span>
                 </p>
             </div>
             <Button text="Reset" mod="ghost-light" onClick={props.onResetClick} />

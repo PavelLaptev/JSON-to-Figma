@@ -1,10 +1,10 @@
 import {radioArray} from '../app/components/views/OperationsView/sections/Options/buttonsArray';
-import {populateOnlySelected, populateByName, figmaNotify} from './utils';
+import {populateOnlySelected, populateByName, populateByTemplateString, figmaNotify} from './utils';
 import {shuffleArray} from '../app/utils';
 
 /// Show UI
-const pluginInitialWidth = 330;
-figma.showUI(__html__, {width: 330, height: 246});
+const pluginInitialWidth = 350;
+figma.showUI(__html__, {width: pluginInitialWidth, height: 246});
 
 figma.ui.onmessage = msg => {
     // Show message
@@ -21,7 +21,7 @@ figma.ui.onmessage = msg => {
 
     // Check if random button is on
     const isRandomJSON = msg => {
-        return msg.selected.random ? shuffleArray(msg.resultObj) : msg.resultObj;
+        return msg.selected.random ? shuffleArray(msg.obj) : msg.obj;
     };
 
     // By layer name
@@ -47,7 +47,8 @@ figma.ui.onmessage = msg => {
         if (figma.currentPage.selection.length <= 0) {
             figmaNotify('error', `Select frames/groups with string templates "${msg.selected.btnName}"`, 3000);
         } else {
-            console.log(msg.selected);
+            populateByTemplateString(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
+            // console.log(msg.selected);
         }
     }
 };

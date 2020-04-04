@@ -1,11 +1,12 @@
-export default function populateByName(selectedLayers, JSONobj, btnName) {
+export default function populateByTemplateString(selectedLayers, JSONobj, btnName) {
     let newItem = 0;
 
     const loopSelected = arr => {
         arr.map(item => {
-            if (item.name.toUpperCase() === btnName.toUpperCase() && item.type === 'TEXT') {
+            if (item.type === 'TEXT' && item.characters.includes(`{${btnName}}`)) {
+                console.log(item);
                 figma.loadFontAsync(item.fontName).then(() => {
-                    item.characters = JSONobj[newItem][btnName].toString();
+                    item.characters = item.characters.replace(`{${btnName}}`, JSONobj[newItem][btnName].toString());
                     newItem = ++newItem;
                 });
             }
@@ -17,3 +18,6 @@ export default function populateByName(selectedLayers, JSONobj, btnName) {
 
     loopSelected(selectedLayers);
 }
+
+// TO-DO
+// Handle errors

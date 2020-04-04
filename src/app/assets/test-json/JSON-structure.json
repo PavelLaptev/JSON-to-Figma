@@ -1,0 +1,65 @@
+[
+    {
+        "number_key": 1,
+        "string_key": "String #1",
+        "with_array": [
+            {
+                "number_key": 1,
+                "string_key": "Substring #1"
+            },
+            {
+                "number_key": 2,
+                "string_key": "Substring #2"
+            }
+        ],
+        "with_object": {
+            "number_key": 1,
+            "string_key": {
+                "sub_key_one": "Subkey #1",
+                "sub_key_two": "Subkey #2"
+            }
+        }
+    },
+    {
+        "number_key": 2,
+        "string_key": "String #2",
+        "with_array": [
+            {
+                "number_key": 4,
+                "string_key": "Substring #3"
+            },
+            {
+                "number_key": 3,
+                "string_key": "Substring #4"
+            }
+        ],
+        "with_object": {
+            "number_key": 1,
+            "string_key": {
+                "sub_key_one": "Subkey #1",
+                "sub_key_two": "Subkey #2"
+            }
+        }
+    },
+    {
+        "number_key": 3,
+        "string_key": "String #3",
+        "with_array": [
+            {
+                "number_key": 5,
+                "string_key": "Substring #5"
+            },
+            {
+                "number_key": 6,
+                "string_key": "Substring #6"
+            }
+        ],
+        "with_object": {
+            "number_key": 1,
+            "string_key": {
+                "sub_key_one": "Subkey #1",
+                "sub_key_two": "Subkey #2"
+            }
+        }
+    }
+]
