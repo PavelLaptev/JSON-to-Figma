@@ -4,18 +4,16 @@ export default function populateByName(selectedLayers, JSONobj, btnName) {
 
     const loopSelected = arr => {
         arr.map(item => {
-            for (let keys in item) {
-                if (item['name'] === btnName) {
-                    if (keys === 'characters') {
-                        figma.loadFontAsync(item.fontName).then(() => {
-                            item.characters = JSONobj[newItem][btnName].toString();
-                            newItem = ++newItem;
-                        });
-                    }
-                }
-                if (Array.isArray(item[keys])) {
-                    loopSelected(item[keys]);
-                }
+            // console.log(item.type);
+            console.log(item.name.toUpperCase());
+            if (item.name.toUpperCase() === btnName.toUpperCase() && item.type === 'TEXT') {
+                figma.loadFontAsync(item.fontName).then(() => {
+                    item.characters = JSONobj[newItem][btnName].toString();
+                    newItem = ++newItem;
+                });
+            }
+            if (item.children) {
+                loopSelected(item.children);
             }
         });
     };

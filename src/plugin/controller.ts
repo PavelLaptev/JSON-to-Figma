@@ -24,21 +24,21 @@ figma.ui.onmessage = msg => {
         return msg.selected.random ? shuffleArray(msg.resultObj) : msg.resultObj;
     };
 
-    // Selected layers only
-    if (msg.type === radioArray[0].id) {
-        if (figma.currentPage.selection.length <= 0) {
-            figmaNotify('error', 'Select text layers');
-        } else {
-            populateOnlySelected(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
-        }
-    }
-
     // By layer name
-    if (msg.type === radioArray[1].id) {
+    if (msg.type === radioArray[0].id) {
         if (figma.currentPage.selection.length <= 0) {
             figmaNotify('error', `Select frames/groups with layers called "${msg.selected.btnName}"`, 3000);
         } else {
             populateByName(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
+        }
+    }
+
+    // Selected layers only
+    if (msg.type === radioArray[1].id) {
+        if (figma.currentPage.selection.length <= 0) {
+            figmaNotify('error', 'Select text layers');
+        } else {
+            populateOnlySelected(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
         }
     }
 
