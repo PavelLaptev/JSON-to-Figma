@@ -26,7 +26,7 @@ const LaunchView: React.SFC<Props> = props => {
                         <Button icon="copy" text={'From Clipboard link'} onClick={props.urlOnClick} />
                     </section>
                     <p className={styles.caption}>
-                        Your JSON file should have a{' '}
+                        JSON file should have a{' '}
                         {<CopyLink text="certain structure" className="yo" link="https://www.google.com/" />} to be
                         readable.
                     </p>

@@ -4,7 +4,7 @@ import {shuffleArray} from '../app/utils';
 
 /// Show UI
 const pluginInitialWidth = 350;
-figma.showUI(__html__, {width: pluginInitialWidth, height: 246});
+figma.showUI(__html__, {width: pluginInitialWidth, height: 228});
 
 figma.ui.onmessage = msg => {
     // Show message

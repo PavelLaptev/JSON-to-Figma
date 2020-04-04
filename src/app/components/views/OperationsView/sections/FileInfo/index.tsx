@@ -19,7 +19,7 @@ const FileSection: React.SFC<Props> = props => {
             <div className={styles.info}>
                 <img className={styles.infoIcon} src={loadedFileIcon} />
                 <p className={styles.text}>
-                    <span>{amountOfKeys} keys</span> and <span>{amountOfItems} repeat items</span>
+                    <span>{amountOfKeys} keys</span> and <span>{amountOfItems} items</span>
                 </p>
             </div>
             <Button text="Reset" mod="ghost-light" onClick={props.onResetClick} />
