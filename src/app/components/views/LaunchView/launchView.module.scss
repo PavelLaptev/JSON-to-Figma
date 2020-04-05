@@ -2,23 +2,33 @@
 @import '../../../styles/figma/styles';
 
 .wrap {
-    background-color: $color-pink-main;
-    padding: $l-space;
-    background-repeat: no-repeat;
-    background-size: 154px 204px;
-    background-position: 108% -56px;
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: $color-primary-main;
+    padding: $l-space;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    margin-top: $xxs-space;
+    margin-bottom: $l-space + $xs-space;
+}
+
+.jsonMaskLogo {
+    pointer-events: none;
+    user-select: none;
+    width: 62px;
+    height: 82px;
+    margin-right: $s-space + $xs-space;
 }
 
 .logo {
     pointer-events: none;
     user-select: none;
-    width: 170px;
+    width: 173px;
     height: 80px;
-    margin-top: $s-space;
-    margin-bottom: $l-space + $xs-space;
 }
 
 .buttonsSection {
@@ -34,6 +44,10 @@
 .caption {
     @include text-11-regular;
     user-select: none;
-    color: $color-black-80;
+    color: $color-black-60;
     text-align: left;
+}
+
+.copyLink {
+    color: $color-black-80;
 }

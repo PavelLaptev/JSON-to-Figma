@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Archivo:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Archivo:400,700&display=swap');
 
 ////////// COLORS //////////
 ////////////////////////////
-$light-pink-clr: #ffd1ce;
-$pink-clr: #ff7f76;
-$main-blue-clr: #0038ff;
-$main-bluedark-clr: #001e8a;
+$color-primary-main: #fdffb4;
+$color-primary-dark: #e6ea26;
+$color-secondary-main: #7748fc;
+$color-secondary-dark: #6135da;
 
 ////////// SIZES ///////////
 ////////////////////////////
@@ -24,146 +24,165 @@ $mobile: 400px;
 ///////// GENERAL //////////
 ////////////////////////////
 * {
-  box-sizing: border-box;
-  border-collapse: collapse;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 body {
-  background: $light-pink-clr;
-  font-family: "Archivo", sans-serif;
+    background: $color-primary-main;
+    font-family: 'Archivo', sans-serif;
 }
 
 a {
-  color: #4200ff;
-  transition: all 0.16s ease;
-  &:hover {
-    color: $pink-clr;
-  }
+    color: #4200ff;
+    transition: all 0.16s ease;
+    &:hover {
+        color: $color-primary-dark;
+    }
+}
+
+*::selection {
+    background-color: $color-primary-dark;
+}
+
+.hr-line {
+    height: 25px;
+    background-image: url(../img/hr.svg);
+    border: none;
+    margin: $xl 0;
 }
 
 ///////// SPECIFIC /////////
 ////////////////////////////
+
 .wrap {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 60px;
-  @media screen and (max-width: $tablet) {
-    padding: 0 40px;
-  }
-  @media screen and (max-width: $mobile) {
-    padding: 0 24px;
-  }
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 60px;
+    @media screen and (max-width: $tablet) {
+        padding: 0 40px;
+    }
+    @media screen and (max-width: $mobile) {
+        padding: 0 24px;
+    }
 }
 
 .header {
-  position: relative;
-  &__title {
-    margin: $m * 4 0 $m * 3;
     position: relative;
-    z-index: 999;
-    font-size: calc(20px + 12vw);
-    line-height: 90%;
-    color: $main-blue-clr;
-    @media screen and (min-width: $desktop) {
-      font-size: 140px;
+    &__title {
+        margin: $m * 4 0 $m * 3;
+        position: relative;
+        z-index: 999;
+        font-size: calc(20px + 12vw);
+        line-height: 90%;
+        color: $color-secondary-main;
+        @media screen and (min-width: $desktop) {
+            font-size: 140px;
+        }
+        @media screen and (max-width: $tablet) {
+            margin: $m * 2 0 $m * 2;
+        }
+        @media screen and (max-width: $mobile) {
+            margin: $m * 2 0 $m * 2;
+        }
+        sup {
+            top: -1.2em;
+            left: 0.1em;
+            font-size: 30%;
+        }
     }
-    @media screen and (max-width: $tablet) {
-      margin: $m * 2 0 $m * 2;
+    &__promo-sign {
+        position: absolute;
+        top: -280px;
+        right: -180px;
+        width: 490px;
+        height: 674px;
+        background-image: url(../img/mask.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        @media screen and (max-width: $tablet) {
+            width: calc(340px / 1.3);
+            height: calc(624px / 1.3);
+            right: -110px;
+            top: -170px;
+        }
     }
-    @media screen and (max-width: $mobile) {
-      margin: $m * 2 0 $m * 2;
-    }
-    sup {
-      top: -1.2em;
-      left: 0.1em;
-      font-size: 30%;
-    }
-  }
-  &__promo-sign {
-    position: absolute;
-    top: -280px;
-    right: -180px;
-    width: 490px;
-    height: 674px;
-    background-image: url(../img/mask.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    @media screen and (max-width: $tablet) {
-      width: calc(340px / 1.3);
-      height: calc(624px / 1.3);
-      right: -110px;
-      top: -170px;
-    }
-  }
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 99;
-  &__cover-img {
-    max-width: 100%;
-    background: linear-gradient(89.94deg, #000000 43.24%, #ffffff 57.29%);
-    margin-bottom: 40px;
-  }
-  &__description {
-    font-size: 26px;
-    max-width: 520px;
-    line-height: 1.3;
-    @media screen and (max-width: $tablet) {
-      font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 99;
+    &__cover-img {
+        max-width: 100%;
+        background: linear-gradient(89.94deg, #000000 43.24%, #ffffff 57.29%);
+        margin-bottom: 40px;
     }
-    @media screen and (max-width: $mobile) {
-      font-size: 18px;
+    &__description {
+        font-size: 26px;
+        max-width: 520px;
+        line-height: 1.3;
+        @media screen and (max-width: $tablet) {
+            font-size: 22px;
+        }
+        @media screen and (max-width: $mobile) {
+            font-size: 18px;
+        }
     }
-  }
-  &__copyright {
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.4);
-    margin: 60px 0 60px;
-  }
-  &__youtube-video {
-    margin-top: 32px;
-    iframe {
-      width: 100%;
-      height: 480px;
+    &__copyright {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.4);
+        margin: $m 0 $xl;
     }
-  }
+    &__youtube-video {
+        margin-top: 32px;
+        iframe {
+            width: 100%;
+            height: 480px;
+        }
+    }
+    &__donate {
+        color: $color-secondary-main;
+        h4 {
+            font-size: 24px;
+            max-width: 260px;
+        }
+    }
 }
 
 .btns-row {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .btn {
-  cursor: pointer;
-  padding: $m $m * 1.4;
-  font-size: 26px;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  &_primary {
-    color: white;
-    background: $main-blue-clr;
-    transition: all 0.16s ease;
-    &:hover {
-      color: white;
-      background: $main-bluedark-clr;
+    cursor: pointer;
+    padding: $m $m * 1.4;
+    font-size: 26px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    transition: all 0.1s ease;
+    &_primary {
+        color: white;
+        background: $color-secondary-main;
+
+        &:hover {
+            color: white;
+            background: $color-secondary-dark;
+        }
     }
-  }
-  &_secondary {
-    color: white;
-    border: 2px solid white;
-    transition: all 0.16s ease;
-    &:hover {
-      background: white;
-      color: $pink-clr;
+    &_secondary {
+        color: $color-secondary-main;
+        border: 2px solid $color-secondary-main;
+        &:hover {
+            color: $color-secondary-main;
+            background: white;
+        }
     }
-  }
 }

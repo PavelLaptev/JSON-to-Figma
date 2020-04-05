@@ -10,7 +10,7 @@
 }
 
 *::selection {
-    background-color: lighten($color: $color-pink-dark, $amount: 10);
+    background-color: lighten($color: $color-primary-dark, $amount: 10);
 }
 
 body {

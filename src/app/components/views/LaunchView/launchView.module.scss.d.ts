@@ -3,6 +3,9 @@
 interface CssExports {
     buttonsSection: string;
     caption: string;
+    copyLink: string;
+    head: string;
+    jsonMaskLogo: string;
     logo: string;
     wrap: string;
 }

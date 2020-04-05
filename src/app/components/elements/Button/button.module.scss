@@ -30,10 +30,10 @@
 }
 
 .blue {
-    background-color: $color-blue-main;
+    background-color: $color-secondary-main;
     color: $color-white;
     &:hover {
-        background-color: $color-blue-dark;
+        background-color: $color-secondary-dark;
     }
 
     svg {

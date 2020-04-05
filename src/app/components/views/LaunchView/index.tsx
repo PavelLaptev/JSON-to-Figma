@@ -6,7 +6,7 @@ import {CopyLink, Button} from '../../elements';
 declare function require(path: string): any;
 
 const pluginLogo = require('../../../assets/logo.svg');
-const jasonMask = require('../../../assets/jason-mask.svg');
+const jsonMask = require('../../../assets/jason-mask.svg');
 
 import styles from './launchView.module.scss';
 
@@ -19,8 +19,11 @@ const LaunchView: React.SFC<Props> = props => {
     return (
         <ViewContext.Consumer>
             {() => (
-                <main className={styles.wrap} style={{backgroundImage: `url(${jasonMask})`}}>
-                    <img className={styles.logo} src={pluginLogo} />
+                <main className={styles.wrap}>
+                    <section className={styles.head}>
+                        <img className={styles.jsonMaskLogo} src={jsonMask} />
+                        <img className={styles.logo} src={pluginLogo} />
+                    </section>
                     <section className={styles.buttonsSection}>
                         <Button icon="upload" fileType text={'From local file'} onChange={props.fileOnChange} />
                         <Button icon="copy" text={'From Clipboard link'} onClick={props.urlOnClick} />
@@ -30,7 +33,7 @@ const LaunchView: React.SFC<Props> = props => {
                         {
                             <CopyLink
                                 text="certain structure"
-                                className="yo"
+                                className={styles.copyLink}
                                 link="https://github.com/PavelLaptev/JSON-to-Figma-2.0-React/blob/master/README.md#-the-correct-json-structure"
                             />
                         }{' '}
