@@ -7,9 +7,24 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 [figma.com/community/plugin/789839703871161985/JSON-to-Figma](https://www.figma.com/community/plugin/789839703871161985/JSON-to-Figma)
 
+#### Youtube demo
+
+[youtu.be/f7AULw3xcG8](https://youtu.be/f7AULw3xcG8)
+
 ---
 
-## 🎀 What's new
+### 💡 Features:
+
+— Populate only selected layers
+— Load loacl files and from URL
+— Nested layers parse
+— Fin and automatic strings replacement by layer name
+— Populate by string templates
+— Direct or random order
+
+---
+
+### 🎀 What's new
 
 — New version built with React
 — Ability to load a JSON from URL
@@ -19,7 +34,7 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 ---
 
-## ✅ The correct JSON structure
+### ✅ The correct JSON structure
 
 The beeter JSON structure for the file should look like array of objects
 
@@ -61,7 +76,7 @@ You can download try different [JSON samples here](https://github.com/PavelLapte
 
 ---
 
-## ⚙️ Populate Options
+### ⚙️ Populate Options
 
 1. `By layer name` — You can populate layers deeply nested in any group or frame. To do so, manually rename the layer you want to populate so that it matches the name in the JSON file.
    Not a case-sensitive method — a JSON item with a `job` name will be match to `Job` layer name.
@@ -83,3 +98,9 @@ Avoid values without quotes like `null` or `undefined` your file should be an ar
 #### Previous version of the plugin
 
 This version was rewritten in React. Which allows to be more flexible and use external libraries. The previous version was written in plane HTML and vanila JS but you still can fin it here — [github.com/PavelLaptev/JSON-from-Figma](https://github.com/PavelLaptev/JSON-from-Figma).
+
+---
+
+#### Original boilerplate repo
+
+[github.com/nirsky/figma-plugin-react-template](https://github.com/nirsky/figma-plugin-react-template)

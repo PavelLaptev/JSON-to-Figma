@@ -1,7 +1,7 @@
 {
-    "name": "figma-plugin-react-template",
+    "name": "json-to-figma-react",
     "version": "1.0.0",
-    "description": "This plugin template uses Typescript. If you are familiar with Javascript, Typescript will look very familiar. In fact, valid Javascript code is already valid Typescript code.",
+    "description": "",
     "license": "ISC",
     "scripts": {
         "build": "/usr/local/bin/node node_modules/.bin/webpack --mode=production",
