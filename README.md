@@ -3,9 +3,23 @@
 An easy way to populate Figma layers with JSON.
 The plugin can parse local or JSON files from URL link. You can populate text layers that you selected, or by name or string template.
 
+#### Plugins' community page
+
+[figma.com/community/plugin/789839703871161985/JSON-to-Figma](https://www.figma.com/community/plugin/789839703871161985/JSON-to-Figma)
+
 ---
 
-### ✅ The correct JSON structure
+## 🎀 What's new
+
+— New version built with React
+— Ability to load a JSON from URL
+— Better errors handling
+— Refactored functions. Lighter and more efficient methods
+— Parsing of JSON files with any ammount of nested levels.
+
+---
+
+## ✅ The correct JSON structure
 
 The beeter JSON structure for the file should look like array of objects
 
@@ -24,7 +38,7 @@ The beeter JSON structure for the file should look like array of objects
 // As a result you will see buttons — `key_string`, `key_number`
 ```
 
-##### Other JSON structures
+##### ⚠️ Other JSON structures
 
 But you also can use different JSON structures. For example:
 
@@ -43,9 +57,11 @@ But you also can use different JSON structures. For example:
 // As a result you will see buttons — `0`, `1.key_string`, `1.key_number`
 ```
 
+You can download try different [JSON samples here](https://github.com/PavelLaptev/JSON-to-Figma-2.0-React/tree/master/src/app/assets/test-json).
+
 ---
 
-### ⚙️ Populate Options
+## ⚙️ Populate Options
 
 1. `By layer name` — You can populate layers deeply nested in any group or frame. To do so, manually rename the layer you want to populate so that it matches the name in the JSON file.
    Not a case-sensitive method — a JSON item with a `job` name will be match to `Job` layer name.

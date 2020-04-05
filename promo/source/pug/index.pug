@@ -1,0 +1,37 @@
+doctype html  
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='icon', type='image/png', href='fav/favico-64px.png', sizes='64x64')
+        link(rel='icon', type='image/png', href='fav/favico-32px.png', sizes='32x32')
+        link(rel='icon', type='image/png', href='fav/favico-16px.png', sizes='16x16')
+        title JSON To Figma
+        meta(name='description', content='Populate Figma layers with your JSON strings')
+        meta(name='author', content='Pavel Laptev')
+
+        meta(property='og:title' content='JSON To Figma')
+        meta(property='og:image' content='https://pavellaptev.github.io/JSON-to-Figma/preview/web-preview.jpg')
+        meta(property='og:description' content='Populate Figma layers with your JSON strings')
+        meta(property='og:url' content='https://pavellaptev.github.io/JSON-to-Figma/preview' )
+
+        link(rel='stylesheet', href='css/normalize.css')
+        link(rel='stylesheet', href='css/styles.css')
+
+    body
+        main.wrap
+            section.header
+                h1.header__title JSON to Figma
+                    sup 2.0
+                .header__promo-sign
+            section.content
+                img.content__cover-img(src="img/cover.png", alt="preview image")
+                section.btns-row
+                    a.btn.btn_primary(href="https://www.figma.com/c/plugin/789839703871161985/JSON-to-Figma" target="_blank") Install plugin
+                    a.btn.btn_secondary(href="https://github.com/PavelLaptev/JSON-to-Figma-2.0-React" target="_blank") Github
+                    a.btn.btn_secondary(href="https://www.figma.com/file/dcOi6yAtkTQqxNGbLJQVPE/JSON-To-Figma-%E2%80%94-Plugin?node-id=62%3A4" target="_blank") Figma project
+                p.content__description Populate layers using JSON files. You can populate selected layers, populate by layer name or by string templates.
+                section.content__youtube-video
+                    iframe(frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src='https://www.youtube.com/embed/f7AULw3xcG8')
+                p.content__copyright 2020. By 
+                    a(href="https://pavellaptev.github.io/" target="_blank") Pavel Laptev

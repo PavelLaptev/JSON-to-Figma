@@ -27,8 +27,14 @@ const LaunchView: React.SFC<Props> = props => {
                     </section>
                     <p className={styles.caption}>
                         JSON file should have a{' '}
-                        {<CopyLink text="certain structure" className="yo" link="https://www.google.com/" />} to be
-                        readable.
+                        {
+                            <CopyLink
+                                text="certain structure"
+                                className="yo"
+                                link="https://github.com/PavelLaptev/JSON-to-Figma-2.0-React/blob/master/README.md#-the-correct-json-structure"
+                            />
+                        }{' '}
+                        to be readable.
                     </p>
                 </main>
             )}
