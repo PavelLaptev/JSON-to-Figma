@@ -5,3 +5,4 @@ export {default as fetchJSONfromURL} from './fetchJSONfromURL';
 export {default as shuffleArray} from './shuffleArray';
 export {default as groupFlattenedObj} from './groupFlattenedObj';
 export {default as compareStrings} from './compareStrings';
+export {default as isPlainObject} from './isPlainObject';

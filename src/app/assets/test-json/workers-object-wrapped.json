@@ -1,19 +1,17 @@
-[
-    {
-        "user": {
-            "id": 1,
-            "name": "Cecil Mccallum",
-            "job": "Operations"
-        },
-        "user2": {
-            "id": 2,
-            "name": "Romy Brandt",
-            "job": "Lead of Engineering"
-        },
-        "user3": {
-            "id": 3,
-            "name": "Iona Cherry",
-            "job": "Developer"
-        }
+{
+    "user": {
+        "id": 1,
+        "name": "Cecil Mccallum",
+        "job": "Operations"
+    },
+    "user2": {
+        "id": 2,
+        "name": "Romy Brandt",
+        "job": "Lead of Engineering"
+    },
+    "user3": {
+        "id": 3,
+        "name": "Iona Cherry",
+        "job": "Developer"
     }
-]
+}
