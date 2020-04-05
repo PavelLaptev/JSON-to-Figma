@@ -5,6 +5,8 @@ import {showMsg, execGetClipboard, groupFlattenedObj} from '../utils';
 import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
+import {pluginFrameSize} from '../../plugin/data/pluginFrameSize';
+
 const App = ({}) => {
     const [JSONobject, setJSONobject] = React.useState(null);
 
@@ -53,7 +55,7 @@ const App = ({}) => {
 
     const onResetClickHandle = () => {
         setJSONobject(null);
-        const frameHeight = 246;
+        const frameHeight = pluginFrameSize.height;
         parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
     };
 

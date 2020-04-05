@@ -1,10 +1,11 @@
 import {radioArray} from '../app/components/views/OperationsView/sections/Options/buttonsArray';
-import {populateOnlySelected, populateByName, populateByTemplateString, figmaNotify} from './utils';
 import {shuffleArray} from '../app/utils';
 
+import {populateOnlySelected, populateByName, populateByTemplateString, figmaNotify} from './utils';
+import {pluginFrameSize} from './data/pluginFrameSize';
+
 /// Show UI
-const pluginInitialWidth = 350;
-figma.showUI(__html__, {width: pluginInitialWidth, height: 228});
+figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});
 
 figma.ui.onmessage = msg => {
     // Show message
@@ -16,7 +17,7 @@ figma.ui.onmessage = msg => {
 
     // Change size
     if (msg.type === 'change-size' || msg.type === 'reset') {
-        figma.ui.resize(pluginInitialWidth, msg.frameHeight);
+        figma.ui.resize(pluginFrameSize.width, msg.frameHeight);
     }
 
     // Check if random button is on
