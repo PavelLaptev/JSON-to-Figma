@@ -19,22 +19,22 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 ### 💡 Features:
 
-— Populate only selected layers
-— Load loacl files and from URL
-— Nested layers parse
-— Fin and automatic strings replacement by layer name
-— Populate by string templates
-— Direct or random order
+-   Populate only selected layers
+-   Load loacl files and from URL
+-   Nested layers parse
+-   Fin and automatic strings replacement by layer name
+-   Populate by string templates
+-   Direct or random order
 
 ---
 
 ### 🎀 What's new
 
-— New version built with React
-— Ability to load a JSON from URL
-— Better errors handling
-— Refactored functions. Lighter and more efficient methods
-— Parsing of JSON files with any ammount of nested levels.
+-   New version built with React
+-   Ability to load a JSON from URL
+-   Better errors handling
+-   Refactored functions. Lighter and more efficient methods
+-   Parsing of JSON files with any ammount of nested levels.
 
 ---
 
