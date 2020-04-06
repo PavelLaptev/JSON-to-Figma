@@ -11,6 +11,10 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 [youtu.be/f7AULw3xcG8](https://youtu.be/f7AULw3xcG8)
 
+#### Promo page
+
+[pavellaptev.github.io/JSON-to-Figma-React](https://pavellaptev.github.io/JSON-to-Figma-React/promo/index.html)
+
 ---
 
 ### 💡 Features:
