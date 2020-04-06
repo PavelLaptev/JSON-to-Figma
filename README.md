@@ -30,11 +30,11 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 ### 🎀 What's new
 
--   New version built with React
+-   The new version built with React
 -   Ability to load a JSON from URL
 -   Better errors handling
 -   Refactored functions. Lighter and more efficient methods
--   Parsing of JSON files with any ammount of nested levels.
+-   Parsing of JSON files with any amount of nested levels.
 
 ---
 
