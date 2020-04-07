@@ -4,12 +4,12 @@ const radioArray = [
         id: 'by-layer-name',
         label: 'By layer name',
         captionText:
-            'You can populate layers deeply nested in any group or frame. To do so, manually rename the layer you want to populate so that it matches the name in the JSON file.',
+            'Select layers, groups or frames with layers you want to populate. Script will compare layers names and JSON items names. Manually rename a layer you want to populate so that it matches the name in the JSON file.',
     },
     {
         id: 'only-selected',
         label: 'Selected layers only',
-        captionText: 'Replaces text only for directly selected text layers.',
+        captionText: 'Manualy select text layers. Replaces text only for manually selected text layers.',
     },
     {
         id: 'string-templates',

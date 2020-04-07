@@ -3,6 +3,7 @@ import * as React from 'react';
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
+import {radioArray} from '../../sections/Options/buttonsArray';
 import styles from './jsonItemsSection.module.scss';
 
 interface Props {
@@ -25,8 +26,13 @@ const createButtons = (obj, props) => {
 
 const JSONbuttons: React.SFC<Props> = props => {
     return (
-        <SectionWrapper title="JSON Items">
+        <SectionWrapper className={styles.wrap} title="JSON Keys">
             <div onChange={props.onSectionChange} className={styles.buttonsWrap}>
+                {props.selected['option'] === radioArray[0].id ? (
+                    <Button text="Populate all matches" mod="primary" onClick={e => console.log(e)} />
+                ) : (
+                    console.log(props.selected)
+                )}
                 {createButtons(props.obj, props)}
             </div>
         </SectionWrapper>
