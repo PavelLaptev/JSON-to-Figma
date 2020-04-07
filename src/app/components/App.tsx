@@ -42,7 +42,17 @@ const App = ({}) => {
     const handleClickButton = () => {
         let clipboardLink = execGetClipboard();
 
-        fetch(clipboardLink)
+        let header = new Headers({
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'multipart/form-data',
+        });
+
+        let sentData = {
+            mode: 'cors',
+            header: header,
+        };
+
+        fetch(clipboardLink, sentData as any)
             .then(response => response.json())
             .then(responseJson => {
                 let obj = groupFlattenedObj(responseJson);
