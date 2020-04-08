@@ -29,10 +29,10 @@ const LaunchView: React.SFC<Props> = props => {
                         <Button icon="copy" text={'From Clipboard link'} onClick={props.urlOnClick} />
                     </section>
                     <p className={styles.caption}>
-                        Learn more about the plugin on{' '}
+                        Learn more on the{' '}
                         {
                             <CopyLink
-                                text="the GitHub page"
+                                text="GitHub page"
                                 className={styles.copyLink}
                                 link="https://github.com/PavelLaptev/JSON-to-Figma-2.0-React/blob/master/README.md#-the-correct-json-structure"
                             />

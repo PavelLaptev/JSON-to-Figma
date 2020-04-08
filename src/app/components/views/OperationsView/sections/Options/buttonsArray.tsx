@@ -19,4 +19,9 @@ const radioArray = [
     },
 ];
 
-export {radioGroupName, radioArray};
+const allMatches = {
+    id: 'populate-all-matches',
+    name: 'Populate all matches',
+};
+
+export {radioGroupName, radioArray, allMatches};

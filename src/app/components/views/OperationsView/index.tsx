@@ -25,7 +25,6 @@ const OperationsView: React.SFC<Props> = props => {
     });
 
     const handleSelectedOption = e => {
-        console.log(e.target['value']);
         setSelectedOption(e.target['value']);
     };
 
