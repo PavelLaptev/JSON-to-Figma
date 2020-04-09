@@ -93,6 +93,12 @@ You can download try different [JSON samples here](https://github.com/PavelLapte
 
 ---
 
+#### ⛔️ Restrictions
+
+Avoid values without quotes like `null` or `undefined` your file should be an array consists of objects.
+
+---
+
 #### Previous version of the plugin
 
 This version was rewritten in React. Which allows to be more flexible and use external libraries. The previous version was written in plane HTML and vanila JS but you still can fin it here — [github.com/PavelLaptev/JSON-from-Figma](https://github.com/PavelLaptev/JSON-from-Figma).
