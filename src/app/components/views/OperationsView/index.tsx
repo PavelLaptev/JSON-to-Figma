@@ -36,6 +36,8 @@ const OperationsView: React.SFC<Props> = props => {
         <ViewContext.Consumer>
             {JSONobject => (
                 <main ref={mainSectionRef} className={styles.wrap}>
+                    <FileInfo obj={JSONobject} onResetClick={props.onResetClick} />
+                    <JSONbuttons obj={JSONobject} selected={{option: selectedOption, random: isRandomSwitch}} />
                     <Options
                         onSectionChange={handleSelectedOption}
                         array={radioArray}
@@ -43,8 +45,6 @@ const OperationsView: React.SFC<Props> = props => {
                         defaultRadio={selectedOption}
                     />
                     <RandomSwitcher onSectionChange={handleRandomSwitcher} />
-                    <JSONbuttons obj={JSONobject} selected={{option: selectedOption, random: isRandomSwitch}} />
-                    <FileInfo obj={JSONobject} onResetClick={props.onResetClick} />
                 </main>
             )}
         </ViewContext.Consumer>

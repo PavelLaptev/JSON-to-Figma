@@ -1,10 +1,16 @@
-export default function fetchJSONfromURL(url) {
-    return fetch(url)
+export default async function fetchJSONfromURL(
+    url,
+    callback,
+    errorCallback = error => {
+        console.error(error);
+    }
+) {
+    return await fetch(url)
         .then(response => response.json())
         .then(responseJson => {
-            return responseJson;
+            callback(responseJson);
         })
         .catch(error => {
-            console.error(error);
+            errorCallback(error);
         });
 }

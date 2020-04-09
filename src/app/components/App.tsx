@@ -1,7 +1,7 @@
 import * as React from 'react';
 import '../styles/ui.scss';
 
-import {showMsg, execGetClipboard, groupFlattenedObj} from '../utils';
+import {showMsg, execGetClipboard, groupFlattenedObj, fetchJSONfromURL} from '../utils';
 import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
@@ -39,22 +39,23 @@ const App = ({}) => {
     };
 
     // Handle copy from Clipboard
-    async function fetchUrlLink() {
+    function fetchUrlLink() {
         let clipboardLink = execGetClipboard();
 
-        await fetch(clipboardLink)
-            .then(response => response.json())
-            .then(responseJson => {
-                console.log(responseJson);
+        fetchJSONfromURL(
+            clipboardLink,
+            responseJson => {
                 let obj = groupFlattenedObj(responseJson);
                 loadOperationView(obj);
-            })
-            .catch(error => {
+            },
+            error => {
                 showErrorMsg(error, 'Something wrong with the URL or JSON file');
-            });
+            }
+        );
     }
 
     const onResetClickHandle = () => {
+        console.clear();
         setJSONobject(null);
         const frameHeight = pluginFrameSize.height;
         parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
