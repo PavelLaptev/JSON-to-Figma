@@ -39,19 +39,20 @@ const App = ({}) => {
     };
 
     // Handle copy from Clipboard
-    const handleClickButton = () => {
+    async function fetchUrlLink() {
         let clipboardLink = execGetClipboard();
 
-        fetch(clipboardLink)
+        await fetch(clipboardLink)
             .then(response => response.json())
             .then(responseJson => {
+                console.log(responseJson);
                 let obj = groupFlattenedObj(responseJson);
                 loadOperationView(obj);
             })
             .catch(error => {
                 showErrorMsg(error, 'Something wrong with the URL or JSON file');
             });
-    };
+    }
 
     const onResetClickHandle = () => {
         setJSONobject(null);
@@ -64,7 +65,7 @@ const App = ({}) => {
             {JSONobject !== null ? (
                 <OperationsView onResetClick={onResetClickHandle} />
             ) : (
-                <LaunchView urlOnClick={handleClickButton} fileOnChange={handleChangeButton} />
+                <LaunchView urlOnClick={fetchUrlLink} fileOnChange={handleChangeButton} />
             )}
         </ViewContext.Provider>
     );
