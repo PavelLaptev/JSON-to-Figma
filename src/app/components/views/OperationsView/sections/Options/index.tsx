@@ -3,6 +3,8 @@ import * as React from 'react';
 import {ElementCaption, RadioBtn} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
+import styles from './optionsSection.module.scss';
+
 interface Props {
     array: Array<any>;
     groupName: string;
@@ -34,7 +36,7 @@ const OptionsSection: React.SFC<Props> = props => {
     };
 
     return (
-        <SectionWrapper title="Populate options" onChange={props.onSectionChange}>
+        <SectionWrapper title="Populate options" className={styles.wrap} onChange={props.onSectionChange}>
             {radioButtons()}
         </SectionWrapper>
     );

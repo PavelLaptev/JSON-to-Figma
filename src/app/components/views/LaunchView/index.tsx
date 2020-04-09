@@ -29,15 +29,15 @@ const LaunchView: React.SFC<Props> = props => {
                         <Button icon="copy" text={'From Clipboard link'} onClick={props.urlOnClick} />
                     </section>
                     <p className={styles.caption}>
-                        Learn more on the{' '}
+                        JSON file should have a{' '}
                         {
                             <CopyLink
-                                text="GitHub page"
+                                text="certain structure"
                                 className={styles.copyLink}
                                 link="https://github.com/PavelLaptev/JSON-to-Figma-2.0-React/blob/master/README.md#-the-correct-json-structure"
                             />
-                        }
-                        .
+                        }{' '}
+                        to be readable.
                     </p>
                 </main>
             )}
