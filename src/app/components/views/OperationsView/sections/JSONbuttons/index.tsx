@@ -34,7 +34,7 @@ const JSONbuttons: React.SFC<Props> = props => {
     return (
         <SectionWrapper className={styles.wrap} title="JSON keys">
             <div onChange={props.onSectionChange} className={styles.buttonsWrap}>
-                {props.selected['option'] === radioArray[0].id ? (
+                {props.selected['option'] === radioArray[0].id || props.selected['option'] === radioArray[2].id ? (
                     <Button
                         text={allMatches.name}
                         mod="primary"

@@ -57,6 +57,7 @@ const App = ({}) => {
     const onResetClickHandle = () => {
         console.clear();
         setJSONobject(null);
+
         const frameHeight = pluginFrameSize.height;
         parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
     };

@@ -4,10 +4,84 @@ import {shuffleArray} from '../app/utils';
 import {populateOnlySelected, populateByName, populateByTemplateString, figmaNotify} from './utils';
 import {pluginFrameSize} from './data/pluginFrameSize';
 
-/// Show UI
+// Show UI
 figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});
 
 figma.ui.onmessage = msg => {
+    //
+    // CONDITIONAL VARIABLES FOR CHECKING
+    //
+    // Check if random button is on
+    const isRandomJSON = msg => {
+        return msg.selected.random ? shuffleArray(msg.obj) : msg.obj;
+    };
+
+    // Check for selected populate option
+    const isOptionTypeMatch = radioNum => {
+        if (msg.type === radioArray[radioNum].id) {
+            return true;
+        }
+    };
+
+    // CHeck if something selected
+    const isSelectionLength = figma.currentPage.selection.length !== 0;
+
+    // Check if `Populate all mathes` was clicked
+    const isAllMatchesClicked = () => {
+        if (msg.selected.btnName === allMatches.name) {
+            return true;
+        }
+    };
+
+    //
+    // POPULATE FUNCTIONS
+    //
+    // By layer name
+    if (isOptionTypeMatch(0)) {
+        if (isSelectionLength) {
+            if (isAllMatchesClicked) {
+                const buttonsArray = Object.keys(isRandomJSON(msg)[0]);
+
+                buttonsArray.map(btnName => {
+                    populateByName(figma.currentPage.selection, isRandomJSON(msg), btnName);
+                });
+            } else {
+                populateByName(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
+            }
+        } else {
+            figmaNotify('error', `Select frames/groups with layers called "${msg.selected.btnName}"`, 3000);
+        }
+    }
+
+    // Selected layers only
+    if (isOptionTypeMatch(1)) {
+        if (isSelectionLength) {
+            populateOnlySelected(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
+        } else {
+            figmaNotify('error', 'Select text layers', 3000);
+        }
+    }
+
+    // String templates
+    if (isOptionTypeMatch(2)) {
+        if (isSelectionLength) {
+            if (isAllMatchesClicked) {
+                const buttonsArray = Object.keys(isRandomJSON(msg)[0]);
+
+                buttonsArray.map(btnName => {
+                    populateByTemplateString(figma.currentPage.selection, isRandomJSON(msg), btnName);
+                });
+            } else {
+                populateByTemplateString(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
+            }
+        } else {
+            figmaNotify('error', `Select frames/groups with string templates "${msg.selected.btnName}"`, 3000);
+        }
+    }
+
+    //
+    // THE REST MESSAGES
+    //
     // Show message
     if (msg.type === 'showMsg') {
         figma.notify(msg.notifyText, {
@@ -18,47 +92,6 @@ figma.ui.onmessage = msg => {
     // Change size
     if (msg.type === 'change-size' || msg.type === 'reset') {
         figma.ui.resize(pluginFrameSize.width, msg.frameHeight);
-    }
-
-    // Check if random button is on
-    const isRandomJSON = msg => {
-        return msg.selected.random ? shuffleArray(msg.obj) : msg.obj;
-    };
-
-    //
-    const populateAllMatch = msg => {
-        console.log(msg);
-    };
-
-    // By layer name
-    if (msg.type === radioArray[0].id) {
-        if (figma.currentPage.selection.length !== 0) {
-            if (msg.selected.btnName === allMatches.name) {
-                populateAllMatch(msg);
-            } else {
-                populateByName(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
-            }
-        } else {
-            figmaNotify('error', `Select frames/groups with layers called "${msg.selected.btnName}"`, 3000);
-        }
-    }
-
-    // Selected layers only
-    if (msg.type === radioArray[1].id) {
-        if (figma.currentPage.selection.length <= 0) {
-            figmaNotify('error', 'Select text layers');
-        } else {
-            populateOnlySelected(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
-        }
-    }
-
-    // String templates
-    if (msg.type === radioArray[2].id) {
-        if (figma.currentPage.selection.length <= 0) {
-            figmaNotify('error', `Select frames/groups with string templates "${msg.selected.btnName}"`, 3000);
-        } else {
-            populateByTemplateString(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
-        }
     }
 };
 
