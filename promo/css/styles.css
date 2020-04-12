@@ -7,22 +7,23 @@
   text-rendering: optimizeLegibility; }
 
 body {
-  background: #fdffb4;
+  background: #e7fafa;
   font-family: 'Archivo', sans-serif; }
 
 a {
-  color: #4200ff;
+  color: #f45;
   -webkit-transition: all 0.16s ease;
   -o-transition: all 0.16s ease;
   transition: all 0.16s ease; }
   a:hover {
-    color: #e6ea26; }
+    color: #222222;
+    text-decoration: none; }
 
 *::-moz-selection {
-  background-color: #e6ea26; }
+  background-color: #c1ecec; }
 
 *::selection {
-  background-color: #e6ea26; }
+  background-color: #c1ecec; }
 
 .hr-line {
   height: 25px;
@@ -42,14 +43,30 @@ a {
       padding: 0 24px; } }
 
 .header {
-  position: relative; }
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  @media screen and (max-width: 768px) {
+    .header {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin-top: 20px; } }
   .header__title {
     margin: 80px 0 60px;
     position: relative;
     z-index: 999;
     font-size: calc(20px + 12vw);
     line-height: 90%;
-    color: #7748fc; }
+    color: #222222; }
     @media screen and (min-width: 1020px) {
       .header__title {
         font-size: 140px; } }
@@ -63,22 +80,15 @@ a {
       top: -1.2em;
       left: 0.1em;
       font-size: 30%; }
-  .header__promo-sign {
-    position: absolute;
-    top: -280px;
-    right: -180px;
-    width: 490px;
-    height: 674px;
-    background-image: url(../img/mask.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain; }
+  .header__mask {
+    height: 260px;
+    margin-right: 32px;
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px); }
     @media screen and (max-width: 768px) {
-      .header__promo-sign {
-        width: calc(340px / 1.3);
-        height: calc(624px / 1.3);
-        right: -110px;
-        top: -170px; } }
+      .header__mask {
+        height: calc(260px / 1.3); } }
 
 .content {
   display: -webkit-box;
@@ -116,7 +126,7 @@ a {
       width: 100%;
       height: 480px; }
   .content__donate {
-    color: #7748fc; }
+    color: #222222; }
     .content__donate h4 {
       font-size: 24px;
       max-width: 260px; }
@@ -141,13 +151,13 @@ a {
   transition: all 0.1s ease; }
   .btn_primary {
     color: white;
-    background: #7748fc; }
+    background: #222222; }
     .btn_primary:hover {
       color: white;
-      background: #6135da; }
+      background: #000000; }
   .btn_secondary {
-    color: #7748fc;
-    border: 2px solid #7748fc; }
+    color: #222222;
+    border: 2px solid #222222; }
     .btn_secondary:hover {
-      color: #7748fc;
+      color: #222222;
       background: white; }
