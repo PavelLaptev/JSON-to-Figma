@@ -4,6 +4,7 @@ export default function populateByTemplateString(selectedLayers, JSONobj, btnNam
     const loopSelected = arr => {
         arr.map(item => {
             if (item.type === 'TEXT' && item.characters.includes(`{${btnName}}`)) {
+                console.log(item);
                 figma.loadFontAsync(item.fontName).then(() => {
                     item.characters = item.characters.replace(`{${btnName}}`, JSONobj[newItem][btnName].toString());
                     newItem = ++newItem;

@@ -43,7 +43,7 @@ const Button: React.SFC<Props> = props => {
 
 Button.defaultProps = {
     className: null,
-    mod: 'primary',
+    mod: 'blue',
     fileType: false,
 } as Partial<Props>;
 

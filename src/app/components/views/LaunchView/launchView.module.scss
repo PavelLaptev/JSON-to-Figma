@@ -42,9 +42,9 @@
 }
 
 .caption {
-    @include text-12-regular;
+    @include text-11-regular;
     user-select: none;
-    color: $color-black-50;
+    color: $color-black-60;
     text-align: left;
 }
 
