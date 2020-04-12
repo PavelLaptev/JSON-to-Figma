@@ -11,7 +11,7 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 #### Promo page
 
-[pavellaptev.github.io/JSON-to-Figma-React](https://pavellaptev.github.io/JSON-to-Figma-React/promo/index.html)
+[pavellaptev.github.io/JSON-to-Figma-React](https://pavellaptev.github.io/JSON-to-Figma/promo/index.html)
 
 #### Youtube demo
 
@@ -43,20 +43,20 @@ The plugin has main three populate options. Two of them are automatic options �
 
 ### ⚙️ Populate Options
 
-1. `By layer name` — You can populate layers deeply nested in any group or frame. To do so, manually rename the layer you want to populate so that it matches the name in the JSON file.
-   Not a case-sensitive method — a JSON item with a `job` name will be match to `Job` layer name.
+**1. `By layer name`** — You can populate layers deeply nested in any group or frame. To do so, manually rename the layer you want to populate so that it matches the name in the JSON file.
+Not a case-sensitive method — a JSON item with a `job` name will be match to `Job` layer name.
 
 ![By layer name preview](promo/img/populate-by-name-how.jpg)
 
-2. `Selected layers only` — Replaces text only for directly selected text layers.
+**2. `Selected layers only`** — Replaces text only for directly selected text layers.
 
 ![Selected layers only preview](promo/img/only-selected-how.jpg)
 
-3. `String templates` — Select frames or groups that contents text layers with string templates. Replaces only the contents of a string in {braces}.
+**3. `String templates`** — Select frames or groups that contents text layers with string templates. Replaces only the contents of a string in {braces}.
 
 ![String templates preview](promo/img/populate-by-strings.jpg)
 
-4. `Random order` — All selected items will be filled in a random order. By default all your layers will be filled in order.
+**4. `Random order`** — All selected items will be filled in a random order. By default all your layers will be filled in order.
 
 ### ✅ The correct JSON structure
 
