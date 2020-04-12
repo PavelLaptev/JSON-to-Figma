@@ -11,7 +11,7 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 #### Promo page
 
-[pavellaptev.github.io/JSON-to-Figma-React](https://pavellaptev.github.io/JSON-to-Figma/promo/index.html)
+[pavellaptev.github.io/JSON-to-Figma](https://pavellaptev.github.io/JSON-to-Figma/promo/index.html)
 
 #### Youtube demo
 
@@ -21,7 +21,7 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 ### 🎀 What's new in 2.5 version
 
--   Added `Populate all matches` button.
+-   Added **`Populate all matches`** button.
 -   Fetch URL method updated
 -   Refactored methods. New Object of objects parsing
 
@@ -57,6 +57,8 @@ Not a case-sensitive method — a JSON item with a `job` name will be match to `
 ![String templates preview](promo/img/populate-by-strings.jpg)
 
 **4. `Random order`** — All selected items will be filled in a random order. By default all your layers will be filled in order.
+
+---
 
 ### ✅ The correct JSON structure
 
