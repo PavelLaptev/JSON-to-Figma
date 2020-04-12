@@ -34,7 +34,7 @@ const LaunchView: React.SFC<Props> = props => {
                             <CopyLink
                                 text="GitHub page"
                                 className={styles.copyLink}
-                                link="https://github.com/PavelLaptev/JSON-to-Figma-2.0-React/blob/master/README.md#-the-correct-json-structure"
+                                link="https://github.com/PavelLaptev/JSON-to-Figma-React/blob/master/README.md"
                             />
                         }
                         .

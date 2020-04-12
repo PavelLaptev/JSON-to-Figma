@@ -39,7 +39,7 @@ figma.ui.onmessage = msg => {
     // By layer name
     if (isOptionTypeMatch(0)) {
         if (isSelectionLength) {
-            if (isAllMatchesClicked) {
+            if (isAllMatchesClicked()) {
                 const buttonsArray = Object.keys(isRandomJSON(msg)[0]);
 
                 buttonsArray.map(btnName => {
@@ -48,8 +48,10 @@ figma.ui.onmessage = msg => {
             } else {
                 populateByName(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
             }
-        } else {
+        } else if (!isSelectionLength && !isAllMatchesClicked()) {
             figmaNotify('error', `Select frames/groups with layers called "${msg.selected.btnName}"`, 3000);
+        } else if (!isSelectionLength && isAllMatchesClicked()) {
+            figmaNotify('error', `Select frames/groups to populate all matches`, 3000);
         }
     }
 
@@ -65,7 +67,7 @@ figma.ui.onmessage = msg => {
     // String templates
     if (isOptionTypeMatch(2)) {
         if (isSelectionLength) {
-            if (isAllMatchesClicked) {
+            if (isAllMatchesClicked()) {
                 const buttonsArray = Object.keys(isRandomJSON(msg)[0]);
 
                 buttonsArray.map(btnName => {
@@ -74,8 +76,10 @@ figma.ui.onmessage = msg => {
             } else {
                 populateByTemplateString(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
             }
-        } else {
+        } else if (!isSelectionLength && !isAllMatchesClicked()) {
             figmaNotify('error', `Select frames/groups with string templates "${msg.selected.btnName}"`, 3000);
+        } else if (!isSelectionLength && isAllMatchesClicked()) {
+            figmaNotify('error', `Select frames/groups to populate all matches`, 3000);
         }
     }
 
