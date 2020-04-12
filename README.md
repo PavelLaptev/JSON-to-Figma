@@ -1,6 +1,4 @@
-# JSON to Figma 2.5
-
-![preview](promo/web-preview.png)
+# JSON to Figma 2.0
 
 An easy way to populate Figma layers with JSON.
 The plugin can parse local or JSON files from URL link. You can populate text layers that you selected, or by name or string template.
@@ -9,54 +7,36 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 [figma.com/community/plugin/789839703871161985/JSON-to-Figma](https://www.figma.com/community/plugin/789839703871161985/JSON-to-Figma)
 
-#### Promo page
-
-[pavellaptev.github.io/JSON-to-Figma-React](https://pavellaptev.github.io/JSON-to-Figma/promo/index.html)
-
 #### Youtube demo
 
 [youtu.be/f7AULw3xcG8](https://youtu.be/f7AULw3xcG8)
 
----
+#### Promo page
 
-### 🎀 What's new in 2.5 version
-
--   Added `Populate all matches` button.
--   Fetch URL method updated
--   Refactored methods. New Object of objects parsing
+[pavellaptev.github.io/JSON-to-Figma-React](https://pavellaptev.github.io/JSON-to-Figma-React/promo/index.html)
 
 ---
 
 ### 💡 Features:
 
--   Load **loacl** files and fetch **from URL**
--   Parsing of JSON files with **any amount of nested levels**
--   Popualte **all matches** only by one button
--   Three populate options — populate **`only selected layers`**, **`by layer name`**, **`by string templates`**
--   Popualte **by direct or random order**
+-   Populate only selected layers
+-   Load loacl files and from URL
+-   Nested layers parse
+-   Fin and automatic strings replacement by layer name
+-   Populate by string templates
+-   Direct or random order
 
 ---
 
-## 🚀 How to start
+### 🎀 What's new
 
-The plugin has main three populate options. Two of them are automatic options — select groups or frames that contain layers that you want to populate and the plugin will find match layers automatically.
+-   The new version built with React
+-   Ability to load a JSON from URL
+-   Better errors handling
+-   Refactored functions. Lighter and more efficient methods
+-   Parsing of JSON files with any amount of nested levels.
 
-### ⚙️ Populate Options
-
-**1. `By layer name`** — You can populate layers deeply nested in any group or frame. To do so, manually rename the layer you want to populate so that it matches the name in the JSON file.
-Not a case-sensitive method — a JSON item with a `job` name will be match to `Job` layer name.
-
-![By layer name preview](promo/img/populate-by-name-how.jpg)
-
-**2. `Selected layers only`** — Replaces text only for directly selected text layers.
-
-![Selected layers only preview](promo/img/only-selected-how.jpg)
-
-**3. `String templates`** — Select frames or groups that contents text layers with string templates. Replaces only the contents of a string in {braces}.
-
-![String templates preview](promo/img/populate-by-strings.jpg)
-
-**4. `Random order`** — All selected items will be filled in a random order. By default all your layers will be filled in order.
+---
 
 ### ✅ The correct JSON structure
 
@@ -96,21 +76,26 @@ But you also can use different JSON structures. For example:
 // As a result you will see buttons — `0`, `1.key_string`, `1.key_number`
 ```
 
-### 📓 Services to generate JSON data
-
-You can download try different JSON samples [from this repo](https://github.com/PavelLaptev/JSON-to-Figma-2.0-React/tree/master/json-test-files).
-
-Or you can use on of these services:
-
--   [mockaroo.com](https://www.mockaroo.com/)
--   [next.json-generator.com](https://next.json-generator.com/EyLps-PPO?fbclid=IwAR0WGNKJMclqcS6qwRHj-NXOyF52BjQYJp9osgeWRmN2iCGZ47awnDDLhmI)
--   [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/)
+You can download try different [JSON samples here](https://github.com/PavelLaptev/JSON-to-Figma-2.0-React/tree/master/src/app/assets/test-json).
 
 ---
 
-### 🤙 Feedback
+### ⚙️ Populate Options
 
-Please if you have any trubles with the plugin or ideas how I could improve the plugin, let me know here or by email 😊
+1. `By layer name` — You can populate layers deeply nested in any group or frame. To do so, manually rename the layer you want to populate so that it matches the name in the JSON file.
+   Not a case-sensitive method — a JSON item with a `job` name will be match to `Job` layer name.
+
+2. `Selected layers only` — Replaces text only for directly selected text layers.
+
+3. `String templates` — Select frames or groups that contents text layers with string templates. Replaces only the contents of a string in {braces}.
+
+4. `Random order` — All selected items will be filled in a random order. By default all your layers will be filled in order.
+
+---
+
+#### Previous version of the plugin
+
+This version was rewritten in React. Which allows to be more flexible and use external libraries. The previous version was written in plane HTML and vanila JS but you still can fin it here — [github.com/PavelLaptev/JSON-from-Figma](https://github.com/PavelLaptev/JSON-from-Figma).
 
 ---
 
