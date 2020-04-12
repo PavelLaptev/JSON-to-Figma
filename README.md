@@ -1,6 +1,6 @@
 # JSON to Figma 2.5
 
-![preview](promo/web-preview.png)
+![preview](promo/web-preview-large.png)
 
 An easy way to populate Figma layers with JSON.
 The plugin can parse local or JSON files from URL link. You can populate text layers that you selected, or by name or string template.
