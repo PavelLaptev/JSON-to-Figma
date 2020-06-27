@@ -1,4 +1,4 @@
-export default function populateByName(selectedLayers, JSONobj, btnName) {
+export default function populateByName(selectedLayers, JSONobj, isFetchImages, btnName) {
     let newItem = 0;
 
     const loopSelected = arr => {
