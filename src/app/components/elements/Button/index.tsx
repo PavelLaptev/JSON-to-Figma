@@ -8,6 +8,7 @@ interface Props {
     text: string;
     className?: any;
     icon?: string;
+    iconColor?: string;
     mod?: string;
     fileType?: boolean;
     onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
@@ -15,6 +16,14 @@ interface Props {
 }
 
 const Button: React.SFC<Props> = props => {
+    const isIcon = () => {
+        if (typeof props.icon !== 'undefined') {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
     const btnComponent = () => {
         return (
             <button
@@ -23,7 +32,7 @@ const Button: React.SFC<Props> = props => {
                 onChange={props.onChange}
             >
                 <span>{props.text}</span>
-                {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
+                {isIcon() ? <Icon name={props.icon} color={props.iconColor} /> : null}
             </button>
         );
     };

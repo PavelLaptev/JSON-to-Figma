@@ -1,0 +1,407 @@
+[
+  {
+    "comment": {
+      "long": [
+        {
+          "value": "Swimtelligence has identified that your arm recovers low to the surface wide around the side of your body on your right side.",
+          "type": "text"
+        }
+      ],
+      "short": "You have a low wide arm recovery on your right side."
+    },
+    "id": "4CE04391-ED9E-474E-9A26-8B9B80CAC08A",
+    "type": "contentful",
+    "title": "Kick On Side Drill",
+    "image": ""
+  },
+  {
+    "id": "BED024F8-C476-4056-AA45-D172AB1FB8DE",
+    "type": "contentful",
+    "title": "Fault: Sweeping Across Centre Line Under Body",
+    "image": "",
+    "comment": {
+      "long": [
+        {
+          "value": "Swimtelligence has identified that your pull through crosses the centre line under your body on your right side.",
+          "type": "text"
+        }
+      ],
+      "short": "You cross the centre line during your pull through on your right side."
+    }
+  },
+  {
+    "id": "616BBED5-5B00-47A8-8355-F02E6106DD83",
+    "type": "contentful",
+    "title": "Doggy Paddle Extension",
+    "image": "",
+    "comment": {
+      "long": [
+        {
+          "type": "text",
+          "value": "Swimtelligence has identified that your pull through crosses the centre line under your body on your right side."
+        }
+      ],
+      "short": "You cross the centre line during your pull through on your right side."
+    }
+  },
+  {
+    "image": "",
+    "comment": {
+      "short": "You are pulling wide underwater on your right side.",
+      "long": [
+        {
+          "value": "Swimtelligence has identified that you pull through wide of the body underwater on your right side.",
+          "type": "text"
+        }
+      ]
+    },
+    "id": "5A468988-61C1-4DDA-B355-ABA70FF2FB9D",
+    "type": "contentful",
+    "title": "Fault: Wide Pull Through"
+  },
+  {
+    "id": "44B0638B-21EC-4F2C-AFF1-42F9A413BDB0",
+    "type": "contentful",
+    "title": "Swimming Down A Narrow Corridor",
+    "image": "",
+    "comment": {
+      "long": [
+        {
+          "type": "text",
+          "value": "Swimtelligence has identified that you pull through wide of the body underwater on your right side."
+        }
+      ],
+      "short": "You are pulling wide underwater on your right side."
+    }
+  },
+  {
+    "image": "",
+    "comment": {
+      "long": [
+        {
+          "type": "text",
+          "value": "Swimtelligence has identified that you pull through wide of the body underwater on your right side."
+        }
+      ],
+      "short": "You are pulling wide underwater on your right side."
+    },
+    "id": "A88D2A3F-0340-4FD6-BA8B-EBDBE32BA699",
+    "type": "contentful",
+    "title": "Doggy Paddle Drill"
+  },
+  {
+    "id": "63015C2D-4E01-4DDD-AF98-FBB42D2A2E1D",
+    "type": "contentful",
+    "title": "Fault: Pulling Through With A Straight Arm",
+    "image": "",
+    "comment": {
+      "long": [
+        {
+          "value": "Swimtelligence has identified that you pull through deep with a straight arm under the body on your right side.",
+          "type": "text"
+        }
+      ],
+      "short": "You are pulling deep and straight on your right side."
+    }
+  },
+  {
+    "id": "A88D2A3F-0340-4FD6-BA8B-EBDBE32BA699",
+    "type": "contentful",
+    "title": "Doggy Paddle Drill",
+    "image": "",
+    "comment": {
+      "long": [
+        {
+          "value": "Swimtelligence has identified that you pull through deep with a straight arm under the body on your right side.",
+          "type": "text"
+        }
+      ],
+      "short": "You are pulling deep and straight on your right side."
+    }
+  },
+  {
+    "id": "616BBED5-5B00-47A8-8355-F02E6106DD83",
+    "type": "contentful",
+    "title": "Doggy Paddle Extension",
+    "image": "",
+    "comment": {
+      "long": [
+        {
+          "type": "text",
+          "value": "Swimtelligence has identified that you pull through deep with a straight arm under the body on your right side."
+        }
+      ],
+      "short": "You are pulling deep and straight on your right side."
+    }
+  },
+  {
+    "title": "Fault: Overgliding",
+    "image": "",
+    "comment": {
+      "long": [
+        {
+          "value": "Swimtelligence has identified that you pause for too long at the front of your stroke on your right side.",
+          "type": "text"
+        }
+      ],
+      "short": "You are pausing too long at front of stroke on your right side."
+    },
+    "id": "6831A991-2543-4FB3-8FFC-73461EDFB922",
+    "type": "contentful"
+  },
+  {
+    "id": "7mJfYP2oR54uYoaUZ56y2C",
+    "type": "contentful",
+    "title": "Stroke Rate Basics",
+    "image": "https://images.ctfassets.net/50b15ahactsg/6OQDVLTP0z5r4z0B3ZM7cJ/f06e66f2d1a2350676eaba0b79e5b5ab/stroke-rate.jpg",
+    "comment": {
+      "long": [
+        {
+          "type": "text",
+          "value": "Swimtelligence has identified that you pause for too long at the front of your stroke on your right side."
+        }
+      ],
+      "short": "You are pausing too long at front of stroke on your right side."
+    }
+  },
+  {
+    "comment": {
+      "long": [
+        {
+          "type": "text",
+          "value": "Swimtelligence has identified that you pause for too long at the front of your stroke on your right side."
+        }
+      ],
+      "short": "You are pausing too long at front of stroke on your right side."
+    },
+    "id": "VGTvDLNXHt3MIyYLaa53f",
+    "type": "contentful",
+    "title": "Stroke Rate (Advanced)",
+    "image": "https://images.ctfassets.net/50b15ahactsg/vC0yaieW61vcXxpwqddnn/371690ca1c08a34b5e8ba67995fac8d6/texas1.png"
+  },
+  {
+    "comment": {
+      "long": [
+        {
+          "value": "Swimtelligence has identified you fit the Arnie Swim Type category.",
+          "type": "text"
+        }
+      ],
+      "short": "You look like a Arnie."
+    },
+    "id": "wzLIhvCnyUWWwCmkrBIOk",
+    "type": "contentful",
+    "title": "Finis Freestyler Paddles",
+    "image": "https://images.ctfassets.net/50b15ahactsg/7MJVSpeTu1IXZw6vDmbZX9/b4001765db22b61e63f03fc75955db98/finis-freestyler-paddle1_aa46d438-92da-4916-b4de-ce7ba53dbfe3_1024x1024.webp"
+  },
+  {
+    "id": "4fgVVw6VIgKpldxQQ6P9RT",
+    "type": "contentful",
+    "title": "Fins (Flippers)",
+    "image": "https://images.ctfassets.net/50b15ahactsg/mmQQPoaQX8wuRDlB6wlA4/716d744d08064e04f66795407a9de2b9/finis-floating-fins-flippers1_fe3c544f-778c-4c6a-8d2c-28bf84717679_1024x1024.webp",
+    "comment": {
+      "long": [
+        {
+          "type": "text",
+          "value": "Swimtelligence has identified you fit the Arnie Swim Type category."
+        }
+      ],
+      "short": "You look like a Arnie."
+    }
+  },
+  {
+    "id": "wzLIhvCnyUWWwCmkrBIOk",
+    "type": "contentful",
+    "title": "Finis Freestyler Paddles",
+    "image": "https://images.ctfassets.net/50b15ahactsg/7MJVSpeTu1IXZw6vDmbZX9/b4001765db22b61e63f03fc75955db98/finis-freestyler-paddle1_aa46d438-92da-4916-b4de-ce7ba53dbfe3_1024x1024.webp",
+    "comment": {
+      "long": [
+        {
+          "value": "Swimtelligence has identified that your arm crosses the centre line in front of your head on your left side.",
+          "type": "text"
+        }
+      ],
+      "short": "Your hand crosses centre line in front of your head on your left side."
+    }
+  },
+  {
+    "id": "1e88xK5fbSKq0QqjNWRN9H",
+    "type": "contentful",
+    "title": "Pull Buoy",
+    "image": "https://images.ctfassets.net/50b15ahactsg/7MvXMqZqER1jWmyQF9g6Fb/9874c5e9bd85de08821e61ab53ef43d6/pull-buoy2.jpg",
+    "comment": {
+      "long": [
+        {
+          "type": "text",
+          "value": "Swimtelligence has identified you fit the Arnie Swim Type category."
+        }
+      ],
+      "short": "You look like a Arnie."
+    }
+  },
+  {
+    "id": "78k2TUbXBoaO4RytEAFio1",
+    "type": "contentful",
+    "title": "Finis Tempo Trainer Pro",
+    "image": "https://images.ctfassets.net/50b15ahactsg/2QlvzMLC2TZv77VzJPC5dk/78a3c33c630654fe1e946664343bbbbe/finis-tempo-trainer-pro2_2314a8de-6613-4a4a-b72a-233ca20a860c_1024x1024.webp",
+    "comment": {
+      "long": [
+        {
+          "value": "Swimtelligence has identified you fit the Arnie Swim Type category.",
+          "type": "text"
+        }
+      ],
+      "short": "You look like a Arnie."
+    }
+  },
+  {
+    "id": "BClwK9wsmip4t2ihXB4v",
+    "type": "session",
+    "title": "Fresh & Fruity - CSS Time Trial",
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/4c477ae0-ce6e-440b-a913-144899ddef9e.jpg",
+    "comment": {
+      "long": [
+        {
+          "value": "You got this because of a random number generator!",
+          "type": "text"
+        }
+      ],
+      "short": "You got this because of a random number generator!"
+    }
+  },
+  {
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/431b4af9-e029-44ec-a437-4f46371b2d8e.jpg",
+    "comment": {
+      "short": "You got this because of a random number generator!",
+      "long": [
+        {
+          "type": "text",
+          "value": "You got this because of a random number generator!"
+        }
+      ]
+    },
+    "id": "9uxhNKmmeDSj4zjKarXY",
+    "type": "session",
+    "title": "Obedience School Day Two"
+  },
+  {
+    "id": "DLLxjNvkRmXeVwhu1T5M",
+    "type": "session",
+    "title": "Session 309 CSS Development - Kick it in Gear",
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/8c66d0ae-9673-4594-9c7e-5a5f2e015b77.jpg",
+    "comment": {
+      "long": [
+        {
+          "value": "You got this because of a random number generator!",
+          "type": "text"
+        }
+      ],
+      "short": "You got this because of a random number generator!"
+    }
+  },
+  {
+    "title": "Gradual Build",
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/78ec692d-89a6-4f91-9338-b6a2704c51e6.jpg",
+    "comment": {
+      "long": [
+        {
+          "value": "You got this because of a random number generator!",
+          "type": "text"
+        }
+      ],
+      "short": "You got this because of a random number generator!"
+    },
+    "id": "n8OiwhG2AhNqbhiZCRUH",
+    "type": "session"
+  },
+  {
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/7d845b41-dc20-4e0e-8769-4f8f7d53cb5e.jpg",
+    "comment": {
+      "long": [
+        {
+          "value": "You got this because of a random number generator!",
+          "type": "text"
+        }
+      ],
+      "short": "You got this because of a random number generator!"
+    },
+    "id": "er6LcROpwpslSQSl4ACZ",
+    "type": "session",
+    "title": "Feel Smooth!"
+  },
+  {
+    "comment": {
+      "long": [
+        {
+          "value": "You got this because of a random number generator!",
+          "type": "text"
+        }
+      ],
+      "short": "You got this because of a random number generator!"
+    },
+    "id": "u6lWOiTqX775GifqxuIe",
+    "type": "session",
+    "title": "Long Swim - Open Water",
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/4c477ae0-ce6e-440b-a913-144899ddef9e.jpg"
+  },
+  {
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/0fdd88c9-032b-4eab-b1a5-38cdb036f436.jpg",
+    "comment": {
+      "long": [
+        {
+          "type": "text",
+          "value": "You got this because of a random number generator!"
+        }
+      ],
+      "short": "You got this because of a random number generator!"
+    },
+    "id": "EA8xL2R4eYteIawsNmk2",
+    "type": "session",
+    "title": "Litmus Test"
+  },
+  {
+    "id": "HVwYB91Awz5QDmKWdfb4",
+    "type": "session",
+    "title": "Session 246 CSS Development - Hold Your Peak Pace",
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/8c66d0ae-9673-4594-9c7e-5a5f2e015b77.jpg",
+    "comment": {
+      "short": "You got this because of a random number generator!",
+      "long": [
+        {
+          "value": "You got this because of a random number generator!",
+          "type": "text"
+        }
+      ]
+    }
+  },
+  {
+    "id": "i7cougeh56RFwBJldIhl",
+    "type": "session",
+    "title": "Session 263 Red Mist Endurance - Rest and Best",
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/8c66d0ae-9673-4594-9c7e-5a5f2e015b77.jpg",
+    "comment": {
+      "long": [
+        {
+          "value": "You got this because of a random number generator!",
+          "type": "text"
+        }
+      ],
+      "short": "You got this because of a random number generator!"
+    }
+  },
+  {
+    "image": "https://bb733c4fe3721ef7324b-ce45a0afce0c331a08b5b2c095400659.ssl.cf3.rackcdn.com/medialibrary/images/marketingimages/4c477ae0-ce6e-440b-a913-144899ddef9e.jpg",
+    "comment": {
+      "long": [
+        {
+          "value": "You got this because of a random number generator!",
+          "type": "text"
+        }
+      ],
+      "short": "You got this because of a random number generator!"
+    },
+    "id": "upzsrQuvjXdKL3LknUsU",
+    "type": "session",
+    "title": "Fresh & Fruity"
+  }
+]

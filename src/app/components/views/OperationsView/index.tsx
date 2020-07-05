@@ -5,7 +5,7 @@ import FileInfo from './sections/FileInfo';
 import JSONbuttons from './sections/JSONbuttons';
 import Options from './sections/Options';
 import RandomSwitcher from './sections/RandomSwitcher';
-import LoadImagesSwitcher from './sections/LoadImagesSwitcher';
+// import LoadImagesSwitcher from './sections/LoadImagesSwitcher';
 
 import styles from './operationsView.module.scss';
 
@@ -18,7 +18,7 @@ interface Props {
 const OperationsView: React.SFC<Props> = props => {
     const [selectedOption, setSelectedOption] = React.useState(radioArray[0].id);
     const [isRandomSwitch, setIsRandomSwitch] = React.useState(false);
-    const [isFetchImages, setIsFetchImages] = React.useState(false);
+    // const [isFetchImages, setIsFetchImages] = React.useState(false);
     const mainSectionRef = React.useRef(null);
 
     React.useEffect(() => {
@@ -34,20 +34,17 @@ const OperationsView: React.SFC<Props> = props => {
         setIsRandomSwitch(e.target.checked);
     };
 
-    const handleImageSwitcher = e => {
-        setIsFetchImages(e.target.checked);
-        console.log(isFetchImages);
-    };
+    // const handleImageSwitcher = e => {
+    //     setIsFetchImages(e.target.checked);
+    //     console.log(isFetchImages);
+    // };
 
     return (
         <ViewContext.Consumer>
             {JSONobject => (
                 <main ref={mainSectionRef} className={styles.wrap}>
                     <FileInfo obj={JSONobject} onResetClick={props.onResetClick} />
-                    <JSONbuttons
-                        obj={JSONobject}
-                        selected={{option: selectedOption, random: isRandomSwitch, fetchImages: isFetchImages}}
-                    />
+                    <JSONbuttons obj={JSONobject} selected={{option: selectedOption, random: isRandomSwitch}} />
                     <Options
                         onSectionChange={handleSelectedOption}
                         array={radioArray}
@@ -55,7 +52,7 @@ const OperationsView: React.SFC<Props> = props => {
                         defaultRadio={selectedOption}
                     />
                     <RandomSwitcher onSectionChange={handleRandomSwitcher} />
-                    <LoadImagesSwitcher onSectionChange={handleImageSwitcher} />
+                    {/* <LoadImagesSwitcher onSectionChange={handleImageSwitcher} /> */}
                 </main>
             )}
         </ViewContext.Consumer>

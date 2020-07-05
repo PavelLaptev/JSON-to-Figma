@@ -17,9 +17,9 @@ figma.ui.onmessage = msg => {
     };
 
     // Fetch Images
-    const isFetchImages = msg => {
-        return msg.selected.fetchImages ? console.log('yes') : console.log('no');
-    };
+    // const isFetchImages = msg => {
+    //     return msg.selected.fetchImages ? true : console.log('no');
+    // };
 
     // Check for selected populate option
     const isOptionTypeMatch = radioNum => {
@@ -48,15 +48,10 @@ figma.ui.onmessage = msg => {
                 const buttonsArray = Object.keys(isRandomJSON(msg)[0]);
 
                 buttonsArray.map(btnName => {
-                    populateByName(figma.currentPage.selection, isRandomJSON(msg), msg.selected.fetchImages, btnName);
+                    populateByName(figma.currentPage.selection, isRandomJSON(msg), btnName);
                 });
             } else {
-                populateByName(
-                    figma.currentPage.selection,
-                    isRandomJSON(msg),
-                    msg.selected.fetchImages,
-                    msg.selected.btnName
-                );
+                populateByName(figma.currentPage.selection, isRandomJSON(msg), msg.selected.btnName);
             }
         } else if (!isSelectionLength && !isAllMatchesClicked()) {
             figmaNotify('error', `Select frames/groups with layers called "${msg.selected.btnName}"`, 3000);

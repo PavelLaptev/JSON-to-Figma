@@ -2,26 +2,31 @@
     {
         "id": "1",
         "name": "Cecil Mccallum",
-        "job": "Operations"
+        "job": "Operations",
+        "userpic": "https://randomuser.me/api/portraits/women/32.jpg"
     },
     {
         "id": "2",
         "name": "Romy Brandt",
-        "job": "Lead of Engineering"
+        "job": "Lead of Engineering",
+        "userpic": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         "id": "3",
         "name": "Iona Cherry",
-        "job": "Developer"
+        "job": "Developer",
+        "userpic": "https://randomuser.me/api/portraits/women/2.jpg"
     },
     {
         "id": "4",
         "name": "Robert Curran",
-        "job": "Partnership Management"
+        "job": "Partnership Management",
+        "userpic": "https://randomuser.me/api/portraits/men/20.jpg"
     },
     {
         "id": "5",
         "name": "Elias Bains",
-        "job": "Software Engineering"
+        "job": "Software Engineering",
+        "userpic": "https://randomuser.me/api/portraits/women/40.jpg"
     }
 ]

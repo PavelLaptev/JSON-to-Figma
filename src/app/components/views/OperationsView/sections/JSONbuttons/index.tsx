@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import isImageString from '../../../../../utils/isImageString';
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
@@ -20,7 +21,16 @@ const createButtons = (obj, props) => {
     };
 
     return Object.keys(obj[0]).map((item, i) => {
-        return <Button key={`item-button-${i}`} text={item} mod="ghost-dark" onClick={handleClick} />;
+        let isImage = isImageString(obj[0][item]);
+        return (
+            <Button
+                key={`item-button-${i}`}
+                text={item}
+                icon={isImage ? 'image' : undefined}
+                mod="ghost-dark"
+                onClick={handleClick}
+            />
+        );
     });
 };
 
