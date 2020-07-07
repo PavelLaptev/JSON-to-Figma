@@ -11,12 +11,7 @@ export default function populateOnlySelected(selectedLayers, obj, btnName) {
                 figmaNotify('error', 'Select only text layers or option "By layer name"', 1500);
             }
         } else {
-            let currentFills = item.fills;
-            console.log(item.fills);
-            item.fills = [
-                ...currentFills,
-                {type: 'SOLID', visible: true, opacity: 1, blendMode: 'NORMAL', color: {r: 0, g: 0, b: 0}},
-            ];
+            figma.ui.postMessage({type: 'image-url', url: obj[i][btnName].toString(), targetID: item.id});
         }
     });
 }

@@ -4,7 +4,7 @@ export default function populateByName(selectedLayers, JSONobj, btnName) {
     // console.log(isFetchImages);
 
     const loopSelected = arr => {
-        console.log(arr);
+        // console.log(arr);
         arr.map(item => {
             if (item.name.toUpperCase() === btnName.toUpperCase() && item.type === 'TEXT') {
                 figma.loadFontAsync(item.fontName).then(() => {

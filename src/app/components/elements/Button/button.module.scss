@@ -6,7 +6,8 @@
     outline: none;
     border: none;
     border-radius: $border-radius-6;
-    padding: ($xs-space + $xs-space) $m-space;
+    padding-left: $m-space;
+    padding-right: $m-space;
     display: flex;
     align-items: center;
     height: 32px;
@@ -14,6 +15,7 @@
 
     span {
         @include text-11-regular;
+        pointer-events: none;
         line-height: 1;
     }
 

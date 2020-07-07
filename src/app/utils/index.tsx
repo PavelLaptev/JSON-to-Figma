@@ -6,3 +6,4 @@ export {default as shuffleArray} from './shuffleArray';
 export {default as groupFlattenedObj} from './groupFlattenedObj';
 export {default as compareStrings} from './compareStrings';
 export {default as isPlainObject} from './isPlainObject';
+export {default as fetchImagefromURL} from './fetchImagefromURL';

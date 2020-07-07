@@ -10,7 +10,6 @@
     },
     "dependencies": {
         "@create-figma-plugin/ui": "0.0.54",
-        "fetch-images": "0.0.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1"
     },

@@ -8,6 +8,7 @@ import {pluginFrameSize} from './data/pluginFrameSize';
 figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});
 
 figma.ui.onmessage = msg => {
+    // console.log(msg);
     //
     // CONDITIONAL VARIABLES FOR CHECKING
     //
@@ -15,11 +16,6 @@ figma.ui.onmessage = msg => {
     const isRandomJSON = msg => {
         return msg.selected.random ? shuffleArray(msg.obj) : msg.obj;
     };
-
-    // Fetch Images
-    // const isFetchImages = msg => {
-    //     return msg.selected.fetchImages ? true : console.log('no');
-    // };
 
     // Check for selected populate option
     const isOptionTypeMatch = radioNum => {
@@ -67,6 +63,22 @@ figma.ui.onmessage = msg => {
         } else {
             figmaNotify('error', 'Select text layers', 3000);
         }
+    }
+
+    // if we recived fetched images
+    if (msg.type === 'imgData') {
+        const target = figma.currentPage.findOne(n => n.id === msg.targetID);
+        const imageHash = figma.createImage(msg.data).hash;
+        const currentFills = target['fills'];
+        const newFill = {
+            type: 'IMAGE',
+            opacity: 1,
+            blendMode: 'NORMAL',
+            scaleMode: 'FILL',
+            imageHash: imageHash,
+        };
+        target['fills'] = [...currentFills, ...[newFill]];
+        console.log(...currentFills, ...[newFill]);
     }
 
     // String templates

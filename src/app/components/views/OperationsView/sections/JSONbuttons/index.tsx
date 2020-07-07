@@ -7,6 +7,17 @@ import {SectionWrapper} from '../../../../sections';
 import {radioArray, allMatches} from '../../sections/Options/buttonsArray';
 import styles from './jsonItemsSection.module.scss';
 
+// async function downloadImage(obj, clickedBtn) {
+//     console.log(obj[clickedBtn]);
+//     // console.log(clickedBtn);
+//     fetch('https://scripter.rsms.me/icon.png')
+//         .then(r => {
+//             if ((r.status + '')[0] != '2') throw Error(`HTTP ${r.status} ${r.statusText}`);
+//             return r.arrayBuffer();
+//         })
+//         .then(a => console.log(a));
+// }
+
 interface Props {
     obj: Object;
     selected: Object;
@@ -15,8 +26,8 @@ interface Props {
 
 const createButtons = (obj, props) => {
     const handleClick = e => {
+        // downloadImage(obj, e.target.textContent);
         let selected = {...props.selected, ...{btnName: e.target.textContent}};
-
         parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
     };
 
