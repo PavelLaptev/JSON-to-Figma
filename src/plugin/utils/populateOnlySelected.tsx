@@ -1,4 +1,5 @@
 import {figmaNotify} from './';
+import {isImageString} from './../../app/utils/';
 
 export default function populateOnlySelected(selectedLayers, obj, btnName) {
     selectedLayers.map((item, i) => {
@@ -11,7 +12,11 @@ export default function populateOnlySelected(selectedLayers, obj, btnName) {
                 figmaNotify('error', 'Select only text layers or option "By layer name"', 1500);
             }
         } else {
-            figma.ui.postMessage({type: 'image-url', url: obj[i][btnName].toString(), targetID: item.id});
+            if (isImageString(obj[i][btnName].toString())) {
+                figma.ui.postMessage({type: 'image-url', url: obj[i][btnName].toString(), targetID: item.id});
+            } else {
+                figmaNotify('error', 'For this button only text layers', 1500);
+            }
         }
     });
 }

@@ -3,30 +3,36 @@
         "id": "1",
         "name": "Cecil Mccallum",
         "job": "Operations",
-        "userpic": "https://scripter.rsms.me/icon.png"
+        "userpic": "https://randomuser.me/api/portraits/women/23.jpg"
     },
     {
         "id": "2",
         "name": "Romy Brandt",
         "job": "Lead of Engineering",
-        "userpic": "https://hsto.org/getpro/habr/post_images/42b/1e5/a59/42b1e5a59be82085386c901ae8c3a8c4.jpg"
+        "userpic": "https://randomuser.me/api/portraits/women/25.jpg"
     },
     {
         "id": "3",
         "name": "Iona Cherry",
         "job": "Developer",
-        "userpic": "https://randomuser.me/api/portraits/women/2.jpg"
+        "userpic": "https://randomuser.me/api/portraits/women/21.jpg"
     },
     {
         "id": "4",
         "name": "Robert Curran",
         "job": "Partnership Management",
-        "userpic": "https://randomuser.me/api/portraits/men/20.jpg"
+        "userpic": "https://randomuser.me/api/portraits/men/50.jpg"
     },
     {
         "id": "5",
         "name": "Elias Bains",
         "job": "Software Engineering",
-        "userpic": "https://randomuser.me/api/portraits/women/40.jpg"
+        "userpic": "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Alina Semenova",
+        "job": "Copywriter",
+        "userpic": "https://randomuser.me/api/portraits/women/41.jpg"
     }
 ]

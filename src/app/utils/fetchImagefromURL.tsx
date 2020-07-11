@@ -1,6 +1,7 @@
 export default async function fetchImagefromURL(url, targetID) {
     // console.log(url);
-    fetch(url)
+    const proxyServer = 'https://cors-anywhere.herokuapp.com';
+    fetch(`${proxyServer}/${url}`)
         .then(r => {
             if ((r.status + '')[0] != '2') throw Error(`HTTP ${r.status} ${r.statusText}`);
             return r.arrayBuffer();

@@ -78,7 +78,6 @@ figma.ui.onmessage = msg => {
             imageHash: imageHash,
         };
         target['fills'] = [...currentFills, ...[newFill]];
-        console.log(...currentFills, ...[newFill]);
     }
 
     // String templates

@@ -17,6 +17,3 @@ export default function populateByTemplateString(selectedLayers, JSONobj, btnNam
 
     loopSelected(selectedLayers);
 }
-
-// TO-DO
-// Handle errors

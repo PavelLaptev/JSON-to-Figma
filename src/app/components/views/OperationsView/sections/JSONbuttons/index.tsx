@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import isImageString from '../../../../../utils/isImageString';
+import {isImageString} from '../../../../../utils/';
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
