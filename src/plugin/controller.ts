@@ -1,8 +1,16 @@
 import {radioArray, allMatches} from '../app/components/views/OperationsView/sections/Options/buttonsArray';
 import {shuffleArray} from '../app/utils';
 
-import {populateOnlySelected, populateByName, populateByTemplateString, figmaNotify} from './utils';
+import {
+    populateOnlySelected,
+    populateByName,
+    populateByTemplateString,
+    figmaNotify,
+    addSign,
+    removeSign,
+} from './utils';
 import {pluginFrameSize} from './data/pluginFrameSize';
+import {skipSign} from './data/skipSign';
 
 // Show UI
 figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});
@@ -17,15 +25,15 @@ figma.ui.onmessage = msg => {
         return msg.selected.random ? shuffleArray(msg.obj) : msg.obj;
     };
 
+    // Check if something selected
+    const isSelectionLength = figma.currentPage.selection.length !== 0;
+
     // Check for selected populate option
     const isOptionTypeMatch = radioNum => {
         if (msg.type === radioArray[radioNum].id) {
             return true;
         }
     };
-
-    // CHeck if something selected
-    const isSelectionLength = figma.currentPage.selection.length !== 0;
 
     // Check if `Populate all mathes` was clicked
     const isAllMatchesClicked = () => {
@@ -99,8 +107,25 @@ figma.ui.onmessage = msg => {
         }
     }
 
+    // "SKIP LAYERS" FUNCTIONS
+    if (msg.type === 'add-skip-sign') {
+        if (isSelectionLength) {
+            addSign(figma.currentPage.selection, skipSign.name, skipSign.symbol);
+        } else {
+            figmaNotify('error', 'Select some layers before', 3000);
+        }
+    }
+
+    if (msg.type === 'remove-skip-sign') {
+        if (isSelectionLength) {
+            removeSign(figma.currentPage.selection, skipSign.name, skipSign.symbol);
+        } else {
+            figmaNotify('error', 'Select some layers before', 3000);
+        }
+    }
+
     //
-    // THE REST MESSAGES
+    // THE REST OF MESSAGES
     //
     // Show message
     if (msg.type === 'showMsg') {

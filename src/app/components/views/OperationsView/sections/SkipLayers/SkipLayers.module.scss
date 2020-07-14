@@ -1,0 +1,17 @@
+@import '../../../../../styles/tokens';
+@import '../../../../../styles/figma/styles';
+
+.wrap {
+    background: $color-black-03;
+    h3 {
+        margin-bottom: 0;
+    }
+}
+
+.btnWrap {
+    display: flex;
+    margin-bottom: $l-space;
+    button {
+        margin-right: $s-space;
+    }
+}

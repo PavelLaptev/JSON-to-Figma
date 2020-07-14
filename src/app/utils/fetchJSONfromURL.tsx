@@ -5,7 +5,8 @@ export default async function fetchJSONfromURL(
         console.error(error);
     }
 ) {
-    return await fetch(url)
+    const proxyServer = 'https://cors-anywhere.herokuapp.com';
+    return await fetch(`${proxyServer}/${url}`)
         .then(response => response.json())
         .then(responseJson => {
             callback(responseJson);

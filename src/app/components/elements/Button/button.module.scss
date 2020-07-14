@@ -6,10 +6,11 @@
     outline: none;
     border: none;
     border-radius: $border-radius-6;
-    padding-left: $m-space;
-    padding-right: $m-space;
+    padding-left: $s-space + $xs-space + $xxs-space;
+    padding-right: $s-space + $xs-space + $xxs-space;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 32px;
     transition: all $default-transition;
 
@@ -20,7 +21,7 @@
     }
 
     i {
-        transform: translateX($s-space + $xxs-space);
+        transform: translateX($s-space);
         margin-right: $xs-space;
     }
 }

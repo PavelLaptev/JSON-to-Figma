@@ -12,32 +12,26 @@
 .head {
     display: flex;
     align-items: center;
-    margin-top: $xxs-space;
-    margin-bottom: $l-space + $xs-space;
-}
-
-.jsonMaskLogo {
-    pointer-events: none;
-    user-select: none;
-    width: 62px;
-    height: 82px;
-    margin-right: $s-space + $xs-space;
+    justify-content: center;
+    margin-top: $xs-space;
+    margin-bottom: $l-space + $s-space + $xxs-space;
 }
 
 .logo {
     pointer-events: none;
     user-select: none;
-    width: 173px;
-    height: 80px;
+    width: 240px;
+    height: 82px;
+    margin-right: $s-space;
 }
 
 .buttonsSection {
-    flex-wrap: wrap;
     display: flex;
+    flex-direction: column;
     margin-bottom: $s-space;
 
     > :first-child {
-        margin-right: $xs-space + $xxs-space;
+        margin-bottom: $xs-space + $xxs-space;
     }
 }
 
@@ -45,7 +39,7 @@
     @include text-12-regular;
     user-select: none;
     color: $color-black-50;
-    text-align: left;
+    text-align: center;
 }
 
 .copyLink {
