@@ -11,7 +11,7 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 ### 💡 Features:
 
 -   Load **loacl** files and fetch **from URL**
--   Fetch images images
+-   Fetch images
 -   Parsing of JSON files with **any amount of nested levels**
 -   Popualte **all matches** only by one button
 -   Three populate options — populate **`only selected layers`**, **`by layer name`**, **`by string templates`**
