@@ -5,8 +5,7 @@ import {CopyLink, Button} from '../../elements';
 
 declare function require(path: string): any;
 
-const pluginLogo = require('../../../assets/logo.svg');
-const jsonMask = require('../../../assets/jason-mask.svg');
+const pluginLogo = require('../../../assets/plugin-logo.svg');
 
 import styles from './launchView.module.scss';
 
@@ -21,7 +20,6 @@ const LaunchView: React.SFC<Props> = props => {
             {() => (
                 <main className={styles.wrap}>
                     <section className={styles.head}>
-                        <img className={styles.jsonMaskLogo} src={jsonMask} />
                         <img className={styles.logo} src={pluginLogo} />
                     </section>
                     <section className={styles.buttonsSection}>

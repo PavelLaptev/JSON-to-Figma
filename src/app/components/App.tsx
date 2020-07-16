@@ -6,9 +6,26 @@ import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
 import {pluginFrameSize} from '../../plugin/data/pluginFrameSize';
+import {fetchImagefromURL} from '../utils';
 
 const App = ({}) => {
     const [JSONobject, setJSONobject] = React.useState(null);
+
+    // Add Msg Listener
+    const MsgListener = e => {
+        if (e.data.pluginMessage.type === 'image-url') {
+            fetchImagefromURL(e.data.pluginMessage.url, e.data.pluginMessage.targetID);
+            // console.log(e.data.pluginMessage);
+        }
+    };
+
+    React.useEffect(() => {
+        window.addEventListener('message', MsgListener);
+
+        return () => {
+            window.removeEventListener('message', MsgListener);
+        };
+    });
 
     // Helper function
     const showErrorMsg = (error, errorText) => {

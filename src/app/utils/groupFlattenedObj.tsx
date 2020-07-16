@@ -10,7 +10,6 @@ export default function groupFlattenedObj(obj) {
         return newObj;
     } else if (isPlainObject(obj)) {
         let newObj = Object.entries(obj).map(item => {
-            // console.log(item[1]);
             let flatObjItem = flattenObj(item[1]);
             return flatObjItem;
         });

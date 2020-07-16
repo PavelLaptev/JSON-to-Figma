@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import {isImageString} from '../../../../../utils/';
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
@@ -14,13 +15,23 @@ interface Props {
 
 const createButtons = (obj, props) => {
     const handleClick = e => {
-        let selected = {...props.selected, ...{btnName: e.target.textContent}};
-
-        parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
+        if (typeof e.target.textContent !== 'undefined') {
+            let selected = {...props.selected, ...{btnName: e.target.textContent}};
+            parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
+        }
     };
 
     return Object.keys(obj[0]).map((item, i) => {
-        return <Button key={`item-button-${i}`} text={item} mod="ghost-dark" onClick={handleClick} />;
+        let isImage = isImageString(obj[0][item]);
+        return (
+            <Button
+                key={`item-button-${i}`}
+                text={item}
+                icon={isImage ? 'image' : undefined}
+                mod="ghost-dark"
+                onClick={handleClick}
+            />
+        );
     });
 };
 

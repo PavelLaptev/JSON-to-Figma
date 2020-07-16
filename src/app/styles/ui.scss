@@ -14,7 +14,8 @@
 }
 
 body {
-    font: 12px sans-serif;
+    font-family: $font-family, sans-serif;
+    font-size: 12px;
     text-align: center;
     margin: 0;
 }

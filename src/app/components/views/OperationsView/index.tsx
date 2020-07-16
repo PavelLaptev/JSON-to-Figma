@@ -4,6 +4,7 @@ import {ViewContext} from '../../contexts';
 import FileInfo from './sections/FileInfo';
 import JSONbuttons from './sections/JSONbuttons';
 import Options from './sections/Options';
+import SkipLayers from './sections/SkipLayers';
 import RandomSwitcher from './sections/RandomSwitcher';
 
 import styles from './operationsView.module.scss';
@@ -44,6 +45,7 @@ const OperationsView: React.SFC<Props> = props => {
                         groupName={radioGroupName}
                         defaultRadio={selectedOption}
                     />
+                    <SkipLayers />
                     <RandomSwitcher onSectionChange={handleRandomSwitcher} />
                 </main>
             )}

@@ -7,4 +7,8 @@ export const msgTypes = {
         type: 'error',
         icon: '❌',
     },
+    success: {
+        type: 'success',
+        icon: '🥳',
+    },
 };

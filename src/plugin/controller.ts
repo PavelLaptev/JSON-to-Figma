@@ -1,13 +1,22 @@
 import {radioArray, allMatches} from '../app/components/views/OperationsView/sections/Options/buttonsArray';
 import {shuffleArray} from '../app/utils';
 
-import {populateOnlySelected, populateByName, populateByTemplateString, figmaNotify} from './utils';
+import {
+    populateOnlySelected,
+    populateByName,
+    populateByTemplateString,
+    figmaNotify,
+    addSign,
+    removeSign,
+} from './utils';
 import {pluginFrameSize} from './data/pluginFrameSize';
+import {skipSign} from './data/skipSign';
 
 // Show UI
 figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});
 
 figma.ui.onmessage = msg => {
+    // console.log(msg);
     //
     // CONDITIONAL VARIABLES FOR CHECKING
     //
@@ -16,15 +25,15 @@ figma.ui.onmessage = msg => {
         return msg.selected.random ? shuffleArray(msg.obj) : msg.obj;
     };
 
+    // Check if something selected
+    const isSelectionLength = figma.currentPage.selection.length !== 0;
+
     // Check for selected populate option
     const isOptionTypeMatch = radioNum => {
         if (msg.type === radioArray[radioNum].id) {
             return true;
         }
     };
-
-    // CHeck if something selected
-    const isSelectionLength = figma.currentPage.selection.length !== 0;
 
     // Check if `Populate all mathes` was clicked
     const isAllMatchesClicked = () => {
@@ -41,7 +50,6 @@ figma.ui.onmessage = msg => {
         if (isSelectionLength) {
             if (isAllMatchesClicked()) {
                 const buttonsArray = Object.keys(isRandomJSON(msg)[0]);
-
                 buttonsArray.map(btnName => {
                     populateByName(figma.currentPage.selection, isRandomJSON(msg), btnName);
                 });
@@ -64,6 +72,21 @@ figma.ui.onmessage = msg => {
         }
     }
 
+    // if we recived fetched images
+    if (msg.type === 'imgData') {
+        const target = figma.currentPage.findOne(n => n.id === msg.targetID);
+        const imageHash = figma.createImage(msg.data).hash;
+        const currentFills = target['fills'];
+        const newFill = {
+            type: 'IMAGE',
+            opacity: 1,
+            blendMode: 'NORMAL',
+            scaleMode: 'FILL',
+            imageHash: imageHash,
+        };
+        target['fills'] = [...currentFills, ...[newFill]];
+    }
+
     // String templates
     if (isOptionTypeMatch(2)) {
         if (isSelectionLength) {
@@ -83,8 +106,25 @@ figma.ui.onmessage = msg => {
         }
     }
 
+    // "SKIP LAYERS" FUNCTIONS
+    if (msg.type === 'add-skip-sign') {
+        if (isSelectionLength) {
+            addSign(figma.currentPage.selection, skipSign.name, skipSign.symbol);
+        } else {
+            figmaNotify('error', 'Select some layers before', 3000);
+        }
+    }
+
+    if (msg.type === 'remove-skip-sign') {
+        if (isSelectionLength) {
+            removeSign(figma.currentPage.selection, skipSign.name, skipSign.symbol);
+        } else {
+            figmaNotify('error', 'Select some layers before', 3000);
+        }
+    }
+
     //
-    // THE REST MESSAGES
+    // THE REST OF MESSAGES
     //
     // Show message
     if (msg.type === 'showMsg') {
