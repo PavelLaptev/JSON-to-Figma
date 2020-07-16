@@ -49,7 +49,7 @@ All you need is a proper JSON. The plugin will parse show all available keys fro
 You can populate layers deeply nested in any group or frame. To do so, manually rename the layer you want to populate so that it matches the name in the JSON file.
 Not a case-sensitive method — a JSON item with a `job` name will be match to `Job` layer name.
 
-![Selected layers only preview](readme-images/how-to-use.jpg)
+![Selected layers only preview](readme-images/by-layer-name.jpg)
 
 #### 2. `Selected layers only`
 
