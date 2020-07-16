@@ -57,7 +57,7 @@ Replaces text only for directly selected text layers.
 
 ![Selected layers only preview](readme-images/selected-layers-only.jpg)
 
-**3. `String templates`** — Select frames or groups that contents text layers with string templates. Replaces only the contents of a string in {braces}.
+**3. `String templates`** — Select frames or groups that content text layers with string templates. Replaces only the contents of a string in {braces}.
 
 ![String templates preview](readme-images/string-templates.jpg)
 
@@ -85,7 +85,7 @@ Replaces text only for directly selected text layers.
 
 ### ✅ The correct JSON structure
 
-The beeter JSON structure for the file should look like array of objects
+The better JSON structure for the file should look like an array of objects
 
 ```js
 [
