@@ -4,7 +4,7 @@
 
 ##### An easy way to populate Figma layers with JSON.
 
-The plugin can parse local or JSON files from URL link. You can populate text layers that you selected, or by name or string template.
+The plugin can parse local or JSON files from URL link. You can populate any layers with text or images.
 
 ---
 
