@@ -20,17 +20,17 @@ The plugin can parse local or JSON files from URL link. You can populate text la
 
 ---
 
-#### Get the plugin
+### Get the plugin
 
-📥 [figma.com/community/plugin/789839703871161985/JSON-to-Figma](https://www.figma.com/community/plugin/789839703871161985/JSON-to-Figma)
+##### 📥 [figma.com/community/plugin/789839703871161985/JSON-to-Figma](https://www.figma.com/community/plugin/789839703871161985/JSON-to-Figma)
 
-#### Youtube demo
+### Youtube demo
 
-🎥 [youtu.be/7CKYdDfLFDY](https://youtu.be/7CKYdDfLFDY)
+##### 🎥 [youtu.be/7CKYdDfLFDY](https://youtu.be/7CKYdDfLFDY)
 
-#### Plugin guide in Figma
+### Plugin guide in Figma
 
-🎀 [figma.com/file/dcOi6yAtkTQqxNGbLJQVPE/JSON-To-Figma-%E2%80%94-Plugin?node-id=1675%3A148](https://www.figma.com/file/dcOi6yAtkTQqxNGbLJQVPE/JSON-To-Figma-%E2%80%94-Plugin?node-id=1675%3A148)
+##### 🎀 [figma.com/file/dcOi6yAtkTQqxNGbLJQVPE/JSON-To-Figma-%E2%80%94-Plugin?node-id=1675%3A148](https://www.figma.com/file/dcOi6yAtkTQqxNGbLJQVPE/JSON-To-Figma-%E2%80%94-Plugin?node-id=1675%3A148)
 
 ---
 
