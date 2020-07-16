@@ -14,12 +14,16 @@ export default function populateByName(selectedLayers, JSONobj, btnName) {
                 }
 
                 if (item.name.toUpperCase() === btnName.toUpperCase() && item.type !== 'TEXT') {
-                    figma.ui.postMessage({
-                        type: 'image-url',
-                        url: JSONobj[newItem][btnName].toString(),
-                        targetID: item.id,
-                    });
-                    newItem = ++newItem;
+                    if (JSONobj.hasOwnProperty(newItem)) {
+                        figma.ui.postMessage({
+                            type: 'image-url',
+                            url: JSONobj[newItem][btnName].toString(),
+                            targetID: item.id,
+                        });
+                        newItem = ++newItem;
+                    } else {
+                        console.error('End of the JSON list');
+                    }
                 }
 
                 if (item.children) {

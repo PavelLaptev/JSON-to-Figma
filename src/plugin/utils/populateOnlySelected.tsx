@@ -14,10 +14,10 @@ export default function populateOnlySelected(selectedLayers, obj, btnName) {
                     figmaNotify('error', 'Select only text layers or option "By layer name"', 1500);
                 }
             } else {
-                if (isImageString(obj[i][btnName].toString())) {
+                if (obj.hasOwnProperty(i) && isImageString(obj[i][btnName].toString())) {
                     figma.ui.postMessage({type: 'image-url', url: obj[i][btnName].toString(), targetID: item.id});
                 } else {
-                    figmaNotify('error', 'For this button only text layers', 1500);
+                    console.error('End of the JSON list');
                 }
             }
             return;

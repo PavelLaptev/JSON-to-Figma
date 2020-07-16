@@ -15,9 +15,10 @@ interface Props {
 
 const createButtons = (obj, props) => {
     const handleClick = e => {
-        // downloadImage(obj, e.target.textContent);
-        let selected = {...props.selected, ...{btnName: e.target.textContent}};
-        parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
+        if (typeof e.target.textContent !== 'undefined') {
+            let selected = {...props.selected, ...{btnName: e.target.textContent}};
+            parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
+        }
     };
 
     return Object.keys(obj[0]).map((item, i) => {

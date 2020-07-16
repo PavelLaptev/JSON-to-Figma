@@ -15,7 +15,7 @@ const radioArray = [
         id: 'string-templates',
         label: 'String templates',
         captionText:
-            'Select frames or groups that contents text layers with string templates. Replaces only the contents of a string in {braces}.',
+            'Select frames or groups that content text layers with string templates. Plugin replaces only contents of a string in {braces}.',
     },
 ];
 

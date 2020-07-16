@@ -50,7 +50,6 @@ figma.ui.onmessage = msg => {
         if (isSelectionLength) {
             if (isAllMatchesClicked()) {
                 const buttonsArray = Object.keys(isRandomJSON(msg)[0]);
-
                 buttonsArray.map(btnName => {
                     populateByName(figma.currentPage.selection, isRandomJSON(msg), btnName);
                 });
