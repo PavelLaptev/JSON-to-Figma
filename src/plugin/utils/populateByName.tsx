@@ -1,6 +1,7 @@
 import {skipSign} from '../data/skipSign';
 
 export default function populateByName(selectedLayers, JSONobj, btnName) {
+    const consoleErrorStyle = 'background: #f45; color: white; padding: 2px 4px; border-radius: 2px';
     let newItem = 0;
 
     const loopSelected = arr => {
@@ -22,7 +23,7 @@ export default function populateByName(selectedLayers, JSONobj, btnName) {
                         });
                         newItem = ++newItem;
                     } else {
-                        console.error('End of the JSON list');
+                        console.error('%cEnd of the JSON list', consoleErrorStyle);
                     }
                 }
 

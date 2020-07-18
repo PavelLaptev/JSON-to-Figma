@@ -3,6 +3,8 @@ import {isImageString} from './../../app/utils/';
 import {skipSign} from '../data/skipSign';
 
 export default function populateOnlySelected(selectedLayers, obj, btnName) {
+    const consoleErrorStyle = 'background: #f45; color: white; padding: 2px 4px; border-radius: 2px';
+
     selectedLayers.map((item, i) => {
         if (!item.name.includes(skipSign.symbol)) {
             if (typeof obj[i] !== 'undefined' && item.type === 'TEXT') {
@@ -17,7 +19,7 @@ export default function populateOnlySelected(selectedLayers, obj, btnName) {
                 if (obj.hasOwnProperty(i) && isImageString(obj[i][btnName].toString())) {
                     figma.ui.postMessage({type: 'image-url', url: obj[i][btnName].toString(), targetID: item.id});
                 } else {
-                    console.error('End of the JSON list');
+                    console.error('End of the JSON list', consoleErrorStyle);
                 }
             }
             return;
