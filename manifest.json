@@ -1,5 +1,5 @@
 {
-    "name": "JSON to Figma 3.0",
+    "name": "JSON to Figma 3.1",
     "id": "789839703871161985",
     "api": "1.0.0",
     "main": "dist/code.js",
