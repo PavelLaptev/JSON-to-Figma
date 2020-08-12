@@ -10,7 +10,7 @@ The plugin can parse local or JSON files from URL link. You can populate any lay
 
 ### 💡 Features:
 
--   Load **loacl** files and fetch **from URL**
+-   Load **local** files and fetch **from URL**
 -   Fetch images
 -   Parsing of JSON files with **any amount of nested levels**
 -   Popualte **all matches** only by one button
