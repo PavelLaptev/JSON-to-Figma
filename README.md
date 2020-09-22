@@ -85,21 +85,20 @@ Replaces text only for directly selected text layers.
 
 ### ✅ The correct JSON structure
 
-The better JSON structure for the file should look like an array of objects
+The better JSON structure for the file should look like an array of objects.
+All keys and values, except numbers, should be under quotes. No single quotes, only double.
 
-```js
+```json
 [
     {
-        key_string: 'string #1',
-        key_number: 0,
+        "key_string": "string #1",
+        "key_number": 1
     },
     {
-        key_string: 'string #2',
-        key_number: 1,
-    },
+        "key_string": "string #2",
+        "key_number": 2
+    }
 ];
-
-// As a result you will see buttons — `key_string`, `key_number`
 ```
 
 ##### ⚠️ Other JSON structures
