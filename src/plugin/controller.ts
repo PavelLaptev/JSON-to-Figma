@@ -76,6 +76,7 @@ figma.ui.onmessage = msg => {
     if (msg.type === 'imgData') {
         const target = figma.currentPage.findOne(n => n.id === msg.targetID);
         const imageHash = figma.createImage(msg.data).hash;
+        console.log(imageHash);
         const currentFills = target['fills'];
         const newFill = {
             type: 'IMAGE',

@@ -22,7 +22,7 @@ const createButtons = (obj, props) => {
     };
 
     return Object.keys(obj[0]).map((item, i) => {
-        let isImage = isImageString(obj[0][item]);
+        const isImage = isImageString(obj[0][item]) ? isImageString(obj[0][item].toString().split('?')[0]) : null;
         return (
             <Button
                 key={`item-button-${i}`}

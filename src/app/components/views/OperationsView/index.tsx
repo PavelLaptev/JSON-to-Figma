@@ -15,7 +15,7 @@ interface Props {
     onResetClick?(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const OperationsView: React.SFC<Props> = props => {
+const OperationsView: React.FunctionComponent<Props> = props => {
     const [selectedOption, setSelectedOption] = React.useState(radioArray[0].id);
     const [isRandomSwitch, setIsRandomSwitch] = React.useState(false);
     const mainSectionRef = React.useRef(null);
