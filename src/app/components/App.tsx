@@ -14,14 +14,13 @@ const App = ({}) => {
     // Add Msg Listener
     const MsgListener = e => {
         if (e.data.pluginMessage.type === 'image-url') {
-            fetchImagefromURL(e.data.pluginMessage.url, e.data.pluginMessage.targetID);
-            // console.log(e.data.pluginMessage);
+            const imgURL = e.data.pluginMessage.url;
+            fetchImagefromURL(imgURL, e.data.pluginMessage.targetID);
         }
     };
 
     React.useEffect(() => {
         window.addEventListener('message', MsgListener);
-
         return () => {
             window.removeEventListener('message', MsgListener);
         };
@@ -52,7 +51,7 @@ const App = ({}) => {
                 showErrorMsg(error, 'Something wrong with the file. Check the structure');
             }
         };
-        e.target.value = null;
+        e.target.value = '';
     };
 
     // Handle copy from Clipboard

@@ -22,7 +22,7 @@ const createButtons = (obj, props) => {
     };
 
     return Object.keys(obj[0]).map((item, i) => {
-        const isImage = isImageString(obj[0][item]) ? isImageString(obj[0][item].toString().split('?')[0]) : null;
+        const isImage = isImageString(obj[0][item].toString().split('?')[0]);
         return (
             <Button
                 key={`item-button-${i}`}
@@ -37,7 +37,6 @@ const createButtons = (obj, props) => {
 
 const handlePopulateAllMathces = (obj, props, e) => {
     let selected = {...props.selected, ...{btnName: e.target.textContent}};
-
     parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
 };
 
