@@ -83,6 +83,10 @@ Replaces text only for directly selected text layers.
 
 ---
 
+### ⭕️ JSON Restrictions
+
+-   Do not use null objects without quotes.
+
 ### ✅ The correct JSON structure
 
 The better JSON structure for the file should look like an array of objects.

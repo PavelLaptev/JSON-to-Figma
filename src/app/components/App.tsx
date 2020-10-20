@@ -14,6 +14,7 @@ const App = ({}) => {
     // Add Msg Listener
     const MsgListener = e => {
         if (e.data.pluginMessage.type === 'image-url') {
+            console.log('sd');
             const imgURL = e.data.pluginMessage.url;
             fetchImagefromURL(imgURL, e.data.pluginMessage.targetID);
         }
