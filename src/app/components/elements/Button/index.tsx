@@ -40,7 +40,7 @@ const Button: React.SFC<Props> = props => {
     const fileBtnComponent = () => {
         return (
             <label className={`${styles.button} ${styles.fileButton} ${props.className} ${styles[props.mod]}`}>
-                <input type="file" onClick={props.onClick} onChange={props.onChange} />
+                <input type="file" accept="application/json" onClick={props.onClick} onChange={props.onChange} />
                 <span>{props.text}</span>
                 {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
             </label>
