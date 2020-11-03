@@ -11,6 +11,7 @@ interface Props {
     iconColor?: string;
     mod?: string;
     fileType?: boolean;
+    accept?: string;
     onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
     onChange?(event: React.FormEvent<HTMLInputElement>): void;
 }
@@ -40,7 +41,7 @@ const Button: React.SFC<Props> = props => {
     const fileBtnComponent = () => {
         return (
             <label className={`${styles.button} ${styles.fileButton} ${props.className} ${styles[props.mod]}`}>
-                <input type="file" accept="application/json" onClick={props.onClick} onChange={props.onChange} />
+                <input type="file" accept={props.accept} onClick={props.onClick} onChange={props.onChange} />
                 <span>{props.text}</span>
                 {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
             </label>
@@ -54,6 +55,7 @@ Button.defaultProps = {
     className: null,
     mod: 'primary',
     fileType: false,
+    accept: 'application/json',
 } as Partial<Props>;
 
 export default Button;
