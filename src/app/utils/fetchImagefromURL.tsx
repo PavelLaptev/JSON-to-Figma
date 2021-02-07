@@ -1,5 +1,6 @@
+import {proxyServer} from './proxyServer';
+
 export default async function fetchImagefromURL(url, targetID) {
-    const proxyServer = 'https://cors-anywhere.herokuapp.com';
     await fetch(`${proxyServer}/${url}`)
         .then(r => {
             try {

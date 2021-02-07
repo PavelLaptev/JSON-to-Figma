@@ -1,4 +1,5 @@
 import {isLocalhost} from './';
+import {proxyServer} from './proxyServer';
 
 export default async function fetchJSONfromURL(
     url,
@@ -7,7 +8,7 @@ export default async function fetchJSONfromURL(
         console.error(error);
     }
 ) {
-    const fetchURL = isLocalhost(url) ? url : `https://cors-anywhere.herokuapp.com/${url}`;
+    const fetchURL = isLocalhost(url) ? url : `${proxyServer}/${url}`;
     return await fetch(fetchURL)
         .then(response => response.json())
         .then(responseJson => {
