@@ -1,5 +1,4 @@
 @import '../../../styles/tokens';
-@import '../../../styles/figma/styles';
 
 .wrap {
     display: flex;
@@ -36,12 +35,11 @@
 }
 
 .caption {
-    @include text-12-regular;
     user-select: none;
-    color: $color-black-50;
+    color: $color-black;
     text-align: center;
 }
 
 .copyLink {
-    color: $color-black-80;
+    color: $color-black;
 }

@@ -1,10 +1,10 @@
-@import './figma/constants';
-
 // Colors
-$color-primary-main: #ffedf3;
-$color-primary-dark: #f0d1dc;
+$color-primary-main: #f7f7f7;
+$color-primary-dark: #ececec;
 $color-secondary-main: #222222;
 $color-secondary-dark: #000000;
+$color-white: #fff;
+$color-black: #000;
 
 // Spacers
 $xxs-space: 2px;
@@ -18,3 +18,8 @@ $xxl-space: 36px;
 // Easing
 $default-transition: 0.1s ease;
 $middle-transition: 0.2s ease;
+
+// Border-Radius
+$radius-s: 4px;
+$radius-m: 6px;
+$radius-l: 8px;

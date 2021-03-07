@@ -1,4 +1,4 @@
-import {skipSign} from '../data/skipSign';
+import {skipSign} from '../../sharableData/skipSign';
 
 export default function populateByTemplateString(selectedLayers, JSONobj, btnName) {
     let newItem = 0;

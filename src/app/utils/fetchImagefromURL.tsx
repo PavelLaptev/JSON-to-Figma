@@ -1,4 +1,4 @@
-import {proxyServer} from './proxyServer';
+import {proxyServer} from '../../sharableData/proxyServer';
 
 export default async function fetchImagefromURL(url, targetID) {
     await fetch(`${proxyServer}/${url}`)

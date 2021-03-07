@@ -1,5 +1,4 @@
 @import '../../../styles/tokens';
-@import '../../../styles/figma/styles';
 
 .wrap {
     display: flex;
@@ -13,7 +12,7 @@
             position: absolute;
             top: 1px;
             left: 0;
-            border: 1px solid $color-black-80;
+            border: 1px solid $color-black;
             background: transparent;
             border-radius: 50px;
             transition: all $middle-transition;
@@ -26,7 +25,7 @@
             position: absolute;
             top: 1px;
             left: 0;
-            border: 1px solid $color-black-80;
+            border: 1px solid $color-black;
             background: white;
             border-radius: 50px;
             transition: all $middle-transition;
@@ -35,7 +34,7 @@
             left: 12px;
         }
         &:checked + label:before {
-            background: $color-black-80;
+            background: $color-black;
         }
     }
     label {

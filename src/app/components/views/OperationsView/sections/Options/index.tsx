@@ -34,7 +34,7 @@ const OptionsSection: React.SFC<Props> = props => {
     };
 
     return (
-        <SectionWrapper title="Populate options" onChange={props.onSectionChange}>
+        <SectionWrapper title="Populate by" onChange={props.onSectionChange}>
             {radioButtons()}
         </SectionWrapper>
     );

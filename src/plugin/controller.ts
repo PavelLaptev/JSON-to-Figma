@@ -9,8 +9,8 @@ import {
     addSign,
     removeSign,
 } from './utils';
-import {pluginFrameSize} from './data/pluginFrameSize';
-import {skipSign} from './data/skipSign';
+import {pluginFrameSize} from '../sharableData/pluginFrameSize';
+import {skipSign} from '../sharableData/skipSign';
 
 // Show UI
 figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});

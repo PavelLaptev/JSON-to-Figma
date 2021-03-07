@@ -2,7 +2,7 @@ const radioGroupName = 'populate-mode';
 const radioArray = [
     {
         id: 'by-layer-name',
-        label: 'By layer name',
+        label: 'layer name',
         captionText:
             'Select layers, groups or frames with layers you want to populate. Script will compare layers names and JSON items names. Manually rename a layer you want to populate so that it matches the name in the JSON file.',
     },

@@ -1,6 +1,6 @@
 import {figmaNotify} from './';
 import {isImageString} from './../../app/utils/';
-import {skipSign} from '../data/skipSign';
+import {skipSign} from '../../sharableData/skipSign';
 
 export default function populateOnlySelected(selectedLayers, obj, btnName) {
     const consoleErrorStyle = 'background: #f45; color: white; padding: 2px 4px; border-radius: 2px';

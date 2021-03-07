@@ -1,11 +1,10 @@
 @import '../../../styles/tokens';
-@import '../../../styles/figma/styles';
 
 .button {
     user-select: none;
     outline: none;
     border: none;
-    border-radius: $border-radius-6;
+    border-radius: $radius-m;
     padding-left: $s-space + $xs-space + $xxs-space;
     padding-right: $s-space + $xs-space + $xxs-space;
     display: flex;
@@ -15,7 +14,6 @@
     transition: all $default-transition;
 
     span {
-        @include text-11-regular;
         pointer-events: none;
         line-height: 1;
     }
@@ -46,28 +44,28 @@
 
 .ghost-dark {
     background-color: transparent;
-    border: 1px solid $color-black-60;
-    color: $color-black-80;
+    border: 1px solid $color-black;
+    color: $color-black;
     &:hover {
-        border: 1px solid $color-black-80;
+        border: 1px solid $color-black;
         color: $color-black;
     }
 
     svg {
-        fill: $color-black-80;
+        fill: $color-black;
     }
 }
 
 .ghost-light {
     background-color: transparent;
-    border: 1px solid $color-white-80;
-    color: $color-white-80;
+    border: 1px solid $color-white;
+    color: $color-white;
     &:hover {
         border: 1px solid $color-white;
         color: $color-white;
     }
 
     svg {
-        fill: $color-white-80;
+        fill: $color-white;
     }
 }

@@ -9,4 +9,3 @@ export {default as isPlainObject} from './isPlainObject';
 export {default as fetchImagefromURL} from './fetchImagefromURL';
 export {default as isImageString} from './isImageString';
 export {default as isLocalhost} from './isLocalhost';
-export {default as converUpperCaseImageFormat} from './converUpperCaseImageFormat';

@@ -1,5 +1,4 @@
 @import '../../../../../styles/tokens';
-@import '../../../../../styles/figma/styles';
 
 .wrap {
     background-color: $color-secondary-main;
@@ -23,8 +22,7 @@
 }
 
 .text {
-    @include text-12-regular;
-    color: $color-white-80;
+    color: $color-white;
     span {
         font-weight: bold;
     }

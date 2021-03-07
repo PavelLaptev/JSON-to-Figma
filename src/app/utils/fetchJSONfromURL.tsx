@@ -1,5 +1,5 @@
 import {isLocalhost} from './';
-import {proxyServer} from './proxyServer';
+import {proxyServer} from '../../sharableData/proxyServer';
 
 export default async function fetchJSONfromURL(
     url,

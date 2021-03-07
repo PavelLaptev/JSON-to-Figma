@@ -1,3 +1,4 @@
+@import './font-face';
 @import './tokens';
 
 *,
@@ -5,8 +6,8 @@
 *:after {
     box-sizing: border-box;
     text-rendering: optimizeLegibility;
-    // -webkit-font-smoothing: antialiased;
-    // -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 *::selection {
@@ -14,7 +15,7 @@
 }
 
 body {
-    font-family: $font-family, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 12px;
     text-align: center;
     margin: 0;
