@@ -15,7 +15,7 @@
             border: 1px solid $color-black;
             background: transparent;
             border-radius: 50px;
-            transition: all $middle-transition;
+            transition: all $transition-middle;
         }
         + label:after {
             content: '';
@@ -28,7 +28,7 @@
             border: 1px solid $color-black;
             background: white;
             border-radius: 50px;
-            transition: all $middle-transition;
+            transition: all $transition-middle;
         }
         &:checked + label:after {
             left: 12px;

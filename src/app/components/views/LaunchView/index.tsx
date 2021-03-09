@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import {ViewContext} from '../../contexts';
-import {CopyLink, Button} from '../../elements';
+import {Button} from '../../elements';
 
 declare function require(path: string): any;
 
@@ -29,11 +29,13 @@ const LaunchView: React.SFC<Props> = props => {
                     <p className={styles.caption}>
                         Learn more on the{' '}
                         {
-                            <CopyLink
-                                text="GitHub page"
+                            <a
+                                target="_blank"
                                 className={styles.copyLink}
-                                link="https://github.com/PavelLaptev/JSON-to-Figma-React/blob/master/README.md"
-                            />
+                                href="https://github.com/PavelLaptev/JSON-to-Figma-React/blob/master/README.md"
+                            >
+                                GitHub page
+                            </a>
                         }
                         .
                     </p>

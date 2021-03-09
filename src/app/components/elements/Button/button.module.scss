@@ -4,23 +4,24 @@
     user-select: none;
     outline: none;
     border: none;
-    border-radius: $radius-m;
-    padding-left: $s-space + $xs-space + $xxs-space;
-    padding-right: $s-space + $xs-space + $xxs-space;
+    border-radius: $radius-l;
+    padding: 0 $space-s + $space-xxs;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 32px;
-    transition: all $default-transition;
+    height: 28px;
+    transition: all $transition-default;
 
     span {
         pointer-events: none;
+        font-size: 12px;
+        font-weight: 700;
         line-height: 1;
     }
 
     i {
-        transform: translateX($s-space);
-        margin-right: $xs-space;
+        transform: translateX($space-s);
+        margin-right: $space-xs;
     }
 }
 

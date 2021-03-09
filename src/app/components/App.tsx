@@ -42,6 +42,7 @@ const App = ({}) => {
     const handleChangeButton = e => {
         let fileReader = new FileReader();
         fileReader.readAsText(e.target.files[0]);
+        console.log(e.target.files[0]);
 
         fileReader.onload = () => {
             try {

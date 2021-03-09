@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import {ViewContext} from '../../contexts';
-import FileInfo from './sections/FileInfo';
 import JSONbuttons from './sections/JSONbuttons';
 import Options from './sections/Options';
 import SkipLayers from './sections/SkipLayers';
@@ -15,7 +14,7 @@ interface Props {
     onResetClick?(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const OperationsView: React.FunctionComponent<Props> = props => {
+const OperationsView: React.FunctionComponent<Props> = () => {
     const [selectedOption, setSelectedOption] = React.useState(radioArray[0].id);
     const [isRandomSwitch, setIsRandomSwitch] = React.useState(false);
     const mainSectionRef = React.useRef(null);
@@ -37,7 +36,6 @@ const OperationsView: React.FunctionComponent<Props> = props => {
         <ViewContext.Consumer>
             {JSONobject => (
                 <main ref={mainSectionRef} className={styles.wrap}>
-                    <FileInfo obj={JSONobject} onResetClick={props.onResetClick} />
                     <JSONbuttons obj={JSONobject} selected={{option: selectedOption, random: isRandomSwitch}} />
                     <Options
                         onSectionChange={handleSelectedOption}

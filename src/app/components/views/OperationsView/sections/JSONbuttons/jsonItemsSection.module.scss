@@ -7,9 +7,9 @@
 .buttonsWrap {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: $xs-space * 3;
+    margin-bottom: $space-xs * 3;
     button {
-        margin-right: $s-space;
-        margin-bottom: $s-space;
+        margin-right: $space-s;
+        margin-bottom: $space-s;
     }
 }

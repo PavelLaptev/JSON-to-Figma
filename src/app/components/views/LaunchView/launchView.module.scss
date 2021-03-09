@@ -5,15 +5,15 @@
     flex-direction: column;
     height: 100%;
     background-color: $color-primary-main;
-    padding: $l-space;
+    padding: $space-l;
 }
 
 .head {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: $xs-space;
-    margin-bottom: $l-space + $s-space + $xxs-space;
+    margin-top: $space-xs;
+    margin-bottom: $space-l + $space-s + $space-xxs;
 }
 
 .logo {
@@ -21,16 +21,16 @@
     user-select: none;
     width: 240px;
     height: 82px;
-    margin-right: $s-space;
+    margin-right: $space-s;
 }
 
 .buttonsSection {
     display: flex;
     flex-direction: column;
-    margin-bottom: $s-space;
+    margin-bottom: $space-s;
 
     > :first-child {
-        margin-bottom: $xs-space + $xxs-space;
+        margin-bottom: $space-xs + $space-xxs;
     }
 }
 

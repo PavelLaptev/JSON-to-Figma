@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import {isImageString} from '../../../../../utils/';
-import {Button} from '../../../../elements';
+import {Header, Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
 import {radioArray, allMatches} from '../../sections/Options/buttonsArray';
@@ -40,9 +40,10 @@ const handlePopulateAllMathces = (obj, props, e) => {
     parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
 };
 
-const JSONbuttons: React.SFC<Props> = props => {
+const JSONbuttons: React.FunctionComponent<Props> = props => {
     return (
-        <SectionWrapper className={styles.wrap} title="JSON keys">
+        <SectionWrapper className={styles.wrap}>
+            <Header text=""></Header>
             <div onChange={props.onSectionChange} className={styles.buttonsWrap}>
                 {props.selected['option'] === radioArray[0].id || props.selected['option'] === radioArray[2].id ? (
                     <Button

@@ -1,11 +1,7 @@
 @import '../../../styles/tokens';
 
-.wrap {
+.header {
     display: flex;
-    flex-direction: column;
-    padding: $space-l;
-    padding-bottom: $space-xl;
-    width: 100%;
 }
 
 .title {
@@ -15,4 +11,8 @@
     font-family: 'Inter', sans-serif;
     margin: 0;
     margin-bottom: $space-m;
+}
+
+.additions {
+    display: flex;
 }
