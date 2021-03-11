@@ -42,12 +42,14 @@ const App = ({}) => {
     const handleChangeButton = e => {
         let fileReader = new FileReader();
         fileReader.readAsText(e.target.files[0]);
-        console.log(e.target.files[0]);
 
         fileReader.onload = () => {
             try {
                 let obj = JSON.parse(fileReader.result as string);
-                loadOperationView(groupFlattenedObj(obj));
+                // If this is an array
+                if (obj[0] !== 'undefined') {
+                    loadOperationView(obj);
+                }
             } catch (error) {
                 showErrorMsg(error, 'Something wrong with the file. Check the structure');
             }

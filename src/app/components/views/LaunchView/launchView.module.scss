@@ -1,19 +1,17 @@
-@import '../../../styles/tokens';
-
 .wrap {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: $color-primary-main;
-    padding: $space-l;
+    background-color: var(--color-white);
+    padding: var(--space-l);
 }
 
 .head {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: $space-xs;
-    margin-bottom: $space-l + $space-s + $space-xxs;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-l) + var(--space-s) + var(--space-xxs);
 }
 
 .logo {
@@ -21,25 +19,25 @@
     user-select: none;
     width: 240px;
     height: 82px;
-    margin-right: $space-s;
+    margin-right: var(--space-s);
 }
 
 .buttonsSection {
     display: flex;
     flex-direction: column;
-    margin-bottom: $space-s;
+    margin-bottom: var(--space-s);
 
     > :first-child {
-        margin-bottom: $space-xs + $space-xxs;
+        margin-bottom: var(--space-xs) + var(--space-xxs);
     }
 }
 
 .caption {
     user-select: none;
-    color: $color-black;
+    color: var(--color-black);
     text-align: center;
 }
 
 .copyLink {
-    color: $color-black;
+    color: var(--color-black);
 }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import {ViewContext} from '../../contexts';
+import HierarchySection from './sections/HierarchySection';
 import JSONbuttons from './sections/JSONbuttons';
 import Options from './sections/Options';
 import SkipLayers from './sections/SkipLayers';
@@ -20,7 +21,7 @@ const OperationsView: React.FunctionComponent<Props> = () => {
     const mainSectionRef = React.useRef(null);
 
     React.useEffect(() => {
-        const frameHeight = mainSectionRef.current.getBoundingClientRect().height;
+        const frameHeight = Math.round(mainSectionRef.current.getBoundingClientRect().height);
         parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
     });
 
@@ -36,6 +37,7 @@ const OperationsView: React.FunctionComponent<Props> = () => {
         <ViewContext.Consumer>
             {JSONobject => (
                 <main ref={mainSectionRef} className={styles.wrap}>
+                    <HierarchySection obj={JSONobject} />
                     <JSONbuttons obj={JSONobject} selected={{option: selectedOption, random: isRandomSwitch}} />
                     <Options
                         onSectionChange={handleSelectedOption}

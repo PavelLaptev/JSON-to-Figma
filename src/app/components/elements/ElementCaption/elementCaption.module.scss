@@ -1,8 +1,6 @@
-@import '../../../styles/tokens';
-
 .caption {
     text-align: left;
     width: 100%;
-    margin-bottom: $space-l;
-    color: $color-black;
+    margin-bottom: var(--space-l);
+    color: var(--color-black);
 }

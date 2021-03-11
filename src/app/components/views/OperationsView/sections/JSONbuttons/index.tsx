@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import {isImageString} from '../../../../../utils/';
-import {Header, Button} from '../../../../elements';
+import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
 import {radioArray, allMatches} from '../../sections/Options/buttonsArray';
@@ -14,6 +14,8 @@ interface Props {
 }
 
 const createButtons = (obj, props) => {
+    // console.log(Object.keys(obj[0]).length);
+
     const handleClick = e => {
         if (typeof e.target.textContent !== 'undefined') {
             let selected = {...props.selected, ...{btnName: e.target.textContent}};
@@ -43,7 +45,12 @@ const handlePopulateAllMathces = (obj, props, e) => {
 const JSONbuttons: React.FunctionComponent<Props> = props => {
     return (
         <SectionWrapper className={styles.wrap}>
-            <Header text=""></Header>
+            <div className={styles.header}>
+                <h3 className={styles.title}>
+                    {`${Object.keys(props.obj[0]).length} keys`}
+                    <span>{` / ${(props.obj as any).length} objects`}</span>
+                </h3>
+            </div>
             <div onChange={props.onSectionChange} className={styles.buttonsWrap}>
                 {props.selected['option'] === radioArray[0].id || props.selected['option'] === radioArray[2].id ? (
                     <Button

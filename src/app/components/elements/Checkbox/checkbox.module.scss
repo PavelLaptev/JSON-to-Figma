@@ -1,0 +1,29 @@
+.wrap {
+    display: flex;
+    user-select: none;
+    padding: 6px;
+    border-radius: var(--radius-l);
+    transition: all var(--transition-default);
+    &:hover {
+        background-color: var(--color-white);
+        .checkbox {
+            border: 2px solid var(--color-accent-main);
+        }
+    }
+}
+
+.checkbox {
+    width: 16px;
+    height: 16px;
+    border-radius: var(--radius-m);
+    border: 2px solid var(--color-black);
+    transition: all var(--transition-default);
+    background-color: var(--color-white);
+}
+
+.label {
+    color: var(--color-black);
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 8px;
+}

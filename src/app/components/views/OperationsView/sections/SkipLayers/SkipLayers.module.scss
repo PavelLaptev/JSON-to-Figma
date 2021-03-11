@@ -1,5 +1,3 @@
-@import '../../../../../styles/tokens';
-
 .wrap {
     h3 {
         margin-bottom: 0;
@@ -8,8 +6,8 @@
 
 .btnWrap {
     display: flex;
-    margin-bottom: $space-l;
+    margin-bottom: var(--space-l);
     button {
-        margin-right: $space-s;
+        margin-right: var(--space-s);
     }
 }

@@ -5,3 +5,4 @@ export {default as Icon} from './Icon';
 export {default as ElementCaption} from './ElementCaption';
 export {default as Switcher} from './Switcher';
 export {default as Header} from './Header';
+export {default as Checkbox} from './Checkbox';

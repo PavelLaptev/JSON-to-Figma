@@ -1,10 +1,8 @@
-@import '../../../styles/tokens';
-
 .wrap {
     display: flex;
     flex-direction: column;
-    padding: $space-l;
-    padding-bottom: $space-xl;
+    padding: var(--space-l);
+    padding-bottom: var(--space-xl);
     width: 100%;
 }
 
@@ -14,5 +12,5 @@
     text-align: left;
     font-family: 'Inter', sans-serif;
     margin: 0;
-    margin-bottom: $space-m;
+    margin-bottom: var(--space-m);
 }

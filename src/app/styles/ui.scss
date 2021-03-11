@@ -11,7 +11,7 @@
 }
 
 *::selection {
-    background-color: lighten($color: $color-primary-dark, $amount: 10);
+    background-color: var(--color-white);
 }
 
 body {

@@ -1,0 +1,16 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--color-gray-4);
+}
+
+.itemWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    margin-bottom: var(--space-xxs);
+}

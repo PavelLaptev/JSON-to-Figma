@@ -1,25 +1,27 @@
 // Colors
-$color-primary-main: #f7f7f7;
-$color-primary-dark: #ececec;
-$color-secondary-main: #222222;
-$color-secondary-dark: #000000;
-$color-white: #fff;
-$color-black: #000;
+:root {
+    --color-accent-main: #5e44ff;
+    --color-accent-dark: #29169c;
+    --color-white: #fff;
+    --color-black: #222;
+    --color-gray-4: rgba(0, 0, 0, 0.04);
+    --color-gray-10: rgba(0, 0, 0, 0.1);
 
-// Spacers
-$space-xxs: 2px;
-$space-xs: 4px;
-$space-s: 8px;
-$space-m: 16px;
-$space-l: 20px;
-$space-xl: 28px;
-$space-xxl: 36px;
+    // Spacers
+    --space-xxs: 2px;
+    --space-xs: 4px;
+    --space-s: 8px;
+    --space-m: 16px;
+    --space-l: 20px;
+    --space-xl: 28px;
+    --space-xxl: 36px;
 
-// Easing
-$transition-default: 0.1s ease;
-$transition-middle: 0.2s ease;
+    // Easing
+    --transition-default: 0.1s ease;
+    --transition-middle: 0.2s ease;
 
-// Border-Radius
-$radius-s: 4px;
-$radius-m: 6px;
-$radius-l: 8px;
+    // Border-Radius
+    --radius-s: 4px;
+    --radius-m: 6px;
+    --radius-l: 8px;
+}

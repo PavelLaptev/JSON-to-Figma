@@ -1,15 +1,29 @@
-@import '../../../../../styles/tokens';
-
 .wrap {
-    background-color: $color-primary-main;
+    background-color: var(--color-white);
 }
 
 .buttonsWrap {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: $space-xs * 3;
+    margin-bottom: calc(var(--space-xs) * 3);
     button {
-        margin-right: $space-s;
-        margin-bottom: $space-s;
+        margin-right: var(--space-s);
+        margin-bottom: var(--space-s);
+    }
+}
+
+.header {
+    display: flex;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: 900;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    margin-bottom: var(--space-m);
+    span {
+        opacity: 0.4;
     }
 }
