@@ -102,7 +102,7 @@ All keys and values, except numbers, should be under quotes. No single quotes, o
         "key_string": "string #2",
         "key_number": 2
     }
-];
+]
 ```
 
 ##### ⚠️ Other JSON structures
