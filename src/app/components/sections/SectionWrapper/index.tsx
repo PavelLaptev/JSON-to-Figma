@@ -10,11 +10,12 @@ interface Props {
     onChange?(event: React.FormEvent<HTMLInputElement>): void;
 }
 
-const SectionWrapper: React.SFC<Props> = props => {
+const SectionWrapper: React.FunctionComponent<Props> = props => {
     return (
         <section className={`${styles.wrap} ${props.className}`} onClick={props.onClick} onChange={props.onChange}>
             {props.title !== null ? <Header text={props.title} /> : null}
             {props.children}
+            <div className={styles.hr}></div>
         </section>
     );
 };

@@ -3,9 +3,10 @@
     user-select: none;
     padding: 6px;
     border-radius: var(--radius-l);
-    transition: all var(--transition-default);
+    transition: all var(--transition-fast);
+    height: 28px;
     &:hover {
-        background-color: var(--color-white);
+        background-color: var(--color-gray-5);
         .checkbox {
             border: 2px solid var(--color-accent-main);
         }

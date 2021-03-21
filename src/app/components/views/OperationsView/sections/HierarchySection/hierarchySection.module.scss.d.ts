@@ -3,6 +3,7 @@
 interface CssExports {
     item: string;
     itemWrap: string;
+    nestedSign: string;
     wrap: string;
 }
 export const cssExports: CssExports;

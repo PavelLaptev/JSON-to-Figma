@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-gray-4);
+    // background-color: var(--color-gray-4);
 }
 
 .itemWrap {
@@ -12,5 +12,20 @@
 
 .item {
     display: flex;
+    align-items: center;
     margin-bottom: var(--space-xxs);
+}
+
+.nestedSign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 28px;
+    margin-right: 2px;
+    transition: all var(--transition-default);
+    border-radius: var(--radius-l);
+    &:hover {
+        background-color: var(--color-gray-5);
+    }
 }
