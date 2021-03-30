@@ -35,9 +35,7 @@ const App = ({}) => {
 
     // Show operation view on load
     const loadOperationView = result => {
-        let keysAmount = Object.keys(result[0]).length;
-        let hierarhyObj = [{[`${keysAmount} items`]: result[0]}];
-        setJSONobject(hierarhyObj);
+        setJSONobject(result);
     };
 
     // Handle file input type

@@ -14,15 +14,35 @@
 }
 
 .checkbox {
+    position: relative;
+    pointer-events: none;
     width: 16px;
     height: 16px;
     border-radius: var(--radius-m);
     border: 2px solid var(--color-black);
     transition: all var(--transition-default);
     background-color: var(--color-white);
+    i {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+    svg {
+        opacity: 0;
+        fill: var(--color-white);
+    }
+    &.checked {
+        border: 2px solid var(---color-accent-main);
+        background-color: var(--color-accent-main);
+        svg {
+            opacity: 1;
+        }
+    }
 }
 
 .label {
+    pointer-events: none;
     color: var(--color-black);
     font-size: 12px;
     font-weight: 700;
