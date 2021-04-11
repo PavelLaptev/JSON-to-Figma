@@ -17,16 +17,30 @@ interface ItemProps {
 }
 
 const HierarchySection: React.FunctionComponent<Props> = props => {
-    const [checked, setChecked] = React.useState([]);
-
-    const handleClick = () => {
-        console.log(checked);
+    const generateState = obj => {
+        return Object.keys(obj).map((item, i) => {
+            if (typeof Object.values(obj)[i] === 'object') {
+                return {key: item, checked: false, children: generateState(Object.values(obj)[i])};
+            } else {
+                return {key: item, checked: false};
+            }
+        });
     };
 
+    let [stateObj, setStateObj] = React.useState(generateState(props.obj[0]));
+
+    console.log(stateObj);
+
     const Checkbox: React.FunctionComponent<ItemProps> = props => {
+        const [checkedState, setChecked] = React.useState(false);
+
+        const handleClick = () => {
+            setChecked(!checkedState);
+        };
+
         return (
             <div className={styles.checkboxWrap} onClick={handleClick}>
-                <div className={`checkbox ${styles.checkbox} ${checked ? styles.checked : null}`}>
+                <div className={`checkbox ${styles.checkbox} ${checkedState ? styles.checked : null}`}>
                     <Icon name={'tick'} />
                 </div>
                 <span className={styles.label}>{props.label}</span>
@@ -84,7 +98,6 @@ const HierarchySection: React.FunctionComponent<Props> = props => {
 
     const loopObject = obj => {
         return Object.keys(obj).map((item, i) => {
-            setChecked([{key: item, checked: false}]);
             // console.log(checked);
 
             let isNested = typeof Object.values(obj)[i] === 'object';

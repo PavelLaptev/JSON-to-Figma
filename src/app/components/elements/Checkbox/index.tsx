@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './checkbox.scss';
+import styles from './checkbox.module.scss';
 import {Icon} from '../index';
 
 interface Props {
@@ -18,11 +18,11 @@ const Checkbox: React.FunctionComponent<Props> = props => {
     };
 
     return (
-        <div data-checked={checked} className={`wrap`} onClick={handleClick}>
-            <div className={`checkbox  ${checked ? `checked` : null}`}>
+        <div data-checked={checked} className={styles.wrap} onClick={handleClick}>
+            <div className={`checkbox ${styles.checkbox} ${checked ? styles.checked : null}`}>
                 <Icon name={'tick'} />
             </div>
-            <span className={`label`}>{props.label}</span>
+            <span className={styles.label}>{props.label}</span>
         </div>
     );
 };
