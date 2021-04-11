@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import {SectionWrapper} from '../../../../sections';
-import {Checkbox, Icon} from '../../../../elements';
+import {Icon} from '../../../../elements';
 
 import styles from './hierarchySection.module.scss';
 
@@ -17,11 +17,22 @@ interface ItemProps {
 }
 
 const HierarchySection: React.FunctionComponent<Props> = props => {
-    // let myRef = React.createRef();
+    const [checked, setChecked] = React.useState([]);
 
-    // React.useEffect(() => {
+    const handleClick = () => {
+        console.log(checked);
+    };
 
-    // })
+    const Checkbox: React.FunctionComponent<ItemProps> = props => {
+        return (
+            <div className={styles.checkboxWrap} onClick={handleClick}>
+                <div className={`checkbox ${styles.checkbox} ${checked ? styles.checked : null}`}>
+                    <Icon name={'tick'} />
+                </div>
+                <span className={styles.label}>{props.label}</span>
+            </div>
+        );
+    };
 
     const HierarchyItem = (props: ItemProps) => {
         const [itemFoldedState, setItemFoldedState] = React.useState(false);
@@ -38,8 +49,24 @@ const HierarchySection: React.FunctionComponent<Props> = props => {
             return itemFoldedState ? 'folder-closed' : 'folder-open';
         };
 
+        // const handleChekboxClick = e => {
+        //     if (props.nested) {
+        //         let children = Array.from(e.target.closest('.parent').querySelectorAll('.checkbox'));
+        //         console.log(children);
+        //         if (e.target.getAttribute('data-checked') === 'false') {
+        //             children.forEach((item: HTMLElement) => {
+        //                 item.style.background = 'rgba(255, 75, 75, 0.2)';
+        //             });
+        //         } else {
+        //             children.forEach((item: HTMLElement) => {
+        //                 item.style.background = 'none';
+        //             });
+        //         }
+        //     }
+        // };
+
         return (
-            <div style={props.style} className={`${styles.itemWrap} nested`}>
+            <div style={props.style} className={`${styles.itemWrap} nested ${props.nested ? 'parent' : false}`}>
                 <div className={styles.item}>
                     <div
                         className={styles.nestedSign}
@@ -48,7 +75,7 @@ const HierarchySection: React.FunctionComponent<Props> = props => {
                     >
                         <Icon name={props.nested ? foldIcon() : 'dot'} style={props.nested ? null : {opacity: 0.2}} />
                     </div>
-                    <Checkbox label={props.label} />
+                    <Checkbox label={props.label} nested={props.nested} />
                 </div>
                 {props.children}
             </div>
@@ -57,6 +84,9 @@ const HierarchySection: React.FunctionComponent<Props> = props => {
 
     const loopObject = obj => {
         return Object.keys(obj).map((item, i) => {
+            setChecked([{key: item, checked: false}]);
+            // console.log(checked);
+
             let isNested = typeof Object.values(obj)[i] === 'object';
             if (isNested) {
                 return (
@@ -84,11 +114,9 @@ const HierarchySection: React.FunctionComponent<Props> = props => {
 
     return (
         <SectionWrapper className={styles.wrap}>
-            {
-                <HierarchyItem nested={true} label={`${Object.keys(props.obj[0]).length} items`}>
-                    {loopObject(props.obj[0])}
-                </HierarchyItem>
-            }
+            <HierarchyItem nested={true} label={`${Object.keys(props.obj[0]).length} items`}>
+                {loopObject(props.obj[0])}
+            </HierarchyItem>
         </SectionWrapper>
     );
 };

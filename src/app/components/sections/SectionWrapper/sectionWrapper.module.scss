@@ -1,7 +1,7 @@
 .wrap {
     display: flex;
     flex-direction: column;
-    padding: var(--space-l);
+    padding: var(--space-l) var(--space-l) 0;
     width: 100%;
 }
 
