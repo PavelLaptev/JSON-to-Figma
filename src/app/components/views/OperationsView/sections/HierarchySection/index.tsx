@@ -34,12 +34,17 @@ const HierarchySection: React.FunctionComponent<Props> = props => {
     const Checkbox: React.FunctionComponent<ItemProps> = props => {
         const [checkedState, setChecked] = React.useState(false);
 
-        const handleClick = () => {
+        const handleClick = e => {
+            if (props.nested) {
+                let children = Array.from(e.target.closest('.parent').querySelectorAll('.checkbox'));
+                console.log(children);
+            }
+
             setChecked(!checkedState);
         };
 
         return (
-            <div className={styles.checkboxWrap} onClick={handleClick}>
+            <div data-name={props.label} className={styles.checkboxWrap} onClick={handleClick}>
                 <div className={`checkbox ${styles.checkbox} ${checkedState ? styles.checked : null}`}>
                     <Icon name={'tick'} />
                 </div>
