@@ -2,11 +2,10 @@
 // Please do not change this file!
 interface CssExports {
     checkbox: string;
+    checkboxSection: string;
     checkboxWrap: string;
-    checked: string;
     item: string;
     itemWrap: string;
-    label: string;
     nestedSign: string;
     wrap: string;
 }
