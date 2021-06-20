@@ -3,7 +3,7 @@ import * as React from 'react';
 import {Switcher, ElementCaption} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
-import styles from './randomSwitcher.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
     onSectionChange?(event: React.FormEvent<HTMLInputElement>): void;

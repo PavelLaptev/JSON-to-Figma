@@ -1,29 +1,37 @@
 // Colors
+$color-primary-main: #ffedf3;
+$color-primary-dark: #f0d1dc;
+$color-secondary-main: #222222;
+$color-secondary-dark: #000000;
+
+// Spacers
+$xxs-space: 2px;
+$xs-space: 4px;
+$s-space: 8px;
+$m-space: 16px;
+$l-space: 20px;
+$xl-space: 28px;
+$xxl-space: 36px;
+
+// Easing
+$default-transition: 0.1s ease;
+$middle-transition: 0.2s ease;
+
 :root {
-    --color-accent-light: #e7e8ff;
-    --color-accent-main: #5e44ff;
-    --color-accent-dark: #29169c;
-    --color-white: #fff;
-    --color-black: #222;
-    --color-gray-5: rgba(0, 0, 0, 0.05);
-    --color-gray-10: rgba(0, 0, 0, 0.1);
-
-    // Spacers
-    --space-xxs: 2px;
-    --space-xs: 4px;
-    --space-s: 8px;
-    --space-m: 16px;
-    --space-l: 20px;
-    --space-xl: 28px;
-    --space-xxl: 36px;
-
-    // Easing
-    --transition-dast: 0.05s ease;
-    --transition-default: 0.1s ease;
-    --transition-middle: 0.2s ease;
-
-    // Border-Radius
-    --radius-s: 4px;
+    --clr-accent-main: #5e44ff;
+    --clr-accent-dark: #4932e4;
+    --clr-black: #000;
+    --clr-white: rgb(255, 255, 255);
+    --clr-gray: #f6f6f6;
+    --clr-link-hover: #ff2b2b;
+    //
+    --xs-space: 4px;
+    --s-space: 8px;
+    --m-space: 16px;
+    --l-space: 20px;
+    --xl-space: 28px;
+    //
     --radius-m: 6px;
-    --radius-l: 8px;
+    //
+    --transition-m: 0.05s ease-in-out;
 }

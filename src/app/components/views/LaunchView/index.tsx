@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 import {ViewContext} from '../../contexts';
-import {Button} from '../../elements';
+import {Link, Button} from '../../elements';
 
 declare function require(path: string): any;
 
 const pluginLogo = require('../../../assets/plugin-logo.svg');
 
-import styles from './launchView.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
     fileOnChange(event: React.FormEvent<HTMLInputElement>): void;
@@ -29,13 +29,11 @@ const LaunchView: React.SFC<Props> = props => {
                     <p className={styles.caption}>
                         Learn more on the{' '}
                         {
-                            <a
-                                target="_blank"
-                                className={styles.copyLink}
-                                href="https://github.com/PavelLaptev/JSON-to-Figma-React/blob/master/README.md"
-                            >
-                                GitHub page
-                            </a>
+                            <Link
+                                text="GitHub page"
+                                className={styles.Link}
+                                link="https://github.com/PavelLaptev/JSON-to-Figma-React/blob/master/README.md"
+                            />
                         }
                         .
                     </p>

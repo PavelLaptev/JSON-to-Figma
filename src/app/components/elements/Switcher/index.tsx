@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import styles from './switcher.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
     label?: string;

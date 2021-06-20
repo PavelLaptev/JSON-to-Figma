@@ -5,7 +5,7 @@ import {showMsg, execGetClipboard, groupFlattenedObj, fetchJSONfromURL} from '..
 import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
-import {pluginFrameSize} from '../../sharableData/pluginFrameSize';
+import {pluginFrameSize} from '../../plugin/data/pluginFrameSize';
 import {fetchImagefromURL} from '../utils';
 
 const App = ({}) => {
@@ -46,10 +46,7 @@ const App = ({}) => {
         fileReader.onload = () => {
             try {
                 let obj = JSON.parse(fileReader.result as string);
-                // If this is an array
-                if (obj[0] !== 'undefined') {
-                    loadOperationView(obj);
-                }
+                loadOperationView(groupFlattenedObj(obj));
             } catch (error) {
                 showErrorMsg(error, 'Something wrong with the file. Check the structure');
             }

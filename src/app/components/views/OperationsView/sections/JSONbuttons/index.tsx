@@ -4,63 +4,60 @@ import {isImageString} from '../../../../../utils/';
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
-import {radioArray, allMatches} from '../../sections/Options/buttonsArray';
-import styles from './jsonItemsSection.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
     obj: Object;
-    selected: Object;
-    onSectionChange?(event: React.FormEvent<HTMLInputElement>): void;
+    random: boolean;
+    onResetClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const createButtons = (obj, props) => {
-    // console.log(Object.keys(obj[0]).length);
+const JSONbuttons: React.FC<Props> = props => {
+    const [selectedItems, setSelecteditems] = React.useState([] as Array<string>);
 
-    const handleClick = e => {
-        if (typeof e.target.textContent !== 'undefined') {
-            let selected = {...props.selected, ...{btnName: e.target.textContent}};
-            parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
-        }
+    const createButtons = () => {
+        return Object.keys(props.obj[0]).map((item, i) => {
+            const [toggle, setToggle] = React.useState(false);
+
+            const handleClick = e => {
+                if (typeof e.target.textContent !== 'undefined') {
+                    setToggle(!toggle);
+                }
+            };
+
+            React.useEffect(() => {
+                if (toggle) {
+                    setSelecteditems([...selectedItems, item]);
+                } else {
+                    setSelecteditems(selectedItems.filter(c => c !== item));
+                }
+            }, [toggle]);
+
+            const isImage = isImageString(props.obj[0][item].toString().split('?')[0]);
+            return (
+                <Button
+                    key={`item-button-${i}`}
+                    text={item}
+                    icon={isImage ? 'image' : undefined}
+                    mod={toggle ? 'ACTIVE' : 'OUTLINE'}
+                    onClick={handleClick}
+                />
+            );
+        });
     };
 
-    return Object.keys(obj[0]).map((item, i) => {
-        const isImage = isImageString(obj[0][item].toString().split('?')[0]);
-        return (
-            <Button
-                key={`item-button-${i}`}
-                text={item}
-                icon={isImage ? 'image' : undefined}
-                mod="ghost-dark"
-                onClick={handleClick}
-            />
+    const populateSelected = obj => {
+        parent.postMessage(
+            {pluginMessage: {type: 'populate-selected', random: props.random, selected: selectedItems, obj}},
+            '*'
         );
-    });
-};
+    };
 
-const handlePopulateAllMathces = (obj, props, e) => {
-    let selected = {...props.selected, ...{btnName: e.target.textContent}};
-    parent.postMessage({pluginMessage: {type: selected.option, selected, obj}}, '*');
-};
-
-const JSONbuttons: React.FunctionComponent<Props> = props => {
     return (
-        <SectionWrapper className={styles.wrap}>
-            <div className={styles.header}>
-                <h3 className={styles.title}>
-                    {`${Object.keys(props.obj[0]).length} keys`}
-                    <span>{` / ${(props.obj as any).length} objects`}</span>
-                </h3>
-            </div>
-            <div onChange={props.onSectionChange} className={styles.buttonsWrap}>
-                {props.selected['option'] === radioArray[0].id || props.selected['option'] === radioArray[2].id ? (
-                    <Button
-                        text={allMatches.name}
-                        mod="primary"
-                        onClick={e => handlePopulateAllMathces(props.obj, props, e)}
-                    />
-                ) : null}
-                {createButtons(props.obj, props)}
-            </div>
+        <SectionWrapper className={styles.wrap} title="JSON keys">
+            <Button className={styles.reset} text="Reset" mod="OUTLINE" onClick={props.onResetClick} />
+            <div className={styles.buttonsWrap}>{createButtons()}</div>
+            <Button text={'Populate selected'} mod="PRIMARY" onClick={() => populateSelected(props.obj)} />
         </SectionWrapper>
     );
 };

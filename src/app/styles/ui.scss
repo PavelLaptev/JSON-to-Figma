@@ -1,5 +1,5 @@
-@import './font-face';
 @import './tokens';
+@import './fonts';
 
 *,
 *:before,
@@ -10,17 +10,18 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-*::selection {
-    background-color: var(--color-white);
-}
+// *::selection {
+//     background-color: lighten($color: $color-primary-dark, $amount: 10);
+// }
 
 body {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
     text-align: center;
     margin: 0;
-}
-
-form {
-    margin: 0;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
 }

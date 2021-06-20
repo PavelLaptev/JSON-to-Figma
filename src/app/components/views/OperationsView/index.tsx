@@ -1,33 +1,24 @@
 import * as React from 'react';
 
 import {ViewContext} from '../../contexts';
-import HierarchySection from './sections/HierarchySection';
 import JSONbuttons from './sections/JSONbuttons';
-import Options from './sections/Options';
 import SkipLayers from './sections/SkipLayers';
 import RandomSwitcher from './sections/RandomSwitcher';
 
-import styles from './operationsView.module.scss';
-
-import {radioGroupName, radioArray} from './sections/Options/buttonsArray';
+import styles from './styles.module.scss';
 
 interface Props {
     onResetClick?(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const OperationsView: React.FunctionComponent<Props> = () => {
-    const [selectedOption, setSelectedOption] = React.useState(radioArray[0].id);
+const OperationsView: React.FunctionComponent<Props> = props => {
     const [isRandomSwitch, setIsRandomSwitch] = React.useState(false);
     const mainSectionRef = React.useRef(null);
 
     React.useEffect(() => {
-        const frameHeight = Math.round(mainSectionRef.current.getBoundingClientRect().height);
+        const frameHeight = mainSectionRef.current.getBoundingClientRect().height;
         parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
     });
-
-    const handleSelectedOption = e => {
-        setSelectedOption(e.target['value']);
-    };
 
     const handleRandomSwitcher = e => {
         setIsRandomSwitch(e.target.checked);
@@ -37,14 +28,7 @@ const OperationsView: React.FunctionComponent<Props> = () => {
         <ViewContext.Consumer>
             {JSONobject => (
                 <main ref={mainSectionRef} className={styles.wrap}>
-                    <HierarchySection obj={JSONobject} />
-                    <JSONbuttons obj={JSONobject} selected={{option: selectedOption, random: isRandomSwitch}} />
-                    <Options
-                        onSectionChange={handleSelectedOption}
-                        array={radioArray}
-                        groupName={radioGroupName}
-                        defaultRadio={selectedOption}
-                    />
+                    <JSONbuttons onResetClick={props.onResetClick} obj={JSONobject} random={isRandomSwitch} />
                     <SkipLayers />
                     <RandomSwitcher onSectionChange={handleRandomSwitcher} />
                 </main>

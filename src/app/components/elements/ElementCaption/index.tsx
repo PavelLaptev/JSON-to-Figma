@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import styles from './elementCaption.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
     text: string;

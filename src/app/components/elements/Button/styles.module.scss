@@ -1,0 +1,81 @@
+@import '../../../styles/tokens';
+@import '../../../styles/figma/styles';
+
+.button {
+    user-select: none;
+    outline: none;
+    border: 3px solid var(--clr-black);
+    border-radius: var(--radius-m);
+    padding: 0 var(--s-space);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    transition: all var(--transition-m);
+
+    span {
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        pointer-events: none;
+        line-height: 1;
+    }
+
+    i {
+        margin-left: var(--s-space);
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+.fileButton {
+    input {
+        display: none;
+    }
+}
+
+.primary {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+
+    svg {
+        fill: var(--clr-white);
+    }
+
+    &:hover {
+        background: var(--clr-accent-dark);
+        box-shadow: 0 2px 0 var(--clr-black);
+    }
+}
+
+.outline {
+    background-color: transparent;
+    color: var(--clr-black);
+
+    svg {
+        fill: var(--clr-black);
+    }
+
+    &:hover {
+        border: 3px solid var(--clr-accent-main);
+        box-shadow: 0 2px 0 var(--clr-accent-main);
+    }
+}
+
+.active {
+    background: var(--clr-accent-main);
+    color: var(--clr-white);
+    border: 3px solid var(--clr-black);
+    box-shadow: 0 2px 0 var(--clr-black);
+    transform: translateY(-2px);
+
+    svg {
+        fill: var(--clr-white);
+    }
+
+    &:hover {
+        background: var(--clr-accent-dark);
+    }
+}

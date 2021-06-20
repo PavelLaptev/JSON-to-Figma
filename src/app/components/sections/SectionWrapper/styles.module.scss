@@ -1,0 +1,18 @@
+@import '../../../styles/tokens';
+@import '../../../styles/figma/styles';
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--clr-black);
+    padding: var(--l-space) var(--m-space);
+    width: 100%;
+}
+
+.title {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    text-align: left;
+    margin: 0 0 var(--l-space) 0;
+}

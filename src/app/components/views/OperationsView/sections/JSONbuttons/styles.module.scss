@@ -1,0 +1,22 @@
+@import '../../../../../styles/tokens';
+@import '../../../../../styles/figma/styles';
+
+.wrap {
+    background-color: var(--clr-gray);
+}
+
+.buttonsWrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: var(--s-space);
+    button {
+        margin-right: var(--s-space);
+        margin-bottom: var(--s-space);
+    }
+}
+
+.reset {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

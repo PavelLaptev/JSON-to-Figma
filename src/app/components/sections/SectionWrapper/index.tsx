@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {Header} from '../../elements';
 
-import styles from './sectionWrapper.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
     title?: string;
@@ -10,12 +9,11 @@ interface Props {
     onChange?(event: React.FormEvent<HTMLInputElement>): void;
 }
 
-const SectionWrapper: React.FunctionComponent<Props> = props => {
+const SectionWrapper: React.SFC<Props> = props => {
     return (
         <section className={`${styles.wrap} ${props.className}`} onClick={props.onClick} onChange={props.onChange}>
-            {props.title !== null ? <Header text={props.title} /> : null}
+            {props.title !== null ? <h3 className={styles.title}>{props.title}</h3> : null}
             {props.children}
-            <div className={styles.hr}></div>
         </section>
     );
 };

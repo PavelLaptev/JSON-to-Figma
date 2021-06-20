@@ -1,22 +1,31 @@
 import * as React from 'react';
-
 import {Icon} from '../index';
 
-import styles from './button.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
     text: string;
     className?: any;
     icon?: string;
     iconColor?: string;
-    mod?: string;
+    mod?: 'PRIMARY' | 'OUTLINE' | 'ACTIVE';
     fileType?: boolean;
-    accept?: string;
     onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
     onChange?(event: React.FormEvent<HTMLInputElement>): void;
 }
 
-const Button: React.SFC<Props> = props => {
+const selectBtnStyle = mod => {
+    switch (mod) {
+        case 'OUTLINE':
+            return 'outline';
+        case 'ACTIVE':
+            return 'active';
+        default:
+            return 'primary';
+    }
+};
+
+const Button: React.FC<Props> = props => {
     const isIcon = () => {
         if (typeof props.icon !== 'undefined') {
             return true;
@@ -28,7 +37,7 @@ const Button: React.SFC<Props> = props => {
     const btnComponent = () => {
         return (
             <button
-                className={`${styles.button} ${props.className} ${styles[props.mod]}`}
+                className={`${styles.button} ${props.className} ${styles[selectBtnStyle(props.mod)]}`}
                 onClick={props.onClick}
                 onChange={props.onChange}
             >
@@ -40,8 +49,12 @@ const Button: React.SFC<Props> = props => {
 
     const fileBtnComponent = () => {
         return (
-            <label className={`${styles.button} ${styles.fileButton} ${props.className} ${styles[props.mod]}`}>
-                <input type="file" accept={props.accept} onClick={props.onClick} onChange={props.onChange} />
+            <label
+                className={`${styles.button} ${styles.fileButton} ${props.className} ${
+                    styles[selectBtnStyle(props.mod)]
+                }`}
+            >
+                <input type="file" accept="application/json" onClick={props.onClick} onChange={props.onChange} />
                 <span>{props.text}</span>
                 {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
             </label>
@@ -52,10 +65,9 @@ const Button: React.SFC<Props> = props => {
 };
 
 Button.defaultProps = {
-    className: null,
-    mod: 'primary',
+    className: '',
+    mod: 'PRIMARY',
     fileType: false,
-    accept: 'application/json',
 } as Partial<Props>;
 
 export default Button;
