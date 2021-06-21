@@ -2,9 +2,9 @@
 @import '../../../styles/figma/styles';
 
 .wrap {
+    position: relative;
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid var(--clr-black);
     padding: var(--l-space) var(--m-space);
     width: 100%;
 }
@@ -15,4 +15,13 @@
     font-weight: 900;
     text-align: left;
     margin: 0 0 var(--l-space) 0;
+}
+
+.divider {
+    position: absolute;
+    opacity: 0.2;
+    bottom: 0;
+    height: 1px;
+    width: calc(100% - var(--m-space) * 2);
+    background: var(--clr-black);
 }

@@ -1,9 +1,11 @@
 import {figmaNotify} from '.';
 
-export default function removeSign(selectedLayers, signName, sign) {
+export default function removeSign(selectedLayers, sign) {
     selectedLayers.map(item => {
         const currentName = item.name;
-        item.name = currentName.replace(sign, '');
+        if (currentName.includes(sign)) {
+            item.name = currentName.replace(sign, '');
+            figmaNotify('success', `the skip sign ${sign} was removed`);
+        }
     });
-    figmaNotify('success', `the ${signName} sign was removed`);
 }

@@ -2,16 +2,14 @@
 @import '../../../../../styles/figma/styles';
 
 .wrap {
-    background: $color-black-03;
-    h3 {
-        margin-bottom: 0;
-    }
+    padding-bottom: var(--m-space);
 }
 
 .btnWrap {
     display: flex;
-    margin-bottom: $l-space;
+    flex-wrap: wrap;
     button {
-        margin-right: $s-space;
+        margin-right: var(--s-space);
+        margin-bottom: var(--s-space);
     }
 }

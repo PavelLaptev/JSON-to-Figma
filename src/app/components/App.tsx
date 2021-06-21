@@ -5,7 +5,7 @@ import {showMsg, execGetClipboard, groupFlattenedObj, fetchJSONfromURL} from '..
 import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
-import {pluginFrameSize} from '../../plugin/data/pluginFrameSize';
+import {pluginFrameSize} from '../../data/pluginFrameSize';
 import {fetchImagefromURL} from '../utils';
 
 const App = ({}) => {

@@ -1,0 +1,22 @@
+.resizer {
+    z-index: 99;
+    cursor: nwse-resize;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    opacity: 0.8;
+    transition: all 0.1s ease;
+
+    &:before {
+        z-index: 99;
+        content: '';
+        position: absolute;
+        top: 4px;
+        right: 7px;
+        border-style: solid;
+        border-width: 0 0 8px 8px;
+        border-color: transparent transparent var(--clr-black) transparent;
+    }
+}

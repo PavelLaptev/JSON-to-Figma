@@ -1,11 +1,11 @@
-import {skipSign} from '../data/skipSign';
+import {skipSign} from '../../data/skipSign';
 
 export default function populateByName(selectedLayers, JSONobj, selectedItem) {
     let newItem = 0;
 
     const loopSelected = arr => {
         arr.map(item => {
-            if (!item.name.includes(skipSign.symbol)) {
+            if (!item.name.includes(skipSign)) {
                 if (item.name.toUpperCase() === selectedItem.toUpperCase() && item.type === 'TEXT') {
                     figma.loadFontAsync(item.fontName).then(() => {
                         if (typeof JSONobj[newItem] !== 'undefined') {

@@ -1,4 +1,4 @@
 export const pluginFrameSize = {
-    width: 360,
+    width: 300,
     height: 270,
 };

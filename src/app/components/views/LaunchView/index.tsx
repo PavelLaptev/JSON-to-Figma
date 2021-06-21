@@ -32,7 +32,7 @@ const LaunchView: React.SFC<Props> = props => {
                             <Link
                                 text="GitHub page"
                                 className={styles.Link}
-                                link="https://github.com/PavelLaptev/JSON-to-Figma-React/blob/master/README.md"
+                                link="https://github.com/PavelLaptev/JSON-to-Figma"
                             />
                         }
                         .

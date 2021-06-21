@@ -3,7 +3,6 @@ export {default as execCopyToClipboard} from './execCopyToClipboard';
 export {default as execGetClipboard} from './execGetClipboard';
 export {default as fetchJSONfromURL} from './fetchJSONfromURL';
 export {default as groupFlattenedObj} from './groupFlattenedObj';
-export {default as compareStrings} from './compareStrings';
 export {default as isPlainObject} from './isPlainObject';
 export {default as fetchImagefromURL} from './fetchImagefromURL';
 export {default as isImageString} from './isImageString';

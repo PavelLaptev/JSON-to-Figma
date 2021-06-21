@@ -4,6 +4,7 @@ import {ViewContext} from '../../contexts';
 import JSONbuttons from './sections/JSONbuttons';
 import SkipLayers from './sections/SkipLayers';
 import RandomSwitcher from './sections/RandomSwitcher';
+import {Resizer} from '../../elements';
 
 import styles from './styles.module.scss';
 
@@ -28,6 +29,7 @@ const OperationsView: React.FunctionComponent<Props> = props => {
         <ViewContext.Consumer>
             {JSONobject => (
                 <main ref={mainSectionRef} className={styles.wrap}>
+                    <Resizer />
                     <JSONbuttons onResetClick={props.onResetClick} obj={JSONobject} random={isRandomSwitch} />
                     <SkipLayers />
                     <RandomSwitcher onSectionChange={handleRandomSwitcher} />

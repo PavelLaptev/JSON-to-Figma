@@ -6,11 +6,11 @@
     outline: none;
     border: 3px solid var(--clr-black);
     border-radius: var(--radius-m);
-    padding: 0 var(--s-space);
+    padding: var(--xs-space) var(--s-space);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 32px;
+    min-height: 32px;
     transition: all var(--transition-m);
 
     span {

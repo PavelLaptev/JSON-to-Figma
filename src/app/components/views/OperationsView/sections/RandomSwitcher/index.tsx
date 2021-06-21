@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Switcher, ElementCaption} from '../../../../elements';
+import {Switcher} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
 import styles from './styles.module.scss';
@@ -11,10 +11,8 @@ interface Props {
 
 const RandomSwitcher: React.SFC<Props> = props => {
     return (
-        <SectionWrapper className={styles.wrap} onChange={props.onSectionChange}>
-            <ElementCaption text="All items will be filled in a random order.">
-                <Switcher id="random-order-check" label="Random order" />
-            </ElementCaption>
+        <SectionWrapper title="Random order" className={styles.wrap} onChange={props.onSectionChange}>
+            <Switcher id="random-order-check" label="All items will be filled in a random order." />
         </SectionWrapper>
     );
 };

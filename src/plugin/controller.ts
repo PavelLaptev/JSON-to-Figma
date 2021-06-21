@@ -1,7 +1,7 @@
 // import {populateByName, figmaNotify, addSign, removeSign} from './utils';
-import {figmaNotify, shuffleArray, populateByName} from './utils';
-import {pluginFrameSize} from './data/pluginFrameSize';
-// import {skipSign} from './data/skipSign';
+import {figmaNotify, shuffleArray, populateByName, addSign, removeSign} from './utils';
+import {pluginFrameSize} from '../data/pluginFrameSize';
+import {skipSign} from '../data/skipSign';
 
 // Show UI
 figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});
@@ -11,10 +11,11 @@ figma.ui.onmessage = msg => {
         return msg.random ? shuffleArray(arr) : arr;
     };
 
+    const isSelectionLength = figma.currentPage.selection.length !== 0;
+
     if (msg.type === 'populate-selected') {
         // Check if something selected
         let selectedArray = msg.selected;
-        const isSelectionLength = figma.currentPage.selection.length !== 0;
         const selection = isRandom(figma.currentPage.selection);
         const obj = isRandom(msg.obj);
 
@@ -48,25 +49,28 @@ figma.ui.onmessage = msg => {
     }
 
     // "SKIP LAYERS" FUNCTIONS
-    // if (msg.type === 'add-skip-sign') {
-    //     if (isSelectionLength) {
-    //         addSign(figma.currentPage.selection, skipSign.name, skipSign.symbol);
-    //     } else {
-    //         figmaNotify('error', 'Select some layers before', 3000);
-    //     }
-    // }
+    if (msg.type === 'add-skip-sign') {
+        if (isSelectionLength) {
+            addSign(figma.currentPage.selection, skipSign);
+        } else {
+            figmaNotify('error', 'Select some layers first', 3000);
+        }
+    }
 
-    // if (msg.type === 'remove-skip-sign') {
-    //     if (isSelectionLength) {
-    //         removeSign(figma.currentPage.selection, skipSign.name, skipSign.symbol);
-    //     } else {
-    //         figmaNotify('error', 'Select some layers before', 3000);
-    //     }
-    // }
+    if (msg.type === 'remove-skip-sign') {
+        if (isSelectionLength) {
+            removeSign(figma.currentPage.selection, skipSign);
+        } else {
+            figmaNotify('error', 'Select some layers first', 3000);
+        }
+    }
 
-    // Change size
+    // CHANGE SIZE
     if (msg.type === 'change-size' || msg.type === 'reset') {
         figma.ui.resize(pluginFrameSize.width, Math.round(msg.frameHeight));
+    }
+    if (msg.type === 'manual-resize' || msg.type === 'reset') {
+        figma.ui.resize(Math.round(msg.size.width), Math.round(msg.size.height));
     }
 };
 
