@@ -9,29 +9,35 @@ import styles from './styles.module.scss';
 interface Props {
     obj: Object;
     random: boolean;
+    range: string;
     onResetClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 const JSONbuttons: React.FC<Props> = props => {
+    const initialToggle = Object.keys(props.obj[0]).reduce((acc, curr) => ((acc[curr] = false), acc), {});
+    const obj = Object.keys(props.obj[0]);
+
     const [selectedItems, setSelecteditems] = React.useState([] as Array<string>);
+    const [toggle, setToggle] = React.useState(initialToggle);
 
     const createButtons = () => {
-        return Object.keys(props.obj[0]).map((item, i) => {
-            const [toggle, setToggle] = React.useState(false);
-
+        return obj.map((item, i) => {
             const handleClick = e => {
                 if (typeof e.target.textContent !== 'undefined') {
-                    setToggle(!toggle);
+                    setToggle(prevState => ({
+                        ...prevState,
+                        [item]: !prevState[item],
+                    }));
                 }
             };
 
             React.useEffect(() => {
-                if (toggle) {
+                if (toggle[item]) {
                     setSelecteditems([...selectedItems, item]);
                 } else {
                     setSelecteditems(selectedItems.filter(c => c !== item));
                 }
-            }, [toggle]);
+            }, [toggle[item]]);
 
             const isImage = isImageString(props.obj[0][item].toString().split('?')[0]);
             return (
@@ -39,7 +45,7 @@ const JSONbuttons: React.FC<Props> = props => {
                     key={`item-button-${i}`}
                     text={item}
                     icon={isImage ? 'image' : undefined}
-                    mod={toggle ? 'ACTIVE' : 'OUTLINE'}
+                    mod={toggle[item] ? 'ACTIVE' : 'OUTLINE'}
                     onClick={handleClick}
                 />
             );
@@ -53,11 +59,45 @@ const JSONbuttons: React.FC<Props> = props => {
         );
     };
 
+    const resetSelected = () => {
+        setSelecteditems([]);
+        setToggle(initialToggle);
+    };
+
+    const invertSelected = () => {
+        const invertedObj = Object.entries(toggle).map(item => {
+            return {[item[0]]: !item[1]};
+        });
+        setToggle(Object.assign({}, ...invertedObj));
+        const invertedItems = invertedObj
+            .map(item => (Object.values(item)[0] ? Object.keys(item)[0] : false))
+            .filter(Boolean);
+
+        setSelecteditems(invertedItems as Array<string>);
+    };
+
     return (
         <SectionWrapper className={styles.wrap} title="JSON keys">
-            <Button className={styles.reset} text="Reset" mod="OUTLINE" onClick={props.onResetClick} />
             <div className={styles.buttonsWrap}>{createButtons()}</div>
-            <Button text={'Populate selected'} mod="PRIMARY" onClick={() => populateSelected(props.obj)} />
+            <div className={styles.manipulationButtons}>
+                <Button className={styles.button} text={'Invert'} mod="PRIMARY" onClick={invertSelected} />
+                <Button className={styles.icon} icon="reset" title="Reset" mod="PRIMARY" onClick={resetSelected} />
+                <Button
+                    className={styles.icon}
+                    icon="reject"
+                    title="Reupload"
+                    mod="PRIMARY"
+                    onClick={props.onResetClick}
+                />
+            </div>
+            <div className={styles.actionButtons}>
+                <Button
+                    className={styles.button}
+                    text={'Populate selected'}
+                    mod="PRIMARY"
+                    onClick={() => populateSelected(props.obj)}
+                />
+            </div>
         </SectionWrapper>
     );
 };

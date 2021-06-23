@@ -1,6 +1,3 @@
-@import '../../../styles/tokens';
-@import '../../../styles/figma/styles';
-
 .wrap {
     display: flex;
     user-select: none;
@@ -17,7 +14,7 @@
             border: 3px solid var(--clr-black);
             background: transparent;
             border-radius: 50px;
-            transition: all $middle-transition;
+            transition: all var(--transition-m);
         }
         + label:after {
             content: '';
@@ -40,6 +37,7 @@
         }
     }
     label {
+        color: var(--clr-caption);
         padding-top: 2px;
         padding-left: 40px;
         line-height: 1.3;

@@ -1,1 +1,1 @@
-export const skipSign = '⏭️';
+export const skipSign = ' ⏭️';

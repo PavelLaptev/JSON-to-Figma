@@ -4,7 +4,8 @@ import {Icon} from '../index';
 import styles from './styles.module.scss';
 
 interface Props {
-    text: string;
+    text?: string;
+    title?: string;
     className?: any;
     icon?: string;
     iconColor?: string;
@@ -40,6 +41,7 @@ const Button: React.FC<Props> = props => {
                 className={`${styles.button} ${props.className} ${styles[selectBtnStyle(props.mod)]}`}
                 onClick={props.onClick}
                 onChange={props.onChange}
+                title={props.title !== '' ? props.title : null}
             >
                 <span>{props.text}</span>
                 {isIcon() ? <Icon name={props.icon} color={props.iconColor} /> : null}
@@ -55,7 +57,7 @@ const Button: React.FC<Props> = props => {
                 }`}
             >
                 <input type="file" accept="application/json" onClick={props.onClick} onChange={props.onChange} />
-                <span>{props.text}</span>
+                {props.text !== '' ? <span>{props.text}</span> : null}
                 {typeof props.icon !== 'undefined' ? <Icon name={props.icon} /> : null}
             </label>
         );
@@ -68,6 +70,8 @@ Button.defaultProps = {
     className: '',
     mod: 'PRIMARY',
     fileType: false,
+    text: '',
+    title: '',
 } as Partial<Props>;
 
 export default Button;

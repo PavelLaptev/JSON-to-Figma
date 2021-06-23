@@ -1,0 +1,14 @@
+.input {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1;
+    padding: 0 var(--s-space);
+    border: 3px solid var(--clr-black);
+    border-radius: var(--radius-m);
+    height: 32px;
+
+    &:focus {
+        outline: none;
+    }
+}

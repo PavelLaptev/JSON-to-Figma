@@ -1,11 +1,11 @@
-// import {populateByName, figmaNotify, addSign, removeSign} from './utils';
 import {figmaNotify, shuffleArray, populateByName, addSign, removeSign} from './utils';
 import {pluginFrameSize} from '../data/pluginFrameSize';
 import {skipSign} from '../data/skipSign';
 
-// Show UI
+// SHOW UI
 figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});
 
+// ON MESSAGE
 figma.ui.onmessage = msg => {
     const isRandom = arr => {
         return msg.random ? shuffleArray(arr) : arr;
@@ -69,7 +69,7 @@ figma.ui.onmessage = msg => {
     if (msg.type === 'change-size' || msg.type === 'reset') {
         figma.ui.resize(pluginFrameSize.width, Math.round(msg.frameHeight));
     }
-    if (msg.type === 'manual-resize' || msg.type === 'reset') {
+    if (msg.type === 'manual-resize') {
         figma.ui.resize(Math.round(msg.size.width), Math.round(msg.size.height));
     }
 };

@@ -1,11 +1,11 @@
 .caption {
     user-select: none;
     font-family: 'Inter', sans-serif;
-    line-height: 130%;
+    line-height: 140%;
     text-align: left;
     width: 100%;
 
     margin-top: 0;
-    margin-bottom: var(--l-space);
-    color: var(--clr-black);
+    margin-bottom: 0;
+    color: var(--clr-caption);
 }

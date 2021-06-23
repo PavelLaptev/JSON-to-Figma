@@ -1,5 +1,4 @@
 export {default as showMsg} from './showMsg';
-export {default as execCopyToClipboard} from './execCopyToClipboard';
 export {default as execGetClipboard} from './execGetClipboard';
 export {default as fetchJSONfromURL} from './fetchJSONfromURL';
 export {default as groupFlattenedObj} from './groupFlattenedObj';
@@ -8,3 +7,4 @@ export {default as fetchImagefromURL} from './fetchImagefromURL';
 export {default as isImageString} from './isImageString';
 export {default as isLocalhost} from './isLocalhost';
 export {default as converUpperCaseImageFormat} from './converUpperCaseImageFormat';
+export {default as validateRangeValue} from './validateRangeValue';

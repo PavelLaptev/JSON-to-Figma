@@ -1,0 +1,20 @@
+.wrap {
+    padding-bottom: var(--m-space);
+}
+
+.inputWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    margin-bottom: var(--m-space);
+}
+
+.inputError {
+    border-color: red;
+}
+
+.errorCaption {
+    color: red;
+}

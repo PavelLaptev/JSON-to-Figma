@@ -6,15 +6,19 @@ import {SectionWrapper} from '../../../../sections';
 import styles from './styles.module.scss';
 
 interface Props {
-    onSectionChange?(event: React.FormEvent<HTMLInputElement>): void;
+    onChange?(event: React.FormEvent<HTMLInputElement>): void;
 }
 
-const RandomSwitcher: React.SFC<Props> = props => {
+const RandomSwitcher: React.FC<Props> = props => {
     return (
-        <SectionWrapper title="Random order" className={styles.wrap} onChange={props.onSectionChange}>
+        <SectionWrapper title="Random order" className={styles.wrap} onChange={props.onChange}>
             <Switcher id="random-order-check" label="All items will be filled in a random order." />
         </SectionWrapper>
     );
 };
+
+RandomSwitcher.defaultProps = {
+    onChange: () => {},
+} as Partial<Props>;
 
 export default RandomSwitcher;

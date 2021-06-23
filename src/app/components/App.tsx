@@ -75,7 +75,7 @@ const App = ({}) => {
         setJSONobject(null);
 
         const frameHeight = pluginFrameSize.height;
-        parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
+        parent.postMessage({pluginMessage: {type: 'reset', frameHeight}}, '*');
     };
 
     return (

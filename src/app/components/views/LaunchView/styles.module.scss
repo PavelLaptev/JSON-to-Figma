@@ -1,20 +1,17 @@
-@import '../../../styles/tokens';
-@import '../../../styles/figma/styles';
-
 .wrap {
     display: flex;
     flex-direction: column;
     height: 100%;
     background-color: var(--clr-white);
-    padding: $l-space;
+    padding: var(--l-space);
 }
 
 .head {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: $xs-space;
-    margin-bottom: $l-space + $s-space + $xxs-space;
+    margin-top: var(--s-space);
+    margin-bottom: calc(var(--l-space) + var(--s-space));
 }
 
 .logo {
@@ -22,26 +19,21 @@
     user-select: none;
     width: 240px;
     height: 82px;
-    margin-right: $s-space;
 }
 
 .buttonsSection {
     display: flex;
     flex-direction: column;
-    margin-bottom: $s-space;
+    margin-bottom: var(--s-space);
 
     > :first-child {
-        margin-bottom: $xs-space + $xxs-space;
+        margin-bottom: var(--s-space);
     }
 }
 
 .caption {
-    @include text-12-regular;
+    font-family: 'inter', sans-serif;
     user-select: none;
-    color: $color-black-50;
+    color: var(--clr-black);
     text-align: center;
-}
-
-.Link {
-    color: $color-black-80;
 }

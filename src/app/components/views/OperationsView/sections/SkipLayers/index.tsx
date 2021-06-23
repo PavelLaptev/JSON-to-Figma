@@ -23,11 +23,12 @@ const SkipLayers: React.FC<Props> = props => {
         <SectionWrapper className={styles.wrap} divider onChange={props.onSectionChange} title="Skip by special sign">
             <ElementCaption
                 text={`Select layers you want to exclude for the population. The plugin will skip all layers with the special ${skipSign} sign.`}
-            ></ElementCaption>
-            <div className={styles.btnWrap}>
-                <Button text="Add sign" mod="OUTLINE" onClick={addSkipSign} />
-                <Button text="Remove sign" mod="OUTLINE" onClick={removeSign} />
-            </div>
+            >
+                <div className={styles.btnWrap}>
+                    <Button text="Add sign" mod="OUTLINE" onClick={addSkipSign} />
+                    <Button text="Remove sign" mod="OUTLINE" onClick={removeSign} />
+                </div>
+            </ElementCaption>
         </SectionWrapper>
     );
 };

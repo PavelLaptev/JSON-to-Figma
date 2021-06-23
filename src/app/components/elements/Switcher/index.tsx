@@ -8,7 +8,7 @@ interface Props {
     id: string;
 }
 
-const Switcher: React.SFC<Props> = props => {
+const Switcher: React.FC<Props> = props => {
     const [switcherChecked, setSwitcherChecked] = useState(props.checked);
 
     const handleChange = () => {

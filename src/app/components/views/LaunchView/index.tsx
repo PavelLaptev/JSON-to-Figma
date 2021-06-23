@@ -14,7 +14,7 @@ interface Props {
     urlOnClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const LaunchView: React.SFC<Props> = props => {
+const LaunchView: React.FC<Props> = props => {
     return (
         <ViewContext.Consumer>
             {() => (
@@ -24,18 +24,15 @@ const LaunchView: React.SFC<Props> = props => {
                     </section>
                     <section className={styles.buttonsSection}>
                         <Button icon="upload" fileType text={'From local file'} onChange={props.fileOnChange} />
-                        <Button icon="copy" text={'From Clipboard link'} onClick={props.urlOnClick} />
+                        <Button
+                            icon="copy"
+                            title="Copy link and press the button"
+                            text={'From Clipboard link'}
+                            onClick={props.urlOnClick}
+                        />
                     </section>
                     <p className={styles.caption}>
-                        Learn more on the{' '}
-                        {
-                            <Link
-                                text="GitHub page"
-                                className={styles.Link}
-                                link="https://github.com/PavelLaptev/JSON-to-Figma"
-                            />
-                        }
-                        .
+                        Read the {<Link text="documentation" link="https://github.com/PavelLaptev/JSON-to-Figma" />}
                     </p>
                 </main>
             )}

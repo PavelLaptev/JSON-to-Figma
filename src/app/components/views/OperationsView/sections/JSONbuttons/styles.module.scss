@@ -1,6 +1,3 @@
-@import '../../../../../styles/tokens';
-@import '../../../../../styles/figma/styles';
-
 .wrap {
     background-color: var(--clr-gray);
 }
@@ -15,8 +12,27 @@
     }
 }
 
-.reset {
-    position: absolute;
-    top: 0;
-    right: 0;
+.button {
+    flex: 1;
+}
+
+.icon {
+    i {
+        margin-left: 0;
+    }
+}
+
+.actionButtons {
+    display: flex;
+}
+
+.manipulationButtons {
+    display: flex;
+    margin-bottom: var(--s-space);
+    button {
+        margin-right: var(--s-space);
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }
