@@ -70,7 +70,7 @@ const App = ({}) => {
         );
     }
 
-    const onResetClickHandle = () => {
+    const handleReupoad = () => {
         console.clear();
         setJSONobject(null);
 
@@ -81,7 +81,7 @@ const App = ({}) => {
     return (
         <ViewContext.Provider value={JSONobject}>
             {JSONobject !== null ? (
-                <OperationsView onResetClick={onResetClickHandle} />
+                <OperationsView onReuploadClick={handleReupoad} />
             ) : (
                 <LaunchView urlOnClick={fetchUrlLink} fileOnChange={handleChangeButton} />
             )}

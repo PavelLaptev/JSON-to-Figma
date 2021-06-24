@@ -8,7 +8,7 @@ import {validateRangeValue} from '../../../utils/';
 import styles from './styles.module.scss';
 
 interface Props {
-    onResetClick?(event: React.MouseEvent<HTMLButtonElement>): void;
+    onReuploadClick?(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 const OperationsView: React.FunctionComponent<Props> = props => {
@@ -42,7 +42,7 @@ const OperationsView: React.FunctionComponent<Props> = props => {
                     <Resizer />
                     <JSONbuttons
                         range={range}
-                        onResetClick={props.onResetClick}
+                        onReuploadClick={props.onReuploadClick}
                         obj={JSONobject}
                         random={isRandomSwitch}
                     />

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {isImageString} from '../../../../../utils/';
+import {isImageString, downloadJSON, fiterObjRange} from '../../../../../utils/';
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
@@ -10,13 +10,15 @@ interface Props {
     obj: Object;
     random: boolean;
     range: string;
-    onResetClick(event: React.MouseEvent<HTMLButtonElement>): void;
+    onReuploadClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 const JSONbuttons: React.FC<Props> = props => {
+    // INITIAL CONSTANTS
     const initialToggle = Object.keys(props.obj[0]).reduce((acc, curr) => ((acc[curr] = false), acc), {});
     const obj = Object.keys(props.obj[0]);
 
+    // STATES
     const [selectedItems, setSelecteditems] = React.useState([] as Array<string>);
     const [toggle, setToggle] = React.useState(initialToggle);
 
@@ -52,19 +54,27 @@ const JSONbuttons: React.FC<Props> = props => {
         });
     };
 
-    const populateSelected = obj => {
+    // HANDLERS
+    const handllePopulate = obj => {
         parent.postMessage(
-            {pluginMessage: {type: 'populate-selected', random: props.random, selected: selectedItems, obj}},
+            {
+                pluginMessage: {
+                    type: 'populate-selected',
+                    random: props.random,
+                    selected: selectedItems,
+                    obj: fiterObjRange(props.range, obj),
+                },
+            },
             '*'
         );
     };
 
-    const resetSelected = () => {
+    const handleReset = () => {
         setSelecteditems([]);
         setToggle(initialToggle);
     };
 
-    const invertSelected = () => {
+    const handleInvert = () => {
         const invertedObj = Object.entries(toggle).map(item => {
             return {[item[0]]: !item[1]};
         });
@@ -76,18 +86,29 @@ const JSONbuttons: React.FC<Props> = props => {
         setSelecteditems(invertedItems as Array<string>);
     };
 
+    const handleDownload = obj => {
+        downloadJSON(fiterObjRange(props.range, obj));
+    };
+
     return (
         <SectionWrapper className={styles.wrap} title="JSON keys">
             <div className={styles.buttonsWrap}>{createButtons()}</div>
             <div className={styles.manipulationButtons}>
-                <Button className={styles.button} text={'Invert'} mod="PRIMARY" onClick={invertSelected} />
-                <Button className={styles.icon} icon="reset" title="Reset" mod="PRIMARY" onClick={resetSelected} />
+                <Button className={styles.button} text={'Invert'} mod="PRIMARY" onClick={handleInvert} />
+                <Button className={styles.icon} icon="reset" title="Reset" mod="PRIMARY" onClick={handleReset} />
+                <Button
+                    className={styles.icon}
+                    icon="save"
+                    title="Save JSON"
+                    mod="PRIMARY"
+                    onClick={() => handleDownload(props.obj)}
+                />
                 <Button
                     className={styles.icon}
                     icon="reject"
                     title="Reupload"
                     mod="PRIMARY"
-                    onClick={props.onResetClick}
+                    onClick={props.onReuploadClick}
                 />
             </div>
             <div className={styles.actionButtons}>
@@ -95,7 +116,7 @@ const JSONbuttons: React.FC<Props> = props => {
                     className={styles.button}
                     text={'Populate selected'}
                     mod="PRIMARY"
-                    onClick={() => populateSelected(props.obj)}
+                    onClick={() => handllePopulate(props.obj)}
                 />
             </div>
         </SectionWrapper>

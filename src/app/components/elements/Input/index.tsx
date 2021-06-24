@@ -15,7 +15,14 @@ const Input: React.FC<Props> = props => {
         props.onChange;
     };
 
-    return <input className={`${styles.input} ${props.className}`} onChange={handleOnChange} value={val} />;
+    return (
+        <input
+            onLoad={() => console.log('loaded')}
+            className={`${styles.input} ${props.className}`}
+            onChange={handleOnChange}
+            value={val}
+        />
+    );
 };
 
 Input.defaultProps = {

@@ -9,6 +9,8 @@ export default function validateRangeValue(string) {
 
     for (var x of inputs) {
         if (!x) return false;
+        if (x.charAt(0) === '0') return false;
+        if (x.match(/([.!@#$%^&*()_=~`":|])/g)) return false;
         const pages = x.split('-');
         if (!isSingleValid(pages) && !isRangeValid(pages)) return false;
     }

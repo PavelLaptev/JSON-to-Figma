@@ -2,10 +2,7 @@ import * as React from 'react';
 
 import {ViewContext} from '../../contexts';
 import {Link, Button} from '../../elements';
-
-declare function require(path: string): any;
-
-const pluginLogo = require('../../../assets/plugin-logo.svg');
+import Head from './sections/Head';
 
 import styles from './styles.module.scss';
 
@@ -19,9 +16,7 @@ const LaunchView: React.FC<Props> = props => {
         <ViewContext.Consumer>
             {() => (
                 <main className={styles.wrap}>
-                    <section className={styles.head}>
-                        <img className={styles.logo} src={pluginLogo} />
-                    </section>
+                    <Head />
                     <section className={styles.buttonsSection}>
                         <Button icon="upload" fileType text={'From local file'} onChange={props.fileOnChange} />
                         <Button
@@ -31,9 +26,14 @@ const LaunchView: React.FC<Props> = props => {
                             onClick={props.urlOnClick}
                         />
                     </section>
-                    <p className={styles.caption}>
-                        Read the {<Link text="documentation" link="https://github.com/PavelLaptev/JSON-to-Figma" />}
-                    </p>
+                    <section className={styles.links}>
+                        <p className={styles.caption}>
+                            Read the <Link text="documentation" link="https://github.com/PavelLaptev/JSON-to-Figma" />
+                        </p>
+                        <p className={styles.caption}>
+                            <Link text="Support plugin" link="https://www.paypal.com/paypalme/pavellaptev" /> 🧑‍💻
+                        </p>
+                    </section>
                 </main>
             )}
         </ViewContext.Consumer>
