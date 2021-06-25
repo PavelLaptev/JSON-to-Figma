@@ -46,8 +46,9 @@ const App = ({}) => {
         fileReader.onload = () => {
             try {
                 let obj = JSON.parse(fileReader.result as string);
+                let clearedFromNull = claerNullValues(obj);
 
-                loadOperationView(groupFlattenedObj(obj));
+                loadOperationView(groupFlattenedObj(clearedFromNull));
             } catch (error) {
                 showErrorMsg(error, 'Something wrong with the file. Check the structure');
             }
@@ -62,8 +63,8 @@ const App = ({}) => {
         fetchJSONfromURL(
             clipboardLink,
             responseJson => {
-                console.log(responseJson);
-                let obj = groupFlattenedObj(responseJson);
+                let clearedFromNull = claerNullValues(responseJson);
+                let obj = groupFlattenedObj(clearedFromNull);
                 loadOperationView(obj);
             },
             error => {
