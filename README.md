@@ -1,4 +1,4 @@
-# JSON to Figma 3.0
+# JSON to Figma 4.0
 
 ![plugin preview](readme-images/cover.jpg)
 
@@ -12,10 +12,12 @@ The plugin can parse local or JSON files from URL link. You can populate any lay
 
 -   Load **local** files and fetch **from URL**
 -   Fetch images
--   Parsing of JSON files with **any amount of nested levels**
--   Popualte **all matches** only by one button
--   Three populate options — populate **`only selected layers`**, **`by layer name`**, **`by string templates`**
+-   Parsing JSON files with **any amount of nested levels**
+-   **Flexible** keys selection
+-   **Invert** selected keys
+-   **Download** filltered JSON
 -   Popualte **by direct or random order**
+-   Select any **ranges** from JSON file
 -   the **"skip" rule** for layers you won't populate
 
 ---
@@ -27,10 +29,6 @@ The plugin can parse local or JSON files from URL link. You can populate any lay
 ### Youtube demo
 
 ##### 🎥 [youtu.be/7CKYdDfLFDY](https://youtu.be/7CKYdDfLFDY)
-
-### Plugin guide in Figma
-
-##### 🎀 [figma.com/file/dcOi6yAtkTQqxNGbLJQVPE/JSON-To-Figma-%E2%80%94-Plugin?node-id=1675%3A148](https://www.figma.com/file/dcOi6yAtkTQqxNGbLJQVPE/JSON-To-Figma-%E2%80%94-Plugin?node-id=1675%3A148)
 
 ---
 

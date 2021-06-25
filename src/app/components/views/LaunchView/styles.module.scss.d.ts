@@ -3,10 +3,7 @@
 interface CssExports {
     buttonsSection: string;
     caption: string;
-    eyes: string;
-    head: string;
     links: string;
-    logo: string;
     wrap: string;
 }
 export const cssExports: CssExports;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import '../styles/ui.scss';
 
-import {showMsg, execGetClipboard, groupFlattenedObj, fetchJSONfromURL} from '../utils';
+import {showMsg, execGetClipboard, groupFlattenedObj, fetchJSONfromURL, claerNullValues} from '../utils';
 import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
@@ -46,6 +46,7 @@ const App = ({}) => {
         fileReader.onload = () => {
             try {
                 let obj = JSON.parse(fileReader.result as string);
+
                 loadOperationView(groupFlattenedObj(obj));
             } catch (error) {
                 showErrorMsg(error, 'Something wrong with the file. Check the structure');
@@ -61,6 +62,7 @@ const App = ({}) => {
         fetchJSONfromURL(
             clipboardLink,
             responseJson => {
+                console.log(responseJson);
                 let obj = groupFlattenedObj(responseJson);
                 loadOperationView(obj);
             },
