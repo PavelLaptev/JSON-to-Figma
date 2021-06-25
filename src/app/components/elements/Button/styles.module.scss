@@ -45,6 +45,12 @@
         background: var(--clr-accent-dark);
         box-shadow: 0 2px 0 var(--clr-black);
     }
+
+    &:active {
+        background: var(--clr-accent-dark);
+        box-shadow: 0 0 0 var(--clr-black);
+        transform: translateY(0);
+    }
 }
 
 .outline {
@@ -74,5 +80,11 @@
 
     &:hover {
         background: var(--clr-accent-dark);
+    }
+
+    &:active {
+        background: var(--clr-accent-dark);
+        box-shadow: 0 0 0 var(--clr-black);
+        transform: translateY(0);
     }
 }

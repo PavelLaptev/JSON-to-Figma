@@ -20,7 +20,6 @@ The plugin can parse local or JSON files from a URL link. You can populate any l
 -   Select any **ranges** from JSON file
 -   the **"skip" rule** for layers you won't populate
 -   Handle `null` values
--   One Easter egg 🐰
 -   Resizeable plugin window
 
 ---
@@ -31,7 +30,7 @@ The plugin can parse local or JSON files from a URL link. You can populate any l
 
 ### Youtube demo
 
-##### 🎥 [youtu.be/7CKYdDfLFDY]()
+##### 🎥 [youtu.be/7CKYdDfLFDY](https://youtu.be/J9Hu2hNSWvE)
 
 ---
 
@@ -68,12 +67,16 @@ The JSON structure for the file should look like an array of objects.
 ```json
 [
     {
-        "key_string": "string #1",
-        "key_number": 1
+        "id": 1,
+        "name": "Shannah Judgkins",
+        "job": "Database Administrator II",
+        "image": "https://robohash.org/suntautvoluptatem.jpg?size=500x500&set=set1"
     },
     {
-        "key_string": "string #2",
-        "key_number": 2
+        "id": 2,
+        "name": "Silvester Hallwell",
+        "job": "Data Coordiator",
+        "image": "https://robohash.org/rerumautemenim.jpg?size=500x500&set=set1"
     }
 ]
 ```
