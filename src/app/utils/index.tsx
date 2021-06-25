@@ -8,5 +8,5 @@ export {default as isImageString} from './isImageString';
 export {default as isLocalhost} from './isLocalhost';
 export {default as validateRangeValue} from './validateRangeValue';
 export {default as downloadJSON} from './downloadJSON';
-export {default as fiterObjRange} from './fiterObjRange';
+export {default as filterObjRange} from './filterObjRange';
 export {default as claerNullValues} from './claerNullValues';

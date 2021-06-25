@@ -4,46 +4,47 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: calc(var(--l-space) + var(--s-space));
+    margin-bottom: var(--s-space);
 }
 
 .eyes {
     position: absolute;
-    top: 55px;
-    left: 33px;
-    &::before,
-    &::after {
+    top: 71px;
+    left: 111px;
+    &:before,
+    &:after {
         content: '';
         display: inline-block;
         position: absolute;
         background-color: var(--clr-gray);
-        width: 4px;
-        height: 4px;
+        width: 3px;
+        height: 3px;
         border-radius: 100px;
     }
     &:after {
-        left: 30px;
+        left: 34px;
     }
 }
 
 .logo {
     pointer-events: none;
     user-select: none;
-    width: 240px;
-    height: 110px;
+    width: 260px;
+    height: 152px;
 }
 
 .nes1989 {
     display: flex;
-    margin-bottom: 140px;
+    margin-bottom: 160px;
+    user-select: none;
 
     .buttonWrap {
         z-index: 99;
         position: absolute;
         width: 140px;
         height: 70px;
-        top: 42px;
-        left: 134px;
+        top: 52px;
+        left: 130px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -66,7 +67,7 @@
         position: absolute;
         z-index: 99;
         width: 149px;
-        top: 0;
+        top: 19px;
         left: 10px;
     }
 

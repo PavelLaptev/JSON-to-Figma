@@ -1,4 +1,4 @@
-export default function fiterObjRange(range, obj) {
+export default function filterObjRange(range, obj) {
     if (range === '') {
         return obj;
     } else {

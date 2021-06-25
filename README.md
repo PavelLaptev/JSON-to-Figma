@@ -2,9 +2,9 @@
 
 ![plugin preview](readme-images/cover.jpg)
 
-##### An easy way to populate Figma layers with JSON.
+##### An easy way to use real data in Figma.
 
-The plugin can parse local or JSON files from URL link. You can populate any layers with text or images.
+The plugin can parse local or JSON files from a URL link. You can populate any layers with text or images.
 
 ---
 
@@ -16,9 +16,12 @@ The plugin can parse local or JSON files from URL link. You can populate any lay
 -   **Flexible** keys selection
 -   **Invert** selected keys
 -   **Download** filltered JSON
--   Popualte **by direct or random order**
+-   Popualte **in random order**
 -   Select any **ranges** from JSON file
 -   the **"skip" rule** for layers you won't populate
+-   Handle `null` values
+-   One Easter egg 🐰
+-   Resizeable plugin window
 
 ---
 
@@ -28,67 +31,39 @@ The plugin can parse local or JSON files from URL link. You can populate any lay
 
 ### Youtube demo
 
-##### 🎥 [youtu.be/7CKYdDfLFDY](https://youtu.be/7CKYdDfLFDY)
+##### 🎥 [youtu.be/7CKYdDfLFDY]()
 
 ---
 
 ## 🚀 How to Use
 
-All you need is a proper JSON. The plugin will parse show all available keys from the JSON including nested layers. The plugin has three populate options and a few additional settings.
+All you need is a [proper JSON](#-valid-json-structure). The plugin will parse show all available keys from the JSON including nested layers.
 
-![How to use](readme-images/how-to-use.jpg)
+![Plugin preview](readme-images/plugin-preview.jpg)
 
----
-
-### ⚙️ Populate Options
-
-#### 1. `By layer name`
-
-You can populate layers deeply nested in any group or frame. To do so, manually rename the layer you want to populate so that it matches the name in the JSON file.
-Not a case-sensitive method — a JSON item with a `job` name will be match to `Job` layer name.
-
-![Selected layers only preview](readme-images/by-layer-name.jpg)
-
-#### 2. `Selected layers only`
-
-Replaces text only for directly selected text layers.
-
-![Selected layers only preview](readme-images/selected-layers-only.jpg)
-
-**3. `String templates`** — Select frames or groups that content text layers with string templates. Replaces only the contents of a string in {braces}.
-
-![String templates preview](readme-images/string-templates.jpg)
+1. Load a JSON file localy or copy a link and the click on the "From Cipboard link" button.
+2. Make sure layers you want to populate have the same names as in the JSON file. For example — if you see a key "user.name" key in the plugin the layer name also should be "user.name".
+3. Select layers with items you want to populate. You can select group or frames with these layers, no need to select layers dirictly or manualy, the plugin will find them by their names.
+4. Select keys you want to use for population.
+5. Press "Populate selected" button
 
 ---
 
-### 🎚 Additional options
+### 🤘 Features
 
-**`Random order`** — If you switch it on all items will be filled in random order. By default, all your layers will be filled in order.
+**`Range seection`** — If you want to select a certain range from a JSON, you can do it like this “1-10”, “1, 5, 20”, or combine them “1-10, 21, 50-340” — it means that the plugin will take JSON objects from 1 to 10, 21 and from 50 to 340 and combine them into one new array. Then you can also **save filtered array**.
 
-![Random order](readme-images/random-order.jpg)
+**`Skip marked layers`** — if you want to skip layers, groups or frames — exclude them from the list, then you can use the “Skip marked layers” option. Just select layers and press “Skip selected”. You can also clean marked layers or add the marker manually.
 
-**`Skip marked layers`** — if you want to skip layers, groups or frames — exclude them from the list, then you can use the “Skip marked layers” option. Just select layers and press “Skip selected”. You can also clean marked layers or add the marker ^ manually.
+**`Random order`** — If you switch it on all items will be filled in a random order. By default, all your layers will be filled in order.
 
-![Skip marked layers](readme-images/skip-marked-layers.jpg)
-
-**`Populate all matches`** — If you want to fill all your layers with all possible keys from the JSON at one — use this button. This option available for "String" and "By name" options.
-
-![Populate all matches](readme-images/populate-all-matches.jpg)
-
-**`Image URLs recognition`** — The plugin will automaticly recognise values from a JSON that end with .JPG, .PNG, .GIF or .WEBP as images. You can distinguish the value with the picture by the following buttons:
-
-![Populate all matches](readme-images/image-urls-recognition.jpg)
+**`Image URLs recognition`** — The plugin will automaticly recognise values from a JSON that end with .JPG, .PNG, .GIF or .WEBP as images. if you name a shape or a frame with the name of the key — the pllugin wil fetch the image by URL and add it as a fill.
 
 ---
 
-### ⭕️ JSON Restrictions
+### ✅ Valid JSON structure
 
--   Do not use null objects without quotes.
-
-### ✅ The correct JSON structure
-
-The better JSON structure for the file should look like an array of objects.
-All keys and values, except numbers, should be under quotes. No single quotes, only double.
+The JSON structure for the file should look like an array of objects.
 
 ```json
 [
@@ -101,25 +76,6 @@ All keys and values, except numbers, should be under quotes. No single quotes, o
         "key_number": 2
     }
 ]
-```
-
-##### ⚠️ Other JSON structures
-
-But you also can use different JSON structures. For example:
-
-```js
-{
-    "obj0": {
-        "key_string": "string #1",
-        "key_number": 0
-    },
-    "obj1": {
-        "key_string": "string #2",
-        "key_number": 1
-    }
-}
-
-// As a result you will see buttons — `0`, `1.key_string`, `1.key_number`
 ```
 
 ---
@@ -139,3 +95,7 @@ Or you can use on of these services:
 ### 🤙 Feedback
 
 Please if you have any trubles with the plugin or ideas how I could improve the plugin, let me know here or by email 😊
+
+---
+
+### [🧑‍💻💸 Support plugin](https://www.paypal.com/paypalme/pavellaptev)

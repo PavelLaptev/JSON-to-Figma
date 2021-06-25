@@ -12,7 +12,7 @@ interface Props {
 const RandomSwitcher: React.FC<Props> = props => {
     return (
         <SectionWrapper title="Random order" className={styles.wrap} onChange={props.onChange}>
-            <Switcher id="random-order-check" label="All items will be filled in a random order." />
+            <Switcher id="random-order-check" label="Fill Selected items in random order." />
         </SectionWrapper>
     );
 };

@@ -17,8 +17,8 @@ const LaunchView: React.FC = () => {
 
     React.useEffect(() => {
         const updatePos = e => {
-            let posX = e.clientX / (pluginFrameSize.width / 4);
-            let posY = e.clientY / (pluginFrameSize.height / 4);
+            let posX = (e.clientX - pluginFrameSize.width / 2) / 100;
+            let posY = (e.clientY - pluginFrameSize.height / 2) / 100;
 
             setEyePos({
                 x: posX,

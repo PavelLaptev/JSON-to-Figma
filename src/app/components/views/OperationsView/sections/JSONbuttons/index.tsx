@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {isImageString, downloadJSON, fiterObjRange} from '../../../../../utils/';
+import {isImageString, downloadJSON, filterObjRange} from '../../../../../utils/';
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
@@ -62,7 +62,7 @@ const JSONbuttons: React.FC<Props> = props => {
                     type: 'populate-selected',
                     random: props.random,
                     selected: selectedItems,
-                    obj: fiterObjRange(props.range, obj),
+                    obj: filterObjRange(props.range, obj),
                 },
             },
             '*'
@@ -87,7 +87,7 @@ const JSONbuttons: React.FC<Props> = props => {
     };
 
     const handleDownload = obj => {
-        downloadJSON(fiterObjRange(props.range, obj));
+        downloadJSON(filterObjRange(props.range, obj));
     };
 
     return (

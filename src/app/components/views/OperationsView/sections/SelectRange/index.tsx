@@ -15,7 +15,7 @@ const SelectRange: React.FC<Props> = props => {
     return (
         <SectionWrapper className={styles.wrap} divider onChange={props.onChange} title="Select Range">
             <ElementCaption
-                text={`If you want to select a certain range from a JSON, you can do it like this “1-10”, “1, 5, 20”, or combine them “1-10, 1, 5, 20, 20-340”.`}
+                text={`If you want to select a certain range from a JSON, you can do it like this “1-10”, “1, 5, 20”, or combine them “1-10, 21, 50-340”.`}
             >
                 <div className={styles.inputWrap}>
                     <Input className={`${props.error ? styles.inputError : ''} ${styles.input}`} value={props.value} />
