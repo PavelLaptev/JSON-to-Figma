@@ -15,12 +15,12 @@ The plugin can parse local or JSON files from a URL link. You can populate any l
 -   Parsing JSON files with **any amount of nested levels**
 -   **Flexible** keys selection
 -   **Invert** selected keys
--   **Download** filltered JSON
--   Popualte **in random order**
+-   **Download** filtered JSON
+-   Populate **in random order**
 -   Select any **ranges** from JSON file
 -   the **"skip" rule** for layers you won't populate
 -   Handle `null` values
--   Resizeable plugin window
+-   Resizable plugin window
 
 ---
 

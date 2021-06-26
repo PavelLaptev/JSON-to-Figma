@@ -9,4 +9,4 @@ export {default as isLocalhost} from './isLocalhost';
 export {default as validateRangeValue} from './validateRangeValue';
 export {default as downloadJSON} from './downloadJSON';
 export {default as filterObjRange} from './filterObjRange';
-export {default as claerNullValues} from './claerNullValues';
+export {default as clearNullValues} from './clearNullValues';

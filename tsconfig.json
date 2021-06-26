@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "esnext",
+        "target": "ES6",
         "outDir": "dist",
         "jsx": "react",
         "noUnusedLocals": true,
