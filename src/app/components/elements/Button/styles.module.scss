@@ -1,7 +1,7 @@
 .button {
     user-select: none;
     outline: none;
-    border: 3px solid var(--clr-black);
+    border: 2px solid var(--clr-black);
     border-radius: var(--radius-m);
     padding: var(--xs-space) var(--s-space);
     display: flex;
@@ -62,7 +62,7 @@
     }
 
     &:hover {
-        border: 3px solid var(--clr-accent-main);
+        border: 2px solid var(--clr-accent-main);
         box-shadow: 0 2px 0 var(--clr-accent-main);
     }
 }
@@ -70,7 +70,7 @@
 .active {
     background: var(--clr-accent-main);
     color: var(--clr-white);
-    border: 3px solid var(--clr-black);
+    border: 2px solid var(--clr-black);
     box-shadow: 0 2px 0 var(--clr-black);
     transform: translateY(-2px);
 
