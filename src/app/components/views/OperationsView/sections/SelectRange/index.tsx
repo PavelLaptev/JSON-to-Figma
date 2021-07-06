@@ -13,7 +13,7 @@ interface Props {
 
 const SelectRange: React.FC<Props> = props => {
     return (
-        <SectionWrapper className={styles.wrap} divider onChange={props.onChange} title="Select Range">
+        <SectionWrapper className={styles.wrap} divider onChange={props.onChange} title="Restrict range">
             <ElementCaption
                 text={`If you want to select a certain range from a JSON, you can do it like this “1-10”, “1, 5, 20”, or combine them “1-10, 21, 50-340”.`}
             >

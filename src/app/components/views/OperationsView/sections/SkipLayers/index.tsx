@@ -20,7 +20,7 @@ const SkipLayers: React.FC<Props> = props => {
     };
 
     return (
-        <SectionWrapper className={styles.wrap} divider onChange={props.onSectionChange} title="Skip by special sign">
+        <SectionWrapper className={styles.wrap} onChange={props.onSectionChange} title="Skip by special sign">
             <ElementCaption
                 text={`Select layers you want to exclude for the population. The plugin will skip all layers with the special ${skipSign} sign.`}
             >
