@@ -1,7 +1,14 @@
 import * as React from 'react';
 
 import {ViewContext} from '../../contexts';
-import {JSONbuttons, SkipLayers, RandomSwitcher, SelectRange, ManualPopulation} from './sections';
+import {
+    JSONButtons,
+    ManualJSONButtons,
+    SkipLayers,
+    RandomSwitcher,
+    SelectRange,
+    ManualPopulationSwitcher,
+} from './sections';
 import {Resizer} from '../../elements';
 import {validateRangeValue} from '../../../utils/';
 
@@ -21,7 +28,7 @@ const OperationsView: React.FunctionComponent<Props> = props => {
     React.useEffect(() => {
         const frameHeight = mainSectionRef.current.getBoundingClientRect().height;
         parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
-    }, []);
+    }, [isManualSwitch]);
 
     const handleRandomSwitcher = e => {
         setIsRandomSwitch(e.target.checked);
@@ -46,17 +53,21 @@ const OperationsView: React.FunctionComponent<Props> = props => {
                 <main ref={mainSectionRef} className={styles.wrap}>
                     <Resizer />
                     {!isManualSwitch ? (
-                        <JSONbuttons
+                        <JSONButtons
                             range={range}
                             onReuploadClick={props.onReuploadClick}
                             obj={JSONobject}
                             random={isRandomSwitch}
                         />
                     ) : (
-                        <div>Manual Switch</div>
+                        <ManualJSONButtons
+                            range={range}
+                            onReuploadClick={props.onReuploadClick}
+                            obj={JSONobject}
+                            random={isRandomSwitch}
+                        />
                     )}
-
-                    <ManualPopulation onChange={handleManualSwitcher} />
+                    <ManualPopulationSwitcher onChange={handleManualSwitcher} />
                     <RandomSwitcher onChange={handleRandomSwitcher} />
                     <SelectRange error={rangeError} onChange={handleRangeInput} value={`1-${JSONobject.length}`} />
                     <SkipLayers />

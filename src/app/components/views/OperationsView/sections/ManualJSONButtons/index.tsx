@@ -13,33 +13,24 @@ interface Props {
     onReuploadClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const JSONButtons: React.FC<Props> = props => {
+const ManualJSONButtons: React.FC<Props> = props => {
     // INITIAL CONSTANTS
-    const initialToggle = Object.keys(props.obj[0]).reduce((acc, curr) => ((acc[curr] = false), acc), {});
     const obj = Object.keys(props.obj[0]);
 
     // STATES
-    const [selectedItems, setSelecteditems] = React.useState([] as Array<string>);
-    const [toggle, setToggle] = React.useState(initialToggle);
+    const [selected, setSelected] = React.useState(null);
 
     const createButtons = () => {
         return obj.map((item, i) => {
             const handleClick = e => {
                 if (typeof e.target.textContent !== 'undefined') {
-                    setToggle(prevState => ({
-                        ...prevState,
-                        [item]: !prevState[item],
-                    }));
+                    if (e.target.textContent === selected) {
+                        setSelected(null);
+                    } else {
+                        setSelected(item);
+                    }
                 }
             };
-
-            React.useEffect(() => {
-                if (toggle[item]) {
-                    setSelecteditems([...selectedItems, item]);
-                } else {
-                    setSelecteditems(selectedItems.filter(c => c !== item));
-                }
-            }, [toggle[item]]);
 
             const isImage = isImageString(props.obj[0][item].toString().split('?')[0]);
 
@@ -48,7 +39,7 @@ const JSONButtons: React.FC<Props> = props => {
                     key={`item-button-${i}`}
                     text={item}
                     icon={isImage ? 'image' : undefined}
-                    mod={toggle[item] ? 'ACTIVE' : 'OUTLINE'}
+                    mod={selected === item ? 'ACTIVE' : 'OUTLINE'}
                     onClick={handleClick}
                 />
             );
@@ -60,31 +51,14 @@ const JSONButtons: React.FC<Props> = props => {
         parent.postMessage(
             {
                 pluginMessage: {
-                    type: 'populate',
+                    type: 'manual-populate',
                     random: props.random,
-                    selected: selectedItems,
+                    selected: selected,
                     obj: filterObjRange(props.range, obj),
                 },
             },
             '*'
         );
-    };
-
-    const handleReset = () => {
-        setSelecteditems([]);
-        setToggle(initialToggle);
-    };
-
-    const handleInvert = () => {
-        const invertedObj = Object.entries(toggle).map(item => {
-            return {[item[0]]: !item[1]};
-        });
-        setToggle(Object.assign({}, ...invertedObj));
-        const invertedItems = invertedObj
-            .map(item => (Object.values(item)[0] ? Object.keys(item)[0] : false))
-            .filter(Boolean);
-
-        setSelecteditems(invertedItems as Array<string>);
     };
 
     const handleDownload = obj => {
@@ -95,8 +69,12 @@ const JSONButtons: React.FC<Props> = props => {
         <SectionWrapper className={styles.wrap} title="JSON keys">
             <div className={styles.buttonsWrap}>{createButtons()}</div>
             <div className={styles.manipulationButtons}>
-                <Button className={styles.button} text={'Invert'} mod="PRIMARY" onClick={handleInvert} />
-                <Button className={styles.icon} icon="reset" title="Reset" mod="PRIMARY" onClick={handleReset} />
+                <Button
+                    className={styles.button}
+                    text={'Populate selected'}
+                    mod="PRIMARY"
+                    onClick={() => handllePopulate(props.obj)}
+                />
                 <Button
                     className={styles.icon}
                     icon="save"
@@ -112,16 +90,8 @@ const JSONButtons: React.FC<Props> = props => {
                     onClick={props.onReuploadClick}
                 />
             </div>
-            <div className={styles.actionButtons}>
-                <Button
-                    className={styles.button}
-                    text={'Populate selected'}
-                    mod="PRIMARY"
-                    onClick={() => handllePopulate(props.obj)}
-                />
-            </div>
         </SectionWrapper>
     );
 };
 
-export default JSONButtons;
+export default ManualJSONButtons;

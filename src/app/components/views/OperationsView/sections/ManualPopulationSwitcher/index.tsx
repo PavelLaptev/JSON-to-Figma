@@ -7,19 +7,19 @@ interface Props {
     onChange?(event: React.FormEvent<HTMLInputElement>): void;
 }
 
-const ManualPopulation: React.FC<Props> = props => {
+const ManualPopulationSwitcher: React.FC<Props> = props => {
     return (
         <SectionWrapper divider title="Manual population" onChange={props.onChange}>
             <Switcher
                 id="manual-population"
-                label="Select layers you want to fill out and hit the desired key-button."
+                label="Select layers and a key. Layers will be filled despite the name mathcing."
             />
         </SectionWrapper>
     );
 };
 
-ManualPopulation.defaultProps = {
+ManualPopulationSwitcher.defaultProps = {
     onChange: () => {},
 } as Partial<Props>;
 
-export default ManualPopulation;
+export default ManualPopulationSwitcher;

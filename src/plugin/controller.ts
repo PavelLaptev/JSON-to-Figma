@@ -1,4 +1,4 @@
-import {figmaNotify, shuffleArray, populateByName, addSign, removeSign} from './utils';
+import {figmaNotify, shuffleArray, populateByName, populateOnlySelected, addSign, removeSign} from './utils';
 import {pluginFrameSize} from '../data/pluginFrameSize';
 import {skipSign} from '../data/skipSign';
 
@@ -13,7 +13,7 @@ figma.ui.onmessage = msg => {
 
     const isSelectionLength = figma.currentPage.selection.length !== 0;
 
-    if (msg.type === 'populate-selected') {
+    if (msg.type === 'populate') {
         // Check if something selected
         let selectedArray = msg.selected;
         const selection = isRandom(figma.currentPage.selection);
@@ -31,6 +31,23 @@ figma.ui.onmessage = msg => {
                 figmaNotify('error', `Select keys to populate`, 3000);
             }
         }
+    }
+
+    if (msg.type === 'manual-populate') {
+        if (msg.selected === null) {
+            figmaNotify('error', 'Select keys to populate', 3000);
+        }
+
+        if (figma.currentPage.selection.length <= 0) {
+            figmaNotify('error', 'Select layers to populate', 3000);
+        }
+
+        const selection = isRandom(figma.currentPage.selection);
+        const obj = isRandom(msg.obj);
+
+        populateOnlySelected(selection, obj, msg.selected);
+
+        console.log(msg.selected);
     }
 
     // if we recived fetched images
