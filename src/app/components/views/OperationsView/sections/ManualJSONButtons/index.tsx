@@ -66,7 +66,7 @@ const ManualJSONButtons: React.FC<Props> = props => {
     };
 
     return (
-        <SectionWrapper className={styles.wrap} title="JSON keys">
+        <SectionWrapper className={styles.wrap} title="Select JSON key ↴">
             <div className={styles.buttonsWrap}>{createButtons()}</div>
             <div className={styles.manipulationButtons}>
                 <Button

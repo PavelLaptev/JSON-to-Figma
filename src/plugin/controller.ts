@@ -46,8 +46,6 @@ figma.ui.onmessage = msg => {
         const obj = isRandom(msg.obj);
 
         populateOnlySelected(selection, obj, msg.selected);
-
-        console.log(msg.selected);
     }
 
     // if we recived fetched images

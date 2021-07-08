@@ -1,12 +1,18 @@
 import * as React from 'react';
 import '../styles/ui.scss';
 
-import {showMsg, execGetClipboard, groupFlattenedObj, fetchJSONfromURL, clearNullValues} from '../utils';
+import {
+    showMsg,
+    execGetClipboard,
+    groupFlattenedObj,
+    fetchJSONfromURL,
+    clearNullValues,
+    fetchImagefromURL,
+} from '../utils';
 import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
 import {pluginFrameSize} from '../../data/pluginFrameSize';
-import {fetchImagefromURL} from '../utils';
 
 const App = ({}) => {
     const [JSONobject, setJSONobject] = React.useState(null);

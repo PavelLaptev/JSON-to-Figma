@@ -92,7 +92,7 @@ const JSONButtons: React.FC<Props> = props => {
     };
 
     return (
-        <SectionWrapper className={styles.wrap} title="JSON keys">
+        <SectionWrapper className={styles.wrap} title="Select JSON keys ↴">
             <div className={styles.buttonsWrap}>{createButtons()}</div>
             <div className={styles.manipulationButtons}>
                 <Button className={styles.button} text={'Invert'} mod="PRIMARY" onClick={handleInvert} />
