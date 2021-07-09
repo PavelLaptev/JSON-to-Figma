@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {isImageString, downloadJSON, filterObjRange} from '../../../../../utils';
+import {isImageString, downloadJSON, filterObjRange, postFigmaMessage} from '../../../../../utils';
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
@@ -22,6 +22,23 @@ const JSONButtons: React.FC<Props> = props => {
     const [selectedItems, setSelecteditems] = React.useState([] as Array<string>);
     const [toggle, setToggle] = React.useState(initialToggle);
 
+    // POST DATA FOO TEMPLATE
+    const postPluginData = () => {
+        postFigmaMessage({
+            type: 'post-plugin-storage',
+            random: props.random,
+            manual: false,
+            selected: selectedItems,
+            obj: filterObjRange(props.range, props.obj),
+        });
+    };
+
+    // USE EFFECT
+    React.useEffect(() => {
+        postPluginData();
+    }, [selectedItems, props.random]);
+
+    // BUTTONS
     const createButtons = () => {
         return obj.map((item, i) => {
             const handleClick = e => {
@@ -57,17 +74,12 @@ const JSONButtons: React.FC<Props> = props => {
 
     // HANDLERS
     const handllePopulate = obj => {
-        parent.postMessage(
-            {
-                pluginMessage: {
-                    type: 'populate',
-                    random: props.random,
-                    selected: selectedItems,
-                    obj: filterObjRange(props.range, obj),
-                },
-            },
-            '*'
-        );
+        postFigmaMessage({
+            type: 'populate',
+            random: props.random,
+            selected: selectedItems,
+            obj: filterObjRange(props.range, obj),
+        });
     };
 
     const handleReset = () => {
@@ -91,8 +103,9 @@ const JSONButtons: React.FC<Props> = props => {
         downloadJSON(filterObjRange(props.range, obj));
     };
 
+    // RENDER
     return (
-        <SectionWrapper className={styles.wrap} title="Select JSON keys ↴">
+        <SectionWrapper className={styles.wrap} title="Select keys ↴">
             <div className={styles.buttonsWrap}>{createButtons()}</div>
             <div className={styles.manipulationButtons}>
                 <Button className={styles.button} text={'Invert'} mod="PRIMARY" onClick={handleInvert} />

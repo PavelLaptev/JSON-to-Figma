@@ -9,7 +9,8 @@
             width: 28px;
             height: 16px;
             position: absolute;
-            top: 1px;
+            transform: translateY(-50%);
+            top: 50%;
             left: 0;
             border: 2px solid var(--clr-black);
             background: transparent;
@@ -22,7 +23,8 @@
             width: 16px;
             height: 16px;
             position: absolute;
-            top: 1px;
+            transform: translateY(-50%);
+            top: 50%;
             left: 0;
             border: 2px solid var(--clr-black);
             background: white;

@@ -10,3 +10,4 @@ export {default as validateRangeValue} from './validateRangeValue';
 export {default as downloadJSON} from './downloadJSON';
 export {default as filterObjRange} from './filterObjRange';
 export {default as clearNullValues} from './clearNullValues';
+export {default as postFigmaMessage} from './postFigmaMessage';

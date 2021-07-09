@@ -33,6 +33,5 @@ export default function populateByName(selectedLayers, JSONobj, selectedItem) {
             }
         });
     };
-
     loopSelected(selectedLayers);
 }

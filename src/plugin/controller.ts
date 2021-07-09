@@ -5,6 +5,18 @@ import {skipSign} from '../data/skipSign';
 // SHOW UI
 figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});
 
+// HANDLE PLUGIN STORAGE
+const storageID = 'JSONtoFigma';
+figma.ui.postMessage({type: 'get-plugin-storage', data: figma.root.getPluginData(storageID)});
+// const storageData = figma.root.getPluginData(storageID);
+
+// const getPluginStorage = () => {
+//     const storageData = figma.root.getPluginData(storageID);
+//     console.log(storageData);
+// };
+
+// getPluginStorage();
+
 // ON MESSAGE
 figma.ui.onmessage = msg => {
     const isRandom = arr => {
@@ -18,6 +30,7 @@ figma.ui.onmessage = msg => {
         let selectedArray = msg.selected;
         const selection = isRandom(figma.currentPage.selection);
         const obj = isRandom(msg.obj);
+        console.log(obj);
 
         // POPULATE
         if (!isSelectionLength) {
@@ -86,6 +99,16 @@ figma.ui.onmessage = msg => {
     }
     if (msg.type === 'manual-resize') {
         figma.ui.resize(Math.round(msg.size.width), Math.round(msg.size.height));
+    }
+
+    // STORAGE
+    if (msg.type === 'reset') {
+        figma.root.setPluginData(storageID, '');
+    }
+
+    if (msg.type === 'post-plugin-storage') {
+        // console.log('data', msg);
+        figma.root.setPluginData(storageID, JSON.stringify(msg));
     }
 };
 

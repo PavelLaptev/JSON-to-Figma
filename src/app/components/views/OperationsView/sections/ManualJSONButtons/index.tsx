@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {isImageString, downloadJSON, filterObjRange} from '../../../../../utils';
+import {isImageString, downloadJSON, filterObjRange, postFigmaMessage} from '../../../../../utils';
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
@@ -20,6 +20,23 @@ const ManualJSONButtons: React.FC<Props> = props => {
     // STATES
     const [selected, setSelected] = React.useState(null);
 
+    // POST DATA FOO TEMPLATE
+    const postPluginData = () => {
+        postFigmaMessage({
+            type: 'post-plugin-storage',
+            random: props.random,
+            manual: true,
+            selected: selected,
+            obj: filterObjRange(props.range, props.obj),
+        });
+    };
+
+    // USE EFFECT
+    React.useEffect(() => {
+        postPluginData();
+    }, [selected, props.random]);
+
+    // BUTTONS
     const createButtons = () => {
         return obj.map((item, i) => {
             const handleClick = e => {
@@ -48,17 +65,12 @@ const ManualJSONButtons: React.FC<Props> = props => {
 
     // HANDLERS
     const handllePopulate = obj => {
-        parent.postMessage(
-            {
-                pluginMessage: {
-                    type: 'manual-populate',
-                    random: props.random,
-                    selected: selected,
-                    obj: filterObjRange(props.range, obj),
-                },
-            },
-            '*'
-        );
+        postFigmaMessage({
+            type: 'manual-populate',
+            random: props.random,
+            selected: selected,
+            obj: filterObjRange(props.range, obj),
+        });
     };
 
     const handleDownload = obj => {
@@ -66,7 +78,7 @@ const ManualJSONButtons: React.FC<Props> = props => {
     };
 
     return (
-        <SectionWrapper className={styles.wrap} title="Select JSON key ↴">
+        <SectionWrapper className={styles.wrap} title="Select a key ↴">
             <div className={styles.buttonsWrap}>{createButtons()}</div>
             <div className={styles.manipulationButtons}>
                 <Button

@@ -23,6 +23,14 @@ const App = ({}) => {
             const imgURL = e.data.pluginMessage.url;
             fetchImagefromURL(imgURL, e.data.pluginMessage.targetID);
         }
+
+        if (e.data.pluginMessage.type === 'get-plugin-storage') {
+            if (e.data.pluginMessage.data === '') {
+                console.log('empty', e.data.pluginMessage);
+            } else {
+                console.log(e.data.pluginMessage.data);
+            }
+        }
     };
 
     React.useEffect(() => {
