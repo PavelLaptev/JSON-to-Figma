@@ -9,7 +9,7 @@ export default async function fetchImagefromURL(url, targetID) {
                 console.error(error);
             }
         })
-        .then(a =>
-            parent.postMessage({pluginMessage: {type: 'imgData', data: new Uint8Array(a), targetID: targetID}}, '*')
-        );
+        .then(a => {
+            parent.postMessage({pluginMessage: {type: 'imgData', data: new Uint8Array(a), targetID: targetID}}, '*');
+        });
 }

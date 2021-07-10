@@ -1,12 +1,18 @@
 import * as React from 'react';
 import '../styles/ui.scss';
 
-import {showMsg, execGetClipboard, groupFlattenedObj, fetchJSONfromURL, clearNullValues} from '../utils';
+import {
+    showMsg,
+    execGetClipboard,
+    groupFlattenedObj,
+    fetchJSONfromURL,
+    clearNullValues,
+    fetchImagefromURL,
+} from '../utils';
 import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
 import {pluginFrameSize} from '../../data/pluginFrameSize';
-import {fetchImagefromURL} from '../utils';
 
 const App = ({}) => {
     const [JSONobject, setJSONobject] = React.useState(null);
@@ -16,6 +22,14 @@ const App = ({}) => {
         if (e.data.pluginMessage.type === 'image-url') {
             const imgURL = e.data.pluginMessage.url;
             fetchImagefromURL(imgURL, e.data.pluginMessage.targetID);
+        }
+
+        if (e.data.pluginMessage.type === 'get-plugin-storage') {
+            if (e.data.pluginMessage.data === '') {
+                console.log('empty', e.data.pluginMessage);
+            } else {
+                console.log(e.data.pluginMessage.data);
+            }
         }
     };
 

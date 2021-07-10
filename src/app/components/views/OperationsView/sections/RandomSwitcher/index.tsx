@@ -3,15 +3,13 @@ import * as React from 'react';
 import {Switcher} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
 
-import styles from './styles.module.scss';
-
 interface Props {
     onChange?(event: React.FormEvent<HTMLInputElement>): void;
 }
 
 const RandomSwitcher: React.FC<Props> = props => {
     return (
-        <SectionWrapper title="Random order" className={styles.wrap} onChange={props.onChange}>
+        <SectionWrapper divider title="Random order" onChange={props.onChange}>
             <Switcher id="random-order-check" label="Fill Selected items in random order." />
         </SectionWrapper>
     );

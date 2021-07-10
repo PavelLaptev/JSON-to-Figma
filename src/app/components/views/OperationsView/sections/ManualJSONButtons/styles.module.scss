@@ -1,0 +1,37 @@
+.wrap {
+    background-color: var(--clr-gray);
+}
+
+.buttonsWrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: var(--s-space);
+    button {
+        margin-right: var(--xs-space);
+        margin-bottom: var(--xs-space);
+    }
+}
+
+.button {
+    flex: 1;
+}
+
+.icon {
+    i {
+        margin-left: 0;
+    }
+}
+
+.actionButtons {
+    display: flex;
+}
+
+.manipulationButtons {
+    display: flex;
+    button {
+        margin-right: var(--s-space);
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
