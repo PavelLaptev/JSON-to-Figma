@@ -12,7 +12,7 @@ const ManualPopulationSwitcher: React.FC<Props> = props => {
         <SectionWrapper title="Manual population" onChange={props.onChange}>
             <Switcher
                 id="manual-population"
-                label="Select layers and a key. Layers will be filled despite the name mathcing."
+                label="Select layers and a key. Layers will be filled despite the name matching."
             />
         </SectionWrapper>
     );
