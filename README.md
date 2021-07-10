@@ -1,4 +1,4 @@
-# JSON to Figma 4.0
+# JSON to Figma 4.2
 
 ![plugin preview](readme-images/cover.jpg)
 
@@ -17,6 +17,7 @@ The plugin can parse local or JSON files from a URL link. You can populate any l
 -   **Invert** selected keys
 -   **Download** filtered JSON
 -   Populate **in random order**
+-   Manual Popualtion
 -   Select any **ranges** from JSON file
 -   the **"skip" rule** for layers you won't populate
 -   Handle `null` values
@@ -57,6 +58,8 @@ All you need is a [proper JSON](#-valid-json-structure). The plugin will parse s
 **`Random order`** — If you switch it on all items will be filled in a random order. By default, all your layers will be filled in order.
 
 **`Image URLs recognition`** — The plugin will automaticly recognise values from a JSON that end with .JPG, .PNG, .GIF or .WEBP as images. if you name a shape or a frame with the name of the key — the pllugin wil fetch the image by URL and add it as a fill.
+
+**`Manual population`** — The plugin populates layers automatically by their names. But you can populate layers manually, despite their names. Select a key in the plugin and then select layers you want to populate. Acceptable for images also.
 
 ---
 

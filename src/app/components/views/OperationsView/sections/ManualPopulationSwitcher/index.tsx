@@ -9,7 +9,7 @@ interface Props {
 
 const ManualPopulationSwitcher: React.FC<Props> = props => {
     return (
-        <SectionWrapper divider title="Manual population" onChange={props.onChange}>
+        <SectionWrapper title="Manual population" onChange={props.onChange}>
             <Switcher
                 id="manual-population"
                 label="Select layers and a key. Layers will be filled despite the name mathcing."

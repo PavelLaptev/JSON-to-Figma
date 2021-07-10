@@ -26,7 +26,7 @@ const OperationsView: React.FunctionComponent<Props> = props => {
     const mainSectionRef = React.useRef(null);
 
     React.useEffect(() => {
-        const frameHeight = mainSectionRef.current.getBoundingClientRect().height;
+        const frameHeight = mainSectionRef.current.getBoundingClientRect().height + 10;
         parent.postMessage({pluginMessage: {type: 'change-size', frameHeight}}, '*');
     }, [isManualSwitch]);
 
@@ -67,10 +67,11 @@ const OperationsView: React.FunctionComponent<Props> = props => {
                             random={isRandomSwitch}
                         />
                     )}
-                    <ManualPopulationSwitcher onChange={handleManualSwitcher} />
+
                     <RandomSwitcher onChange={handleRandomSwitcher} />
                     <SelectRange error={rangeError} onChange={handleRangeInput} value={`1-${JSONobject.length}`} />
                     <SkipLayers />
+                    <ManualPopulationSwitcher onChange={handleManualSwitcher} />
                 </main>
             )}
         </ViewContext.Consumer>
