@@ -6,6 +6,7 @@
     ],
     "jsRules": {},
     "rules": {
+        "arrow-parens": false,
         "ordered-imports": false,
         "object-literal-sort-keys": false,
         "member-ordering": false,
@@ -13,7 +14,10 @@
         "interface-name": false,
         "quotemark": false,
         "curly": false,
-        "member-access": [true, "no-public"],
+        "member-access": [
+            true,
+            "no-public"
+        ],
         "semicolon": false,
         "no-trailing-whitespace": false,
         "no-console": false,

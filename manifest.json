@@ -1,8 +1,8 @@
 {
-    "name": "JSON to Figma",
-    "id": "789839703871161985",
+    "name": "Dynamic content",
+    "id": "1",
     "api": "1.0.0",
     "main": "dist/code.js",
     "ui": "dist/ui.html",
-    "relaunchButtons": [{"command": "open", "name": "JSON to Figma"}]
+    "relaunchButtons": [{"command": "open", "name": "Dynamic content"}]
 }
