@@ -1,0 +1,29 @@
+[
+  {
+    "name": {
+      "characters": "John",
+      "opacity": 0.75,
+      "fills": "[{\"type\":\"SOLID\",\"visible\":true,\"opacity\":1,\"blendMode\":\"NORMAL\",\"color\":{\"r\":0,\"g\":1,\"b\":0}}]"
+    }
+  },
+  {
+    "name": {
+      "characters": "Carmen",
+      "opacity": 1,
+      "fills": "[{\"type\":\"GRADIENT_LINEAR\",\"visible\":true,\"opacity\":1,\"blendMode\":\"NORMAL\",\"gradientStops\":[{\"color\":{\"r\":0.7958333492279053,\"g\":0.20890623331069946,\"b\":0.20890623331069946,\"a\":1},\"position\":0},{\"color\":{\"r\":0.09635418653488159,\"g\":0.12333332747220993,\"b\":0.7708333134651184,\"a\":0.6299999952316284},\"position\":1}],\"gradientTransform\":[[1.7037036418914795,0.04904906451702118,-0.05338672548532486],[-0.04904906451702118,0.05083579197525978,0.4851873219013214]]}]"
+    }
+  },
+  {
+    "name": {
+      "characters": "Sigfred",
+      "opacity": 1,
+      "fills": "[{\"type\":\"GRADIENT_LINEAR\",\"visible\":true,\"opacity\":1,\"blendMode\":\"NORMAL\",\"gradientStops\":[{\"color\":{\"r\":0.1,\"g\":0.3,\"b\":0.5,\"a\":1},\"position\":0},{\"color\":{\"r\":0.09635418653488159,\"g\":0.12333332747220993,\"b\":0.7708333134651184,\"a\":0.6299999952316284},\"position\":1}],\"gradientTransform\":[[1.7037036418914795,0.04904906451702118,0.05338672548532486],[0.04904906451702118,0.05083579197525978,0.4851873219013214]]}]"
+    }
+  },
+  {
+    "name": {
+      "characters": "Tim",
+      "opacity": 0.5
+    }
+  }
+]

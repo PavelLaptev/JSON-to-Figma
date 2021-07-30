@@ -14,7 +14,7 @@ export default function populateByName(selectedLayers, JSONobj, keyFromJSON) {
             const hasMatchingName = node.name.toUpperCase() === keyName.toUpperCase();
             if (!hasSkipSign && hasMatchingName) {
                 const propValuesFromJSON = JSONobj[newItem];
-                const newPropValue = propValuesFromJSON[keyFromJSON];
+                let newPropValue = propValuesFromJSON[keyFromJSON];
                 console.log(
                     `${newItem}: The node named "${keyName}" should change prop "${propToChange}" to "${newPropValue}"`,
                     node
@@ -29,6 +29,16 @@ export default function populateByName(selectedLayers, JSONobj, keyFromJSON) {
                     });
                 } else {
                     try {
+                        const currentValue = node[propToChange];
+                        const oldValue = newPropValue;
+                        try {
+                            newPropValue = JSON.parse(newPropValue);
+                            console.log(`From JSON, newvalue: ${JSON.stringify(newPropValue)}`);
+                        } catch (e) {
+                            // failed to parse newPropValue as JSON
+                        }
+                        newPropValue = newPropValue === undefined ? currentValue : newPropValue;
+                        console.log(currentValue, typeof currentValue, '=> ', newPropValue);
                         node[propToChange] = newPropValue;
                     } catch (e) {
                         console.log(`Failed to set "${propToChange}"`);
