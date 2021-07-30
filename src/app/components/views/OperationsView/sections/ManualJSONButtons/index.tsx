@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import {isImageString, downloadJSON, filterObjRange, postFigmaMessage} from '../../../../../utils';
+import {downloadJSON, filterObjRange, isImageString, postFigmaMessage} from '../../../../../utils';
+
 import {Button} from '../../../../elements';
 import {SectionWrapper} from '../../../../sections';
-
 import styles from './styles.module.scss';
 
 interface Props {

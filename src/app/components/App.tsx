@@ -1,17 +1,18 @@
-import * as React from 'react';
 import '../styles/ui.scss';
 
-import {
-    showMsg,
-    execGetClipboard,
-    groupFlattenedObj,
-    fetchJSONfromURL,
-    clearNullValues,
-    fetchImagefromURL,
-} from '../utils';
-import {ViewContext} from './contexts';
-import {LaunchView, OperationsView} from './views';
+import * as React from 'react';
 
+import {LaunchView, OperationsView} from './views';
+import {
+    clearNullValues,
+    execGetClipboard,
+    fetchImagefromURL,
+    fetchJSONfromURL,
+    groupFlattenedObj,
+    showMsg,
+} from '../utils';
+
+import {ViewContext} from './contexts';
 import {pluginFrameSize} from '../../data/pluginFrameSize';
 
 const App = ({}) => {
@@ -19,6 +20,19 @@ const App = ({}) => {
 
     // Add Msg Listener
     const MsgListener = e => {
+        if (e.data.pluginMessage.type === 'json-ready-to-save') {
+            const {json} = e.data.pluginMessage;
+
+            const a: HTMLAnchorElement = document.getElementById('link') as HTMLAnchorElement;
+            a.href = URL.createObjectURL(
+                new Blob([JSON.stringify(json, null, 2)], {
+                    type: 'application/json',
+                })
+            );
+            a.setAttribute('download', 'selection-properties.json');
+            a.click();
+        }
+
         if (e.data.pluginMessage.type === 'image-url') {
             const imgURL = e.data.pluginMessage.url;
             fetchImagefromURL(imgURL, e.data.pluginMessage.targetID);

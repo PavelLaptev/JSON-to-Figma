@@ -1,4 +1,5 @@
-import {figmaNotify, shuffleArray, populateByName, populateOnlySelected, addSign, removeSign} from './utils';
+import {addSign, figmaNotify, populateByName, populateOnlySelected, removeSign, shuffleArray} from './utils';
+
 import {pluginFrameSize} from '../data/pluginFrameSize';
 import {skipSign} from '../data/skipSign';
 
@@ -31,6 +32,23 @@ figma.ui.onmessage = msg => {
                 figmaNotify('error', `Select keys to populate`, 3000);
             }
         }
+    }
+
+    if (msg.type === 'save-selection-to-json') {
+        const selection = [...figma.currentPage.selection];
+        if (selection === null || selection.length === 0) {
+            figmaNotify('error', 'Select nodes to save', 3000);
+        }
+
+        const json = selection.map(node => {
+            const propsToSave = ['characters', 'fills'];
+            const props = {};
+            const name = node.name.toString();
+            propsToSave.forEach(prop => (props[`${name}.${prop}`] = JSON.stringify(node[prop])));
+            return props;
+        });
+
+        figma.ui.postMessage({type: 'json-ready-to-save', json});
     }
 
     if (msg.type === 'manual-populate') {

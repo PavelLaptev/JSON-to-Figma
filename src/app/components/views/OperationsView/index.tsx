@@ -1,17 +1,19 @@
 import * as React from 'react';
 
-import {ViewContext} from '../../contexts';
 import {
     JSONButtons,
     ManualJSONButtons,
-    SkipLayers,
+    ManualPopulationSwitcher,
     RandomSwitcher,
     SelectRange,
-    ManualPopulationSwitcher,
+    SkipLayers,
 } from './sections';
-import {Resizer} from '../../elements';
-import {validateRangeValue} from '../../../utils/';
+import {postFigmaMessage, validateRangeValue} from '../../../utils/';
 
+import {Resizer} from '../../elements';
+import SaveSelectionAsJSON from './sections/SaveSelectionAsJSON';
+import {ViewContext} from '../../contexts';
+import {figmaNotify} from '../../../../plugin/utils';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -36,6 +38,12 @@ const OperationsView: React.FunctionComponent<Props> = props => {
 
     const handleManualSwitcher = e => {
         setIsManualSwitch(e.target.checked);
+    };
+
+    const handleSaveSelectionToJSON = () => {
+        postFigmaMessage({
+            type: 'save-selection-to-json',
+        });
     };
 
     const handleRangeInput = e => {
@@ -67,11 +75,14 @@ const OperationsView: React.FunctionComponent<Props> = props => {
                             random={isRandomSwitch}
                         />
                     )}
-
                     <RandomSwitcher onChange={handleRandomSwitcher} />
                     <SelectRange error={rangeError} onChange={handleRangeInput} value={`1-${JSONobject.length}`} />
                     <SkipLayers />
                     <ManualPopulationSwitcher onChange={handleManualSwitcher} />
+                    <SaveSelectionAsJSON onClick={handleSaveSelectionToJSON} />
+                    <a href="" id="link" style={{display: 'none'}}>
+                        internal use only
+                    </a>
                 </main>
             )}
         </ViewContext.Consumer>

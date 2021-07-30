@@ -6,6 +6,7 @@
     ],
     "jsRules": {},
     "rules": {
+        "jsx-no-multiline-js": false,
         "arrow-parens": false,
         "ordered-imports": false,
         "object-literal-sort-keys": false,
