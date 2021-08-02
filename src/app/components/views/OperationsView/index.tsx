@@ -13,7 +13,6 @@ import {postFigmaMessage, validateRangeValue} from '../../../utils/';
 import {Resizer} from '../../elements';
 import SaveSelectionAsJSON from './sections/SaveSelectionAsJSON';
 import {ViewContext} from '../../contexts';
-import {figmaNotify} from '../../../../plugin/utils';
 import styles from './styles.module.scss';
 
 interface Props {

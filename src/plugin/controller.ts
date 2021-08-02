@@ -2,6 +2,7 @@ import {addSign, figmaNotify, populateByName, populateOnlySelected, removeSign, 
 
 import {pluginFrameSize} from '../data/pluginFrameSize';
 import {skipSign} from '../data/skipSign';
+import stringify from 'safe-stable-stringify';
 
 // SHOW UI
 figma.showUI(__html__, {width: pluginFrameSize.width, height: pluginFrameSize.height});
@@ -16,7 +17,7 @@ figma.ui.onmessage = msg => {
 
     if (msg.type === 'populate') {
         // Check if something selected
-        let selectedArray = msg.selected;
+        const selectedArray = msg.selected;
         const selection = isRandom(figma.currentPage.selection);
         const obj = isRandom(msg.obj);
 
@@ -40,12 +41,43 @@ figma.ui.onmessage = msg => {
             figmaNotify('error', 'Select nodes to save', 3000);
         }
 
-        const json = selection.map(node => {
-            const propsToSave = ['characters', 'fills'];
+        const json = [];
+        selection.map(node => {
+            const propsToSave = [
+                'characters',
+                'fills',
+                'strokes',
+                'strokeWeight',
+                'strokeAlign',
+                'constraints',
+                'x',
+                'y',
+                'rotation',
+                'opacity',
+                'blendMode',
+                'effects',
+                'cornerRadius',
+                'cornerSmoothing',
+                'topLeftRadius',
+                'topRightRadius',
+                'bottomLeftRadius',
+                'bottomRightRadius',
+            ];
             const props = {};
-            const name = node.name.toString();
-            propsToSave.forEach(prop => (props[`${name}.${prop}`] = JSON.stringify(node[prop])));
-            return props;
+            let name = node.name.toString();
+            name = node.type;
+            let numberOfUndefinedValues = 0;
+            propsToSave.forEach(prop => {
+                const value = node[prop];
+                if (value !== undefined) {
+                    props[`${name}.${prop}`] = JSON.stringify(value);
+                } else {
+                    numberOfUndefinedValues++;
+                }
+            });
+            if (numberOfUndefinedValues !== propsToSave.length) {
+                json.push(props);
+            }
         });
 
         figma.ui.postMessage({type: 'json-ready-to-save', json});
