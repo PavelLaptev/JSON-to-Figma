@@ -8,7 +8,8 @@ export default async function fetchJSONfromURL(
         console.error(error);
     }
 ) {
-    const fetchURL = isLocalhost(url) ? url : `${proxyServer}/${url}`;
+    const encodedURL = encodeURIComponent(url);
+    const fetchURL = isLocalhost(url) ? url : `${proxyServer}/${encodedURL}`;
     return await fetch(fetchURL)
         .then(response => response.json())
         .then(responseJson => {

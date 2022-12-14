@@ -1,1 +1,1 @@
-export const proxyServer = 'https://secure-thicket-88117.herokuapp.com';
+export const proxyServer = 'https://api.allorigins.win/get?url=';

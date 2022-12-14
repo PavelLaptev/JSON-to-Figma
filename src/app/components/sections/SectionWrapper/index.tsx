@@ -8,9 +8,10 @@ interface Props {
     divider?: boolean;
     onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
     onChange?(event: React.FormEvent<HTMLInputElement>): void;
+    children: React.ReactNode;
 }
 
-const SectionWrapper: React.FC<Props> = props => {
+const SectionWrapper: React.FC<Props> = (props) => {
     return (
         <section className={`${styles.wrap} ${props.className}`} onClick={props.onClick} onChange={props.onChange}>
             {props.title !== null ? <h3 className={styles.title}>{props.title}</h3> : null}

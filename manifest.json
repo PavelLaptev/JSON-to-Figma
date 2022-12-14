@@ -4,5 +4,6 @@
     "api": "1.0.0",
     "main": "dist/code.js",
     "ui": "dist/ui.html",
-    "relaunchButtons": [{"command": "open", "name": "JSON to Figma"}]
+    "relaunchButtons": [{"command": "open", "name": "JSON to Figma"}],
+    "editorType": ["figma"]
 }

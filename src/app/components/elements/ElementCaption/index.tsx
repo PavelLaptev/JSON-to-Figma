@@ -4,9 +4,10 @@ import styles from './styles.module.scss';
 
 interface Props {
     text: string;
+    children?: React.ReactNode;
 }
 
-const ElementCaption: React.SFC<Props> = props => {
+const ElementCaption: React.FC<Props> = (props) => {
     return (
         <div>
             {props.children ? <div>{props.children}</div> : null}
