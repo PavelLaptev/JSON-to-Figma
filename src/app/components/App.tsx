@@ -1,14 +1,7 @@
 import * as React from 'react';
 import '../styles/ui.scss';
 
-import {
-    showMsg,
-    execGetClipboard,
-    groupFlattenedObj,
-    fetchJSONfromURL,
-    clearNullValues,
-    fetchImagefromURL,
-} from '../utils';
+import {showMsg, execGetClipboard, groupFlattenedObj, clearNullValues, fetchImagefromURL} from '../utils';
 import {ViewContext} from './contexts';
 import {LaunchView, OperationsView} from './views';
 
@@ -71,21 +64,24 @@ const App = ({}) => {
     };
 
     // Handle copy from Clipboard
-    function fetchUrlLink() {
+    const fetchUrlLink = async () => {
         let clipboardLink = execGetClipboard();
 
-        fetchJSONfromURL(
-            clipboardLink,
-            responseJson => {
-                let clearedFromNull = clearNullValues(responseJson);
-                let obj = groupFlattenedObj(clearedFromNull);
-                loadOperationView(obj);
-            },
-            error => {
-                showErrorMsg(error, 'Something wrong with the URL or JSON file');
-            }
-        );
-    }
+        if (clipboardLink === '') {
+            showMsg('error', 'Clipboard is empty');
+            return;
+        }
+
+        try {
+            let response = await fetch(clipboardLink);
+            let responseJson = await response.json();
+            let clearedFromNull = clearNullValues(responseJson);
+            let obj = groupFlattenedObj(clearedFromNull);
+            loadOperationView(obj);
+        } catch (error) {
+            showErrorMsg(error, 'Something wrong with the URL or JSON file');
+        }
+    };
 
     const handleReupoad = () => {
         console.clear();
