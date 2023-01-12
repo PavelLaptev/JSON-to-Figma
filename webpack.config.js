@@ -1,5 +1,9 @@
 const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HTMLInlineCSSWebpackPlugin =
+  require("html-inline-css-webpack-plugin").default;
+const HtmlInlineScriptPlugin = require("html-inline-script-webpack-plugin");
+
 const path = require("path");
 
 module.exports = (argv) => ({
@@ -56,7 +60,10 @@ module.exports = (argv) => ({
       filename: "ui.html",
       inlineSource: ".(js)$",
       chunks: ["ui"],
+      sourceMap: false,
     }),
+    new HtmlInlineScriptPlugin(),
+    new HTMLInlineCSSWebpackPlugin(),
     // new HtmlWebpackInlineSourcePlugin(),
   ],
 });

@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-// import './index.css';
-// import App from "./App";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// const container = document.getElementById("root");
+// const root = ReactDOM.createRoot(container);
 
-root.render(
-  <React.StrictMode>
-    <div>hello</div>
-  </React.StrictMode>
-);
+// root.render(
+//   <React.StrictMode>
+//     <div>hello</div>
+//   </React.StrictMode>
+// );
+
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+
+root.render(<div>hello</div>);
