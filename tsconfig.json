@@ -9,6 +9,6 @@
         "removeComments": true,
         "noImplicitAny": false,
         "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
     }
 }

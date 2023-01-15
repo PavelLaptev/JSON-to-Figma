@@ -1,84 +1,33 @@
 .head {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--s-space);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--s-space);
 }
 
 .eyes {
+  position: absolute;
+  top: 71px;
+  left: 111px;
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
     position: absolute;
-    top: 71px;
-    left: 111px;
-    &:before,
-    &:after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        background-color: var(--clr-gray);
-        width: 3px;
-        height: 3px;
-        border-radius: 100px;
-    }
-    &:after {
-        left: 34px;
-    }
+    background-color: var(--clr-gray);
+    width: 3px;
+    height: 3px;
+    border-radius: 100px;
+  }
+  &:after {
+    left: 34px;
+  }
 }
 
 .logo {
-    pointer-events: none;
-    user-select: none;
-    width: 260px;
-    height: 152px;
-}
-
-.nes1989 {
-    display: flex;
-    margin-bottom: 160px;
-    user-select: none;
-
-    .buttonWrap {
-        z-index: 99;
-        position: absolute;
-        width: 140px;
-        height: 70px;
-        top: 52px;
-        left: 130px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .button {
-        font-size: 20px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 900;
-        padding: 8px 16px;
-        background: var(--clr-black);
-        color: var(--clr-white);
-        border: 4px solid var(--clr-white);
-        &:focus {
-            outline: none;
-        }
-    }
-
-    .jason {
-        position: absolute;
-        z-index: 99;
-        width: 149px;
-        top: 19px;
-        left: 10px;
-    }
-
-    .background {
-        position: absolute;
-        z-index: 0;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url(../../../../../assets/background.gif);
-        background-size: cover;
-    }
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
 }

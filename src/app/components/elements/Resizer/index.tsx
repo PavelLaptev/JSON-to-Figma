@@ -1,42 +1,49 @@
-import * as React from 'react';
-import styles from './styles.module.scss';
+import * as React from "react";
+import styles from "./styles.module.scss";
 
 const Resizer: React.FunctionComponent = () => {
-    const resizerRef = React.useRef(null);
-    const [pressed, setPressed] = React.useState(false);
+  const resizerRef = React.useRef(null);
+  const [pressed, setPressed] = React.useState(false);
 
-    React.useEffect(() => {
-        const handlePointerDown = (e: PointerEvent) => {
-            resizerRef.current.setPointerCapture(e.pointerId);
-            setPressed(true);
-        };
+  React.useEffect(() => {
+    const instance = resizerRef.current;
 
-        const handlePointerUp = (e: PointerEvent) => {
-            resizerRef.current.releasePointerCapture(e.pointerId);
-            setPressed(false);
-        };
+    const handlePointerDown = (e: PointerEvent) => {
+      instance.setPointerCapture(e.pointerId);
+      setPressed(true);
+    };
 
-        const handleMouseMove = (e: MouseEvent) => {
-            if (pressed) {
-                parent.postMessage(
-                    {pluginMessage: {type: 'manual-resize', size: {width: e.clientX, height: e.clientY}}},
-                    '*'
-                );
-            }
-        };
+    const handlePointerUp = (e: PointerEvent) => {
+      instance.releasePointerCapture(e.pointerId);
+      setPressed(false);
+    };
 
-        resizerRef.current.addEventListener('pointerdown', handlePointerDown);
-        resizerRef.current.addEventListener('pointerup', handlePointerUp);
-        resizerRef.current.addEventListener('mousemove', handleMouseMove);
+    const handleMouseMove = (e: MouseEvent) => {
+      if (pressed) {
+        parent.postMessage(
+          {
+            pluginMessage: {
+              type: "manual-resize",
+              size: { width: e.clientX, height: e.clientY },
+            },
+          },
+          "*"
+        );
+      }
+    };
 
-        return () => {
-            resizerRef.current.removeEventListener('pointerdown', handlePointerDown);
-            resizerRef.current.removeEventListener('pointerup', handlePointerUp);
-            resizerRef.current.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, [pressed]);
+    instance.addEventListener("pointerdown", handlePointerDown);
+    instance.addEventListener("pointerup", handlePointerUp);
+    instance.addEventListener("mousemove", handleMouseMove);
 
-    return <div ref={resizerRef} className={styles.resizer} />;
+    return () => {
+      instance.removeEventListener("pointerdown", handlePointerDown);
+      instance.removeEventListener("pointerup", handlePointerUp);
+      instance.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [pressed]);
+
+  return <div ref={resizerRef} className={styles.resizer} />;
 };
 
 export default Resizer;
