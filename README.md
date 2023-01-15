@@ -1,6 +1,6 @@
 # JSON to Figma 4.2
 
-![plugin preview](readme-images/cover.jpg)
+![plugin preview](readme-images/cover.webp)
 
 ##### An easy way to use real data in Figma.
 
@@ -12,16 +12,14 @@ The plugin can parse local or JSON files from a URL link. You can populate any l
 
 -   Load **local** files and fetch **from URL**
 -   Fetch images
+-   Supported image formats: **JPG, PNG, GIF, WEBP, SVG**
 -   Parsing JSON files with **any amount of nested levels**
 -   **Flexible** keys selection
 -   **Invert** selected keys
--   **Download** filtered JSON
 -   Populate **in random order**
--   Manual Popualtion
 -   Select any **ranges** from JSON file
 -   the **"skip" rule** for layers you won't populate
 -   Handle `null` values
--   Resizable plugin window
 
 ---
 
@@ -38,8 +36,6 @@ The plugin can parse local or JSON files from a URL link. You can populate any l
 ## 🚀 How to Use
 
 All you need is a [proper JSON](#-valid-json-structure). The plugin will parse show all available keys from the JSON including nested layers.
-
-![Plugin preview](readme-images/plugin-preview.jpg)
 
 1. Load a JSON file localy or copy a link and the click on the "From Cipboard link" button.
 2. Make sure layers you want to populate have the same names as in the JSON file. For example — if you see a key "user.name" key in the plugin the layer name also should be "user.name".
@@ -58,8 +54,6 @@ All you need is a [proper JSON](#-valid-json-structure). The plugin will parse s
 **`Random order`** — If you switch it on all items will be filled in a random order. By default, all your layers will be filled in order.
 
 **`Image URLs recognition`** — The plugin will automaticly recognise values from a JSON that end with .JPG, .PNG, .GIF or .WEBP as images. if you name a shape or a frame with the name of the key — the pllugin wil fetch the image by URL and add it as a fill.
-
-**`Manual population`** — The plugin populates layers automatically by their names. But you can populate layers manually, despite their names. Select a key in the plugin and then select layers you want to populate. Acceptable for images also.
 
 ---
 
@@ -98,9 +92,17 @@ Or you can use on of these services:
 
 ---
 
-### 🤙 Feedback
+### 📝 Changelog 4.5
 
-Please if you have any trubles with the plugin or ideas how I could improve the plugin, let me know here or by email 😊
+-   Added support for `SVG`, `WEBP`, `GIF` images
+-   Removed `Manual population` option
+-   Removed `Download JSON` option
+
+---
+
+### 👹 Feedback
+
+Please if you have any trubles with the plugin or ideas how to improve it 👉 [create an issue](https://github.com/PavelLaptev/JSON-to-Figma/issues/new/choose).
 
 ---
 

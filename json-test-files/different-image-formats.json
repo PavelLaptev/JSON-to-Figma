@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Anestassia Maris",
         "job": "Technical Writer",
-        "image": "https://ic.c4assets.com/bips/collections/1712B068-5C26-45d4-94bd-1aaa836c9cd1.jpg?interpolation=progressive-bicubic&output-quality=90&output-format=jpeg{&resize}"
+        "image": "https://ic.c4assets.com/bips/collections/1712B068-5C26-45d4-94bd-1aaa836c9cd1.jpg?interpolation=progressive-bicubic&output-quality=90&output-format=jpeg"
     },
     {
         "id": 2,
@@ -21,12 +21,18 @@
         "id": 4,
         "name": "Garrik Moxsom",
         "job": "Research Nurse",
-        "image": "https://robohash.org/idaspernaturea.jpg?size=500x500&set=set1"
+        "image": "https://www.gstatic.com/webp/gallery/1.webp"
     },
     {
         "id": 5,
         "name": "Janeva Cornelisse",
         "job": "Paralegal",
-        "image": "https://robohash.org/eiusporroest.jpg?size=500x500&set=set1"
+        "image": "https://www.litmus.com/wp-content/uploads/2021/02/motion-tween-example.gif"
+    },
+    {
+        "id": 6,
+        "name": "Lorainne D'Arcy",
+        "job": "Senior Cost Accountant",
+        "image": "https://www.svgrepo.com/show/8739/pulse.svg"
     }
 ]

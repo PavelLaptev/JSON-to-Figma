@@ -5,8 +5,8 @@ import {
   showMsg,
   execGetClipboard,
   groupFlattenedObj,
-  fetchJSONfromURL,
   clearNullValues,
+  fetchFromURL,
   fetchImagefromURL,
 } from "../utils";
 import { ViewContext } from "./contexts";
@@ -21,16 +21,17 @@ const App = ({}) => {
   const MsgListener = (e) => {
     if (e.data.pluginMessage.type === "image-url") {
       const imgURL = e.data.pluginMessage.url;
+      // console.log(imgURL);
       fetchImagefromURL(imgURL, e.data.pluginMessage.targetID);
     }
 
-    if (e.data.pluginMessage.type === "get-plugin-storage") {
-      if (e.data.pluginMessage.data === "") {
-        console.log("empty", e.data.pluginMessage);
-      } else {
-        console.log(e.data.pluginMessage.data);
-      }
-    }
+    // if (e.data.pluginMessage.type === "get-plugin-storage") {
+    //   if (e.data.pluginMessage.data === "") {
+    //     console.log("empty", e.data.pluginMessage);
+    //   } else {
+    //     console.log(e.data.pluginMessage.data);
+    //   }
+    // }
   };
 
   React.useEffect(() => {
@@ -74,21 +75,20 @@ const App = ({}) => {
   };
 
   // Handle copy from Clipboard
-  function fetchUrlLink() {
+  const fetchUrlLink = async () => {
     let clipboardLink = execGetClipboard();
 
-    fetchJSONfromURL(
-      clipboardLink,
-      (responseJson) => {
-        let clearedFromNull = clearNullValues(responseJson);
-        let obj = groupFlattenedObj(clearedFromNull);
-        loadOperationView(obj);
-      },
-      (error) => {
-        showErrorMsg(error, "Something wrong with the URL or JSON file");
-      }
-    );
-  }
+    try {
+      let response = await fetchFromURL(clipboardLink);
+      let responseJson = await response.json();
+      console.log(responseJson);
+      let clearedFromNull = clearNullValues(responseJson);
+      let obj = groupFlattenedObj(clearedFromNull);
+      loadOperationView(obj);
+    } catch (error) {
+      showErrorMsg(error, "Something wrong with the URL. Check the structure");
+    }
+  };
 
   const handleReupoad = () => {
     console.clear();
@@ -100,7 +100,7 @@ const App = ({}) => {
 
   return (
     <ViewContext.Provider value={JSONobject}>
-      {JSONobject !== null ? (
+      {JSONobject ? (
         <OperationsView onReuploadClick={handleReupoad} />
       ) : (
         <LaunchView
