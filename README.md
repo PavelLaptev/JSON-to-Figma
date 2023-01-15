@@ -1,4 +1,4 @@
-# JSON to Figma 4.2
+# JSON to Figma
 
 ![plugin preview](readme-images/cover.webp)
 
