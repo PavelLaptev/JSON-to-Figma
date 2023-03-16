@@ -1,10 +1,18 @@
-# JSON to Figma
+# JSON to Figma (Not Maintained)
 
-![plugin preview](readme-images/cover.webp)
+**⚠️ Important note:** This plugin is no longer maintained and will not receive updates or support. Feel free to use it as is, but please note that it may not be compatible with the latest versions of Figma.
+
+---
 
 ##### An easy way to use real data in Figma.
 
 The plugin can parse local or JSON files from a URL link. You can populate any layers with text or images.
+
+---
+
+### Get the plugin
+
+##### 📥 [figma.com/community/plugin/789839703871161985/JSON-to-Figma](https://www.figma.com/community/plugin/789839703871161985/JSON-to-Figma)
 
 ---
 
@@ -22,10 +30,6 @@ The plugin can parse local or JSON files from a URL link. You can populate any l
 -   Handle `null` values
 
 ---
-
-### Get the plugin
-
-##### 📥 [figma.com/community/plugin/789839703871161985/JSON-to-Figma](https://www.figma.com/community/plugin/789839703871161985/JSON-to-Figma)
 
 ### Youtube demo
 
