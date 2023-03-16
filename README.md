@@ -1,6 +1,10 @@
 # JSON to Figma (Not Maintained)
 
-**⚠️ Important note:** This plugin is no longer maintained and will not receive updates or support. Feel free to use it as is, but please note that it may not be compatible with the latest versions of Figma.
+## Notice: This plugin is no longer maintained
+
+Thank you for your interest in the JSON to Figma plugin. As of now, this plugin has become a paid plugin available on the Figma Community. Due to this change, this repository will no longer be updated and will be closed in tree months.
+
+We appreciate your support and understanding during this transition. If you would like to continue using the plugin, please consider purchasing it from the Figma Community.
 
 ---
 
