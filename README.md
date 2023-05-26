@@ -90,7 +90,7 @@ The JSON structure for the file should look like an array of objects.
 
 ### 📓 Services to generate JSON data
 
-You can download try different JSON samples [from this repo](https://github.com/PavelLaptev/JSON-to-Figma-2.0-React/tree/master/json-test-files).
+You can download try different JSON samples [from this repo](./json-test-files).
 
 Or you can use on of these services:
 
